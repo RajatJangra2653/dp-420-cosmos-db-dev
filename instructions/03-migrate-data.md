@@ -1,14 +1,21 @@
-# Module 2 - Plan and implement Azure Cosmos DB SQL API
+# Lab 02b - Plan and implement Azure Cosmos DB SQL API
+
+
+## Lab scenario
+
+In Azure Data Factory, Azure Cosmos DB is supported as a source of data ingest and as a target (sink) of data output.
+In this lab, we will populate Azure Cosmos DB using a helpful command-line utility and then use Azure Data Factory to move a subset of data from one container to another.
+
+## Lab objectives
+In this lab, you will complete the following tasks:
+- Task 1: Create and seed your Azure Cosmos DB SQL API account.
+- Task 2: Create Azure Data Factory resource.
 
 ### Estimated Timing: 30 minutes
 
-## Migrate existing data using Azure Data Factory
+## Exercise 1: Migrate existing data using Azure Data Factory
 
-In Azure Data Factory, Azure Cosmos DB is supported as a source of data ingest and as a target (sink) of data output.
-
-In this lab, we will populate Azure Cosmos DB using a helpful command-line utility and then use Azure Data Factory to move a subset of data from one container to another.
-
-### Lab 1: Create and seed your Azure Cosmos DB SQL API account
+### Task 1: Create and seed your Azure Cosmos DB SQL API account
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container at **4,000** request units per second (RU/s). Once created, you will adjust the throughput down to 400 RU/s.
 
@@ -79,7 +86,7 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Return to the **Home** of the Azure portal.
 
-## Create Azure Data Factory resource
+### Task 2: Create Azure Data Factory resource
 
 Now that the Azure Cosmos DB SQL API resources are in place, you will create an Azure Data Factory resource and configure all of the necessary components and connections to perform a one-time data movement from one SQL API container to another to extract data, transform it, and load it to another SQL API container.
 
@@ -188,3 +195,12 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
 1. Observe the results of the query.
 
 1. Close your web browser window or tab.
+
+### Review
+
+In this lab, you have completed:
+
+- Created and seed your Azure Cosmos DB SQL API account.
+- Created Azure Data Factory resource.
+
+### You have successfully completed the lab
