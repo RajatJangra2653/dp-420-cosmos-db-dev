@@ -6,6 +6,7 @@ One of the most important things to wrap your head around is configuring through
 In this lab, you will provision throughput using various methods in the Data Explorer. You will provision throughput either manually or using autoscale, at the database and the container level.
 
 ## Lab objectives
+
 In this lab, you will complete the following tasks:
 - Task 1: Create a serverless account.
 - Task 2: Create a provisioned account.
