@@ -1,12 +1,21 @@
-# Module 4 - Implement Azure Cosmos DB SQL API point operations
+# Lab 04c - Implement Azure Cosmos DB SQL API point operations
 
-### Estimated Timing: 30 minutes
-
-## Lab 3 :  Move multiple documents in bulk with the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 The easiest way to learn how to perform a bulk operation is to attempt to push many documents to an Azure Cosmos DB SQL API account in the cloud. Using the bulk features of the SDK, this can be done with some minor help from the [System.Threading.Tasks][docs.microsoft.com/dotnet/api/system.threading.tasks] namespace.
 
 In this lab, you'll use the [Bogus][nuget.org/packages/bogus/33.1.1] library from NuGet to generate fictional data and place that into an Azure Cosmos DB account.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Use an Azure Cosmos DB SQL API account and configure the SDK project.
+- Task 2: Bulk inserting a twenty-five thousand documents.
+- Task 3: Observe the results.
+
+### Estimated Timing: 30 minutes
+
+## Exercise 1: Move multiple documents in bulk with the Azure Cosmos DB SQL API SDK
 
 ## Prepare your development environment
 
@@ -251,3 +260,13 @@ Now that you have sent 25,000 items to Azure Cosmos DB let’s go and look at th
 [docs.microsoft.com/dotnet/core/tools/dotnet-build]: https://docs.microsoft.com/dotnet/core/tools/dotnet-build
 [docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
 [nuget.org/packages/bogus/33.1.1]: https://www.nuget.org/packages/bogus/33.1.1
+
+### Review
+
+In this lab, you have completed:
+
+- Use an Azure Cosmos DB SQL API account and configure the SDK project.
+- Bulk inserting a twenty-five thousand documents.
+- Observe the results.
+
+### You have successfully completed the lab
