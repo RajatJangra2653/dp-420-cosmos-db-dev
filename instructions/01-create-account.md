@@ -5,6 +5,7 @@
 Before diving too deeply into Azure Cosmos DB, it's important to get a handle on the basics of creating the resources you will use the most. In most scenarios, you will need to be comfortable creating accounts, databases, containers, and items. In a real-world scenario, you should also have a few basic queries "on hand" to test that you created all of your resources correctly.
 
 In this lab, you'll create a new Azure Cosmos DB account using the SQL API. You will then use the Data Explorer to create a database, a container, and two items. Finally, you will query the database for the items you created.
+
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
