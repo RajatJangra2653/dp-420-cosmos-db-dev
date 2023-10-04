@@ -17,7 +17,7 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
-## Exercise 1:  Configure the Azure Cosmos DB SQL API SDK for offline development
+## Exercise 1: Configure the Azure Cosmos DB SQL API SDK for offline development
 
 ### Task 1: Prepare your development environment
 
