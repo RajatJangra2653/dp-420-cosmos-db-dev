@@ -1,13 +1,22 @@
-# Module 5 - Execute queries in Azure Cosmos DB SQL API
+# Lab 05b - Execute queries in Azure Cosmos DB SQL API
 
-### Estimated Timing: 30 minutes
-
-## Lab 2 : Paginate cross-product query results with the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 Azure Cosmos DB queries will typically have multiple pages of results. Pagination is done automatically server-side when Azure Cosmos DB cannot return all query results in one single execution. In many applications, you will want to write code using the SDK to process your query results in batches in a performant manner.
 
 In this lab, you'll create a feed iterator that can be used in a loop to iterate over your entire result set.
 
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Seed the Azure Cosmos DB SQL API account with data.
+- Task 3: Paginate through small result sets of a SQL query using the SDK.
+- Task 4: Iterate over the results of a SQL query using the SDK.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Paginate cross-product query results with the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -221,3 +230,14 @@ When processing query results, you must make sure your code progresses through a
 [docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.queryrequestoptions.maxitemcount]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.queryrequestoptions.maxitemcount
 [docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
 [nuget.org/packages/cosmicworks]: https://www.nuget.org/packages/cosmicworks/
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Seeded the Azure Cosmos DB SQL API account with data.
+- Paginated through small result sets of a SQL query using the SDK.
+- Iterated over the results of a SQL query using the SDK.
+
+### You have successfully completed the lab
