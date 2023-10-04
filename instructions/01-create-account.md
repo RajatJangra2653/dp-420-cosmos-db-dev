@@ -1,12 +1,21 @@
-# Module 1 - Get started with Azure Cosmos DB SQL API
+# Lab 01 - Get started with Azure Cosmos DB SQL API
 
-### Estimated Timing: 30 minutes
-
-## Lab 1: Create an Azure Cosmos DB SQL API account
+## Lab scenario
 
 Before diving too deeply into Azure Cosmos DB, it's important to get a handle on the basics of creating the resources you will use the most. In most scenarios, you will need to be comfortable creating accounts, databases, containers, and items. In a real-world scenario, you should also have a few basic queries "on hand" to test that you created all of your resources correctly.
 
 In this lab, you'll create a new Azure Cosmos DB account using the SQL API. You will then use the Data Explorer to create a database, a container, and two items. Finally, you will query the database for the items you created.
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Create a new Azure Cosmos DB account.
+- Task 2: Use the Data Explorer to create a new database and container.
+- Task 3: Use the Data Explorer to create new items.
+- Task 4: Use the Data Explorer to issue a basic query.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Create an Azure Cosmos DB SQL API account
 
 ### Task 1: Create a new Azure Cosmos DB account
 
@@ -131,3 +140,15 @@ Finally, the Data Explorer has a built-in query editor that is used to issue que
     > &#128221; Typically, the request charge for this simple query is between 2 and 3 RU/s when the container size is small.
 
 1. Close your web browser window or tab.
+
+### Review
+
+In this lab, you have completed:
+
+- Created a new Azure Cosmos DB account.
+- Used the Data Explorer to create a new database and container.
+- Used the Data Explorer to create new items.
+- Used the Data Explorer to issue a basic query.
+
+### You have successfully completed the lab
+
