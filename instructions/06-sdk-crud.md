@@ -1,14 +1,23 @@
-# Module 4 - Implement Azure Cosmos DB SQL API point operations
+# Lab 04a - Implement Azure Cosmos DB SQL API point operations
 
-### Estimated Timing: 60 minutes
+## Lab scenario
 
-## Lab 1 :  Create and update documents with the Azure Cosmos DB SQL API SDK
-
-The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB SQL API container. Together, these methods perform some of the most common “CRUD” operations across various items within SQL API containers.
-
+The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB SQL API container. Together, these methods perform some of the most common “CRUD” operations across various items within SQL API containers.<br>
 In this lab, you’ll use the SDK to perform everyday CRUD operations on an item within an Azure Cosmos DB SQL API container.
 
-### Prepare your development environment
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Create an Azure Cosmos DB SQL API account.
+- Task 2: Connect to the Azure Cosmos DB SQL API account from the SDK.
+- Task 3: Perform create and read point operations on items with the SDK.
+- Task 4: Perform update and delete point operations with the SDK.
+
+## Estimated Timing: 60 minutes
+
+## Exercise 1: Create and update documents with the Azure Cosmos DB SQL API SDK
+
+## Prepare your development environment
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
@@ -19,6 +28,7 @@ In this lab, you’ll use the SDK to perform everyday CRUD operations on an item
 3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+
 ### Task 1: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
@@ -502,3 +512,14 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 [docs.microsoft.com/dotnet/core/tools/dotnet-build]: https://docs.microsoft.com/dotnet/core/tools/dotnet-build
 [docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
 [nuget.org/packages/microsoft.azure.cosmos/3.22.1]: https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.22.1
+
+### Review
+
+In this lab, you have completed:
+
+- Created an Azure Cosmos DB SQL API account.
+- Connected to the Azure Cosmos DB SQL API account from the SDK.
+- Performed create and read point operations on items with the SDK.
+- Performed update and delete point operations with the SDK.
+
+### You have successfully completed the lab
