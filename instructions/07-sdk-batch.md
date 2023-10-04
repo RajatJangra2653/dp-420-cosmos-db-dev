@@ -277,8 +277,8 @@ Now, let’s create a transactional batch that will error purposefully. This bat
 
 In this lab, you have completed:
 
-- Use an Azure Cosmos DB SQL API account and configure the SDK project.
-- Creating a transactional batch.
-- Creating an errant transactional batch.
+- Used an Azure Cosmos DB SQL API account and configure the SDK project.
+- Created a transactional batch.
+- Created an errant transactional batch.
 
 ### You have successfully completed the lab
