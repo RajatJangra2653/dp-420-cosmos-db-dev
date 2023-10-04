@@ -1,8 +1,6 @@
-# Module 5 - Execute queries in Azure Cosmos DB SQL API
+# Lab 05a - Execute queries in Azure Cosmos DB SQL API
 
-### Estimated Timing: 30 minutes
-
-## Lab 1 :  Execute a query with the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 The latest version of the .NET SDK for the Azure Cosmos DB SQL API makes it easier than ever to query a container and asynchronously iterate over result sets using the latest best practices and language features from C#.
 
@@ -10,6 +8,18 @@ The latest version of the .NET SDK for the Azure Cosmos DB SQL API makes it easi
 
 In this lab, you'll use an asynchronous stream to iterate over a large result set returned from Azure Cosmos DB SQL API. You will use the .NET SDK to query and iterate over results.
 
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Seed the Azure Cosmos DB SQL API account with data.
+- Task 4: Iterate over the results of a SQL query using the SDK.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Execute a query with the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -199,3 +209,14 @@ You will now use an asynchronous stream to create a simple-to-understand foreach
 [docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
 [nuget.org/packages/azure.cosmos/4.0.0-preview3]: https://www.nuget.org/packages/azure.cosmos/4.0.0-preview3
 [nuget.org/packages/cosmicworks]: https://www.nuget.org/packages/cosmicworks/
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Seeded the Azure Cosmos DB SQL API account with data.
+- Iterated over the results of a SQL query using the SDK.
+
+### You have successfully completed the lab
