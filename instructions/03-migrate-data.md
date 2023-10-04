@@ -7,6 +7,7 @@ In Azure Data Factory, Azure Cosmos DB is supported as a source of data ingest a
 In this lab, we will populate Azure Cosmos DB using a helpful command-line utility and then use Azure Data Factory to move a subset of data from one container to another.
 
 ## Lab objectives
+
 In this lab, you will complete the following tasks:
 - Task 1: Create and seed your Azure Cosmos DB SQL API account.
 - Task 2: Create Azure Data Factory resource.
