@@ -265,8 +265,8 @@ Now that you have sent 25,000 items to Azure Cosmos DB let’s go and look at th
 
 In this lab, you have completed:
 
-- Use an Azure Cosmos DB SQL API account and configure the SDK project.
-- Bulk inserting a twenty-five thousand documents.
-- Observe the results.
+- Used an Azure Cosmos DB SQL API account and configure the SDK project.
+- Bulk inserted a twenty-five thousand documents.
+- Observed the results.
 
 ### You have successfully completed the lab
