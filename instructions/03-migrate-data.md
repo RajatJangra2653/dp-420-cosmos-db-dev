@@ -39,7 +39,7 @@ To accompany the products container, you will create a **flatproducts** containe
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -76,7 +76,7 @@ To accompany the products container, you will create a **flatproducts** containe
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *cosmicworks* |
     | **Container id** | *`flatproducts`* |
     | **Partition key** | *`/category`* |
@@ -94,7 +94,7 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
 1. Select **+ Create a resource**, search for *Data Factory*, and then create a new **Azure Data Factory** resource with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing resource group* |
     | **Name** | *Enter a globally unique name* |
@@ -124,7 +124,7 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
 1. In the **New connection (Azure Cosmos DB (SQL API))** popup, configure the new connection with the following values, and then select **Create**:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Name** | *`CosmosSqlConn`* |
     | **Connect via integration runtime** | *AutoResolveIntegrationRuntime* |
     | **Authentication method** | *Account key* &vert; *Connection string* |
