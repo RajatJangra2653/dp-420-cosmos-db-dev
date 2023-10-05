@@ -76,7 +76,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Open the context menu for the **06-sdk-crud** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > Note: This command will open the terminal with the starting directory already set to the **06-sdk-crud** folder.
+    >**Note**: This command will open the terminal with the starting directory already set to the **06-sdk-crud** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
@@ -94,7 +94,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Open the **script.cs** code file within the **06-sdk-crud** folder.
 
-    > Note: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
+    >**Note**: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
 1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created earlier.
   
@@ -102,7 +102,7 @@ Using the credentials from the newly created account, you will connect with the 
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created earlier.
 
@@ -110,7 +110,7 @@ Using the credentials from the newly created account, you will connect with the 
     string key = "<cosmos-key>";
     ```
 
-    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. Asynchronously invoke the CreateDatabaseIfNotExistsAsync method of the **client** variable passing in the name of the new database (**cosmicworks**) you would like to create, and storing the result in a variable of type **Database**:
 
@@ -170,7 +170,7 @@ You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.C
 
 1. Return to **Visual Studio Code**. Open the **product.cs** code file within the **06-sdk-crud** folder.
 
-    > Note: Do not close the editor for the **script.cs** file.
+    >**Note**: Do not close the editor for the **script.cs** file.
 
 1. Observe the **Product** class within this code file. This class represents a product item that will be stored and manipulated within this container.
 
@@ -364,7 +364,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
     | **Name** | *Road Saddle* |
     | **Price** | *$45.99* |
 
-    > Note: At this point in time, these values should not have been changed since you have created the item. You will change these values in this exercise.
+    >**Note**: At this point in time, these values should not have been changed since you have created the item. You will change these values in this exercise.
 
 1. Close your web browser window or tab.
 
@@ -451,7 +451,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
     | **Name** | *Road LL Saddle* |
     | **Price** | *$32.55* |
 
-    > Note: At this point in time, these values should  have been changed since you have observed the item.
+    >**Note**: At this point in time, these values should  have been changed since you have observed the item.
 
 1. Close your web browser window or tab.
 
