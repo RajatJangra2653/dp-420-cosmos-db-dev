@@ -35,7 +35,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -66,7 +66,7 @@ Before continuing with this exercise, you must first create a new Azure Cognitiv
 1. Select **+ Create a resource**, search for *Cognitive Search*, and then create a new **Azure Cognitive Search** account resource with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing or create a new resource group* |
     | **Name** | *Enter a globally unique name* |
@@ -92,7 +92,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 1. Configure the data source with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Data source name** | *products-cosmossql-source* |
     | **Connection string** | ***connection string** of the Azure Cosmos DB SQL API account created earlier* |
     | **Database** | *cosmicworks* |
@@ -126,14 +126,14 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 1. In the **Customize target index** step of the wizard, configure the index with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Index name** | *products-index* |
     | **Key** | *id* |
 
 1. In the field table, configure the **Retrievable**, **Filterable**, **Sortable**, **Facetable**, and **Searchable** options for each field using the following table:
 
     | **Field** | **Retrievable** | **Filterable** | **Sortable** | **Facetable** | **Searchable** |
-    | ---: | :---: | :---: | :---: | :---: | :---: |
+    | --- | --- | --- | --- | --- | --- |
     | **id** | &#10004; | &#10004; | &#10004; | | |
     | **categoryId** | &#10004; | &#10004; | &#10004; | &#10004; | |
     | **name** | &#10004; | &#10004; | &#10004; | | &#10004; (English - Microsoft) |
@@ -144,7 +144,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 1. In the **Create an indexer** step of the wizard, configure the indexer with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Name** | *products-cosmosdb-indexer* |
     | **Schedule** | *Hourly* |
 
