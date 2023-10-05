@@ -2,7 +2,7 @@
 
 ## Lab scenario
 
-In this exercise, you'll measure the difference for customer entities when you model entities as separate containers versus when you model for a NoSQL database by embedding entities in a single document.
+In this lab, you'll measure the difference for customer entities when you model entities as separate containers versus when you model for a NoSQL database by embedding entities in a single document.
 
 ## Lab objectives
 
