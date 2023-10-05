@@ -1,14 +1,22 @@
-# Module 2 - Plan and implement Azure Cosmos DB SQL API
+# Lab 02b - Plan and implement Azure Cosmos DB SQL API
+
+
+## Lab scenario
+
+In Azure Data Factory, Azure Cosmos DB is supported as a source of data ingest and as a target (sink) of data output.
+In this lab, we will populate Azure Cosmos DB using a helpful command-line utility and then use Azure Data Factory to move a subset of data from one container to another.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Create and seed your Azure Cosmos DB SQL API account.
+- Task 2: Create Azure Data Factory resource.
 
 ### Estimated Timing: 30 minutes
 
-## Migrate existing data using Azure Data Factory
+## Exercise 1: Migrate existing data using Azure Data Factory
 
-In Azure Data Factory, Azure Cosmos DB is supported as a source of data ingest and as a target (sink) of data output.
-
-In this lab, we will populate Azure Cosmos DB using a helpful command-line utility and then use Azure Data Factory to move a subset of data from one container to another.
-
-### Lab 1: Create and seed your Azure Cosmos DB SQL API account
+### Task 1: Create and seed your Azure Cosmos DB SQL API account
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container at **4,000** request units per second (RU/s). Once created, you will adjust the throughput down to 400 RU/s.
 
@@ -31,7 +39,7 @@ To accompany the products container, you will create a **flatproducts** containe
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -68,7 +76,7 @@ To accompany the products container, you will create a **flatproducts** containe
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *cosmicworks* |
     | **Container id** | *`flatproducts`* |
     | **Partition key** | *`/category`* |
@@ -79,14 +87,14 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Return to the **Home** of the Azure portal.
 
-## Create Azure Data Factory resource
+### Task 2: Create Azure Data Factory resource
 
 Now that the Azure Cosmos DB SQL API resources are in place, you will create an Azure Data Factory resource and configure all of the necessary components and connections to perform a one-time data movement from one SQL API container to another to extract data, transform it, and load it to another SQL API container.
 
 1. Select **+ Create a resource**, search for *Data Factory*, and then create a new **Azure Data Factory** resource with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing resource group* |
     | **Name** | *Enter a globally unique name* |
@@ -116,7 +124,7 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
 1. In the **New connection (Azure Cosmos DB (SQL API))** popup, configure the new connection with the following values, and then select **Create**:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Name** | *`CosmosSqlConn`* |
     | **Connect via integration runtime** | *AutoResolveIntegrationRuntime* |
     | **Authentication method** | *Account key* &vert; *Connection string* |
@@ -188,3 +196,12 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
 1. Observe the results of the query.
 
 1. Close your web browser window or tab.
+
+### Review
+
+In this lab, you have completed:
+
+- Created and seeded your Azure Cosmos DB SQL API account.
+- Created Azure Data Factory resource.
+
+### You have successfully completed the lab

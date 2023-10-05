@@ -1,13 +1,23 @@
+# Lab 07a - Integrate Azure Cosmos DB SQL API with Azure services
 
-# Module 7 - Integrate Azure Cosmos DB SQL API with Azure services
-
-### Estimated Timing: 60 minutes
-
-## Lab 1: Process change feed events using the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 The Azure Cosmos DB SQL API change feed is the key to creating supplemental applications driven by events from the platform. The .NET SDK for the Azure Cosmos DB SQL API ships with a suite of classes to build your applications that integrate with the change feed and listen for notifications about operations within your containers.
 
 In this lab, you will use the change feed processor functionality in the .NET SDK to create an application that is notified with a create or update operation is performed on an item in the specified container.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Implement the change feed processor in the .NET SDK.
+- Task 4: Seed your Azure Cosmos DB SQL API account with sample data.
+
+
+## Estimated Timing: 60 minutes
+
+## Exercise 1: Process change feed events using the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -40,7 +50,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
@@ -68,7 +78,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *cosmicworks* |
 
 1. Back in the **Data Explorer** pane, observe the **cosmicworks** database node within the hierarchy.
@@ -78,7 +88,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *cosmicworks* |
     | **Container id** | *products* |
     | **Partition key** | */categoryId* |
@@ -90,7 +100,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *cosmicworks* |
     | **Container id** | *productslease* |
     | **Partition key** | */partitionKey* |
@@ -176,7 +186,7 @@ The **Microsoft.Azure.Cosmos.Container** class ships with a series of methods to
 1. Outside of the foreach loop and anonymous function, create a new variable named **builder** that stores the result of invoking [GetChangeFeedProcessorBuilder<>][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.getchangefeedprocessorbuilder] on the **sourceContainer** variable using the following parameters:
 
     | **Parameter** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **processorName** | *productsProcessor* |
     | **onChangesDelegate** | *handleChanges* |
 
@@ -291,7 +301,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -303,7 +313,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
     > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
     
-    > Note: If your getting error, close the visual studio code and reopen it and try to run the command once again.
+    >**Note**: If your getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
 
@@ -312,3 +322,14 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Close both integrated terminals.
 
 1. Close **Visual Studio Code**.
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Implemented the change feed processor in the .NET SDK.
+- Seeded your Azure Cosmos DB SQL API account with sample data
+
+### You have successfully completed the lab

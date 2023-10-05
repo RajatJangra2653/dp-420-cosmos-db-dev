@@ -1,12 +1,21 @@
-# Module 4 - Implement Azure Cosmos DB SQL API point operations
+# Lab 04b - Implement Azure Cosmos DB SQL API point operations
 
-### Estimated Timing: 30 minutes
-
-## Lab 2 :  Batch multiple point operations together with the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 The [TransactionalBatch][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch] and [TransactionalBatchResponse][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatchresponse] classes together are the key to composing and decomposing operations into a single logical step. Using these classes, you can write your code to perform multiple operations and then determine if they were completed successfully server-side.
 
 In this lab, you’ll use the SDK, to perform two dual-item operations where you attempt to create two items as a single logical unit.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Use an Azure Cosmos DB SQL API account and configure the SDK project.
+- Task 2: Creating a transactional batch.
+- Task 3: Creating an errant transactional batch.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Batch multiple point operations together with the Azure Cosmos DB SQL API SDK
 
 ## Prepare your development environment
 
@@ -26,7 +35,7 @@ In this lab, you’ll use the SDK, to perform two dual-item operations where you
 
 1. Open the **script.cs** code file within the **07-sdk-batch** folder.
 
-    > Note: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
+    >**Note**: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
 1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created in previous lab.
   
@@ -34,7 +43,7 @@ In this lab, you’ll use the SDK, to perform two dual-item operations where you
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    >Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created in previous lab..
 
@@ -42,13 +51,13 @@ In this lab, you’ll use the SDK, to perform two dual-item operations where you
     string key = "<cosmos-key>";
     ```
 
-    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. **Save** the **script.cs** code file.
 
 1. Open the context menu for the **07-sdk-batch** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > Note: This command will open the terminal with the starting directory already set to the **07-sdk-batch** folder.
+    >**Note**: This command will open the terminal with the starting directory already set to the **07-sdk-batch** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
@@ -263,3 +272,13 @@ Now, let’s create a transactional batch that will error purposefully. This bat
 [docs.microsoft.com/dotnet/core/tools/dotnet-build]: https://docs.microsoft.com/dotnet/core/tools/dotnet-build
 [docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
 [nuget.org/packages/microsoft.azure.cosmos/3.22.1]: https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.22.1
+
+### Review
+
+In this lab, you have completed:
+
+- Used an Azure Cosmos DB SQL API account and configure the SDK project.
+- Created a transactional batch.
+- Created an errant transactional batch.
+
+### You have successfully completed the lab

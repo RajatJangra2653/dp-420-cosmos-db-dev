@@ -1,14 +1,24 @@
-# Module 12: Manage an Azure Cosmos DB SQL API solution using DevOps practices
+# Lab 12a - Manage an Azure Cosmos DB SQL API solution using DevOps practices
 
-### Estimated Timing: 30 minutes
-
-## Lab 1: Adjust provisioned throughput using an Azure CLI script
+## Lab scenario
 
 The Azure CLI is a set of commands that you can use to manage various resources across Azure. Azure Cosmos DB has a rich command group that can be used to manage various facets of an Azure Cosmos DB account regardless of the selected API.
 
 In this lab, you'll create an Azure Cosmos DB account, database, and container using the Azure CLI. You will then make adjustments to the provisioned throughput using the Azure CLI.
 
-## Log in to the Azure CLI
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Log in to the Azure CLI.
+- Task 2: Create Azure Cosmos DB account using the Azure CLI.
+- Task 3: Create Azure Cosmos DB NOSQL API resources using the Azure CLI.
+- Task 4: Adjust the throughput of an existing container using the Azure CLI.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Adjust provisioned throughput using an Azure CLI script
+
+### Task 1: Log in to the Azure CLI
 
 Before using the Azure CLI, you must first check the version of the CLI and login using your Azure credentials.
 
@@ -46,7 +56,7 @@ Before using the Azure CLI, you must first check the version of the CLI and logi
     
     This command could return multiple Resource Group names.
 
-## Create Azure Cosmos DB account using the Azure CLI
+### Task 2: Create Azure Cosmos DB account using the Azure CLI
 
 The **cosmosdb** command group contains basic commands to create and manage Azure Cosmos DB accounts using the CLI. Since an Azure Cosmos DB account has an addressable URI, it's important to create a globally unique name for your new account, even if you create it via script.
 
@@ -64,7 +74,7 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
     $suffix=Get-Random -Maximum 1000000
     ```
 
-    > **Note** The Get-Random cmdlet generates a random integer between 0 and 1,000,000. This is useful because our services requires a globally unique name.
+    >**Note**: The Get-Random cmdlet generates a random integer between 0 and 1,000,000. This is useful because our services requires a globally unique name.
 
 1. Create another new variable name **accountName** using the hard-coded string **csms** and variable substitution to inject the value of the **$suffix** variable using the following command:
 
@@ -78,7 +88,7 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
     $resourceGroup="<resource-group-name>"
     ```
 
-    > **Note** For example, if your resource group is named **DP-420-xxxxx**, the command will be **$resourceGroup="DP-420-xxxxx"**.
+    >**Note**: For example, if your resource group is named **DP-420-xxxxx**, the command will be **$resourceGroup="DP-420-xxxxx"**.
 
 1. Use the **echo** cmdlet to write the value of the **$accountName** and **$resourceGroup** variables to the terminal output using the following command:
 
@@ -101,9 +111,9 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
 
 1. Wait for the **create** command to finish execution and return before proceeding forward with this lab.
 
-    > **Note** The **create** command can take anywhere from two to twelve minutes to complete, on average.
+    >**Note**: The **create** command can take anywhere from two to twelve minutes to complete, on average.
 
-## Create Azure Cosmos DB NOSQL API resources using the Azure CLI
+### Task 3: Create Azure Cosmos DB NOSQL API resources using the Azure CLI
 
 The **cosmosdb sql** command group contains commands for managing NOSQL API-specific resources for Azure Cosmos DB. You can always use the **--help** flag to review the options for these command groups.
 
@@ -159,7 +169,7 @@ The **cosmosdb sql** command group contains commands for managing NOSQL API-spec
 
 1. Close your web browser window or tab.
 
-## Adjust the throughput of an existing container using the Azure CLI
+### Task 4: Adjust the throughput of an existing container using the Azure CLI
 
 The Azure CLI can be used to migrate a container between manual and autoscale provisioning of throughput. If the container is using autoscale throughput, the CLI can be used to dynamically adjust the maximum allowed throughput value.
 
@@ -212,3 +222,14 @@ The Azure CLI can be used to migrate a container between manual and autoscale pr
 1. Close your web browser window or tab.
 
 [docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random]: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random
+
+### Review
+
+In this lab, you have completed:
+
+- Logged in to the Azure CLI.
+- Created Azure Cosmos DB account using the Azure CLI.
+- Created Azure Cosmos DB NOSQL API resources using the Azure CLI.
+- Adjusted the throughput of an existing container using the Azure CLI.
+
+### You have successfully completed the lab

@@ -1,12 +1,21 @@
-# Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API
+# Lab 08b - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API
 
-### Estimated Timing: 30 minutes
-
-## Lab 2: Cost of denormalizing data and aggregates and using the change feed for referential integrity
+## Lab scenario
 
 Using the Relational model could allow us to place different entities in their own containers.  However in NoSQL databases there are no *joins* between containers so we need to start denormalizing our data to eliminate the use of *joins*. Additionally, NoSQL reduces the number of request by modeling the data so the applications can fetch their data in as fewer requests as possible. One problem that rises when denormalizing our data could be the referential integrity between our entities, for this we can use the change feed to keep the data in sync. Denormalizing your aggregates like group by counts can also help us reduce requests.  
 
 In this lab, you'll look at the benefits of how denormalizing data and aggregates can help us reduce cost and how we can use the change feed to mantain referential integrity on the denormalized data.
+
+## Lab objectives
+
+In this lab, you will complete the following exercises:
+- Exercise 1: Measure performance cost when denormalizing data.
+- Exercise 2: Use the change feed to manage referential integrity.
+- Exercise 3: Denormalizing Aggregates.
+
+## Estimated Timing: 30 minutes
+
+## Lab : Cost of denormalizing data and aggregates and using the change feed for referential integrity
 
 ## Prepare your development environment
 
@@ -461,7 +470,7 @@ Create a new sales order for the same customer, and update the total sales order
 
     ![Screenshot of Cloud Shell, with an updated customer record showing a value of 3 for the sales order count and three sales orders below it.](media/16-query-customer-and-orders-next.png)
 
-### Task 4: Delete an order by using transactional batch
+### Task 5: Delete an order by using transactional batch
 
 As with any e-commerce application, customers also cancel orders. You can do the same here as well.
 
@@ -476,7 +485,7 @@ As with any e-commerce application, customers also cancel orders. You can do the
 
 1. Press any key to return to the main menu.
 
-### Task 5: View the code that deletes a sales order
+### Task 6: View the code that deletes a sales order
 
 You delete a sales order in exactly the same way that you create one. Both operations are wrapped in a transaction and executed in the same logical partition. Let's look at the code that does that.
 
@@ -491,7 +500,7 @@ You delete a sales order in exactly the same way that you create one. Both opera
 
     Next is the call to **CreateTransactionalBatch()**. Again, the logical partition key value is passed in, but this time, **DeleteItem()** is called with the order ID and **ReplaceItem()** is called with the updated customer record.
 
-### Task 6: View the code for your top 10 customers query
+### Task 7: View the code for your top 10 customers query
 
 Let's look at the query for your top 10 customers.
 
@@ -522,3 +531,13 @@ Let's look at the query for your top 10 customers.
     Something you might not realize is that the top 10 customers query is a cross-partition query that fans out across all the partitions in your container.
 
     The companion lab to this one pointed out that you should strive to avoid cross-partition queries. However, in reality, such queries can be OK in situations where the container is still small or the query is run infrequently. If the query is run frequently or the container is exceptionally large, it would be worth exploring the cost of materializing this data into another container and using it to serve this query.
+
+### Review
+
+In this lab, you have completed:
+
+- Measured performance cost when denormalizing data.
+- Used the change feed to manage referential integrity.
+- Denormalized Aggregates.
+
+### You have successfully completed the lab

@@ -1,12 +1,22 @@
-# Module 7 - Integrate Azure Cosmos DB SQL API with Azure services
+# Lab 07c - Integrate Azure Cosmos DB SQL API with Azure services
 
-### Estimated Timing: 30 minutes
-
-## Lab 3: Search data using Azure Cognitive Search and Azure Cosmos DB SQL API
+## Lab scenario
 
 Azure Cognitive Search combines a search engine as a service with deep integration with AI capabilities to enrich the information in the search index.
 
 In this lab, you will build an Azure Cognitive Search index that automatically indexes data in an Azure Cosmos DB SQL API container and enriches the data using the Azure Cognitive Services Translator functionality.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Seed your Azure Cosmos DB SQL API account with sample data.
+- Task 2: Create Azure Cognitive Search resource.
+- Task 3: Build indexer and index for Azure Cosmos DB SQL API data.
+- Task 4: Validate index with example search queries.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Search data using Azure Cognitive Search and Azure Cosmos DB SQL API
 
 ### Task 1: Seed your Azure Cosmos DB SQL API account with sample data
 
@@ -25,7 +35,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -37,7 +47,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
     > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
-    > Note: If your getting error, close the visual studio code and reopen it and try to run the command once again.
+    >**Note**: If your getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
 
@@ -45,7 +55,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 
 1. Close **Visual Studio Code**.
 
-### Task 1: Create Azure Cognitive Search resource
+### Task 2: Create Azure Cognitive Search resource
 
 Before continuing with this exercise, you must first create a new Azure Cognitive Search instance.
 
@@ -56,7 +66,7 @@ Before continuing with this exercise, you must first create a new Azure Cognitiv
 1. Select **+ Create a resource**, search for *Cognitive Search*, and then create a new **Azure Cognitive Search** account resource with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing or create a new resource group* |
     | **Name** | *Enter a globally unique name* |
@@ -71,7 +81,7 @@ Before continuing with this exercise, you must first create a new Azure Cognitiv
 
 1. Go to the newly created **Azure Cognitive Search** account resource. Click on **Go to resource**
 
-### Task 2: Build indexer and index for Azure Cosmos DB SQL API data
+### Task 3: Build indexer and index for Azure Cosmos DB SQL API data
 
 You will create an indexer that indexes a subset of data in a specific Azure Cosmos DB SQL API container on an hourly basis.
 
@@ -82,7 +92,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 1. Configure the data source with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Data source name** | *products-cosmossql-source* |
     | **Connection string** | ***connection string** of the Azure Cosmos DB SQL API account created earlier* |
     | **Database** | *cosmicworks* |
@@ -116,14 +126,14 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 1. In the **Customize target index** step of the wizard, configure the index with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Index name** | *products-index* |
     | **Key** | *id* |
 
 1. In the field table, configure the **Retrievable**, **Filterable**, **Sortable**, **Facetable**, and **Searchable** options for each field using the following table:
 
     | **Field** | **Retrievable** | **Filterable** | **Sortable** | **Facetable** | **Searchable** |
-    | ---: | :---: | :---: | :---: | :---: | :---: |
+    | --- | --- | --- | --- | --- | --- |
     | **id** | &#10004; | &#10004; | &#10004; | | |
     | **categoryId** | &#10004; | &#10004; | &#10004; | &#10004; | |
     | **name** | &#10004; | &#10004; | &#10004; | | &#10004; (English - Microsoft) |
@@ -134,7 +144,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 1. In the **Create an indexer** step of the wizard, configure the indexer with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Name** | *products-cosmosdb-indexer* |
     | **Schedule** | *Hourly* |
 
@@ -150,7 +160,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 
 1. Navigate to the **Indexes** tab and then select the **products-index** index.
 
-### Task 3: Validate index with example search queries
+### Task 4: Validate index with example search queries
 
 Now that your materialized view of the Azure Cosmos DB SQL API data is in the search index, you can perform a few basic queries that take advantage of the features in Azure Cognitive Search.
 
@@ -209,3 +219,14 @@ Now that your materialized view of the Azure Cosmos DB SQL API data is in the se
 1. Observe that this search query returns a collection of facet data that indicates how many items belong to each category even if they are not all present in the current page of results. In this example, the matching items are broken down into numeric price categories in intervals of 500. This is typically used to populate filters and navigation aids in client-side applications.
 
 1. Close your web browser window or tab.
+
+### Review
+
+In this lab, you have completed:
+
+- Seeded your Azure Cosmos DB SQL API account with sample data.
+- Created Azure Cognitive Search resource.
+- Built indexer and index for Azure Cosmos DB SQL API data.
+- Validated index with example search queries.
+
+### You have successfully completed the lab

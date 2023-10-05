@@ -1,12 +1,22 @@
-# Module 10 - Optimize query performance in Azure Cosmos DB SQL API
+# Lab 10b - Optimize query performance in Azure Cosmos DB SQL API
 
-### Estimated Timing: 60 minutes
-
-## Lab 2: Optimize an Azure Cosmos DB SQL API container's indexing policy for a query
+## Lab scenario
 
 When planning for an Azure Cosmos DB SQL API account, knowing our most popular queries can help us tune the indexing policy so that queries are as performant as possible.
 
 In this lab, we will use the Data Explorer to test SQL queries with the default indexing policy and an indexing policy that includes a composite index.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Create an Azure Cosmos DB SQL API account.
+- Task 2: Seed your Azure Cosmos DB SQL API account with sample data.
+- Task 3: Execute SQL queries and measure their request unit charge.
+- Task 4: Create a composite index in the indexing policy.
+
+## Estimated Timing: 60 minutes
+
+## Exercise 1: Optimize an Azure Cosmos DB SQL API container's indexing policy for a query
 
 ### Task 1: Create an Azure Cosmos DB SQL API account
 
@@ -25,7 +35,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
@@ -46,7 +56,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Create new* &vert; *cosmicworks* |
     | **Container id** | *products* |
     | **Partition key** | */categoryId* |
@@ -80,7 +90,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -345,4 +355,13 @@ Now, you will need to create a composite index if you sort your items using mult
 
 1. Close your web browser window or tab.
 
+### Review
 
+In this lab, you have completed:
+
+- Created an Azure Cosmos DB SQL API account.
+- Seeded your Azure Cosmos DB SQL API account with sample data.
+- Executed SQL queries and measure their request unit charge.
+- Created a composite index in the indexing policy.
+
+### You have successfully completed the lab

@@ -1,12 +1,24 @@
-# Module 13: Create server-side programming constructs in Azure Cosmos DB SQL API'
+# Lab 13b - Create server-side programming constructs in Azure Cosmos DB SQL API'
 
-### Estimated Timing: 30 minutes
-
-## Lab 2: Implement and then use a UDF using the SDK
+## Lab scenario
 
 The .NET SDK for Azure Cosmos DB SQL API can be used to manage and invoke server-side programming constructs directly from a container. When preparing a new container, it may make sense to use the .NET SDK to publish UDFs directly to a container instead of performing the tasks manually using the Data Explorer.
 
 In this lab, you'll create a new UDF using the .NET SDK and then use the Data Explorer to validate that the UDF is working correctly.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Fetch the Keys and endpoint from Cosmos DB account.
+- Task 3: Seed the Azure Cosmos DB SQL API account with data.
+- Task 4: Create a user-defined function (UDF) using the .NET SDK.
+- Task 5: Test the UDF using the Data Explorer.
+
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Implement and then use a UDF using the SDK
 
 ### Task 1: Prepare your development environment
 
@@ -58,7 +70,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -71,7 +83,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
-   > Note: If your getting error, close the visual studio code and reopen it and try to run the command once again.
+   >**Note**: If your getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Close the integrated terminal.
 
@@ -215,3 +227,14 @@ Now that a new UDF has been created in the Azure Cosmos DB container, you will u
 
 1. Close your web browser window or tab.
 
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Fetched the Keys and endpoint from Cosmos DB account.
+- Seeded the Azure Cosmos DB SQL API account with data.
+- Created a user-defined function (UDF) using the .NET SDK.
+- Tested the UDF using the Data Explorer.
+
+### You have successfully completed the lab

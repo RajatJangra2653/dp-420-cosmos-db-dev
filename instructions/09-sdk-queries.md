@@ -1,8 +1,6 @@
-# Module 5 - Execute queries in Azure Cosmos DB SQL API
+# Lab 05a - Execute queries in Azure Cosmos DB SQL API
 
-### Estimated Timing: 30 minutes
-
-## Lab 1 :  Execute a query with the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 The latest version of the .NET SDK for the Azure Cosmos DB SQL API makes it easier than ever to query a container and asynchronously iterate over result sets using the latest best practices and language features from C#.
 
@@ -10,6 +8,18 @@ The latest version of the .NET SDK for the Azure Cosmos DB SQL API makes it easi
 
 In this lab, you'll use an asynchronous stream to iterate over a large result set returned from Azure Cosmos DB SQL API. You will use the .NET SDK to query and iterate over results.
 
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Seed the Azure Cosmos DB SQL API account with data.
+- Task 4: Iterate over the results of a SQL query using the SDK.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Execute a query with the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -40,7 +50,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
@@ -74,12 +84,12 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     dotnet tool install --global cosmicworks
     ```
 
-    > Note: This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
+    >**Note**: This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -88,11 +98,11 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
     ```
 
-    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
-   > Note: If your getting error, close the visual studio code and reopen it and try to run the command once again.
+   >**Note**: If your getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Close the integrated terminal.
 
@@ -114,7 +124,7 @@ You will now use an asynchronous stream to create a simple-to-understand foreach
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Update the existing variable named **key** with its value set to the **key** of the Azure Cosmos DB account you created earlier.
 
@@ -122,7 +132,7 @@ You will now use an asynchronous stream to create a simple-to-understand foreach
     string key = "<cosmos-key>";
     ```
 
-    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. Create a new variable named **sql** of type *string* with a value of **SELECT * FROM products p**:
 
@@ -199,3 +209,14 @@ You will now use an asynchronous stream to create a simple-to-understand foreach
 [docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
 [nuget.org/packages/azure.cosmos/4.0.0-preview3]: https://www.nuget.org/packages/azure.cosmos/4.0.0-preview3
 [nuget.org/packages/cosmicworks]: https://www.nuget.org/packages/cosmicworks/
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Seeded the Azure Cosmos DB SQL API account with data.
+- Iterated over the results of a SQL query using the SDK.
+
+### You have successfully completed the lab

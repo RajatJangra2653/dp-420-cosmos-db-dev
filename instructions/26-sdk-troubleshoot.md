@@ -1,13 +1,23 @@
+# Lab 11b - Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
-# Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
-
-### Estimated Timing: 30 minutes
-
-## Lab 2: Troubleshoot an application using the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 Azure Cosmos DB offers an extensive set of response codes, which help us easily troubleshoot issues that could arise with our different operation types. The catch is to make sure we program proper error handling when creating apps for Azure Cosmos DB.
 
 In this lab, we'll create a menu driven program that will allow us to insert or delete one of two documents. The main purpose of this lab is to introduce us to how to use some of the most common response codes and how to use them in our app's error handling code.  While we'll code error handling for multiple response codes, we'll only trigger two different types of conditions.  Additionally the error handling won't do anything complex, depending on the response code, it will either display a message to the screen or wait 10 seconds and retry the operation one more time. 
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Fetch the Keys and endpoint from Cosmos DB account.
+- Task 3: Import the Microsoft.Azure.Cosmos library into a .NET script.
+- Task 4: Run a script to create menu-driven options to insert and delete documents.
+- Task 5: Time to insert and delete documents.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Troubleshoot an application using the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -59,7 +69,7 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
     dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
     ```
 
-### Task 4: Run a script to create menu-driven options to insert and delete documents.
+### Task 4: Run a script to create menu-driven options to insert and delete documents
 
 Before we can run our application, we need to connect it to our Azure Cosmos DB account. 
 
@@ -99,7 +109,7 @@ Before we can run our application, we need to connect it to our Azure Cosmos DB 
     >Select an option:
     >```
 
-### Task 5: Time to insert and delete documents.
+### Task 5: Time to insert and delete documents
 
 1. Select **1** and **ENTER** to insert the first document. The program will insert the first document and return the following message.
 
@@ -403,3 +413,14 @@ Even the most junior developers knows that proper error handling must be added t
 [dotnet/api/system.net.httpstatuscode]:https://docs.microsoft.com/dotnet/api/system.net.httpstatuscode?view=net-6.0
 [/rest/api/cosmos-db/delete-a-document]:https://docs.microsoft.com/rest/api/cosmos-db/delete-a-document#status-codes
 
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Fetched the Keys and endpoint from Cosmos DB account.
+- Imported the Microsoft.Azure.Cosmos library into a .NET script.
+- Ran a script to create menu-driven options to insert and delete documents.
+- Inserted and deleted documents.
+
+### You have successfully completed the lab

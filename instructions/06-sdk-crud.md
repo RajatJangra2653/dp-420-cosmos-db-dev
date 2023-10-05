@@ -1,14 +1,23 @@
-# Module 4 - Implement Azure Cosmos DB SQL API point operations
+# Lab 04a - Implement Azure Cosmos DB SQL API point operations
 
-### Estimated Timing: 60 minutes
+## Lab scenario
 
-## Lab 1 :  Create and update documents with the Azure Cosmos DB SQL API SDK
-
-The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB SQL API container. Together, these methods perform some of the most common “CRUD” operations across various items within SQL API containers.
-
+The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB SQL API container. Together, these methods perform some of the most common “CRUD” operations across various items within SQL API containers.<br>
 In this lab, you’ll use the SDK to perform everyday CRUD operations on an item within an Azure Cosmos DB SQL API container.
 
-### Prepare your development environment
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Create an Azure Cosmos DB SQL API account.
+- Task 2: Connect to the Azure Cosmos DB SQL API account from the SDK.
+- Task 3: Perform create and read point operations on items with the SDK.
+- Task 4: Perform update and delete point operations with the SDK.
+
+## Estimated Timing: 60 minutes
+
+## Exercise 1: Create and update documents with the Azure Cosmos DB SQL API SDK
+
+## Prepare your development environment
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
@@ -19,6 +28,7 @@ In this lab, you’ll use the SDK to perform everyday CRUD operations on an item
 3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+
 ### Task 1: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
@@ -36,7 +46,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
@@ -66,7 +76,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Open the context menu for the **06-sdk-crud** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > Note: This command will open the terminal with the starting directory already set to the **06-sdk-crud** folder.
+    >**Note**: This command will open the terminal with the starting directory already set to the **06-sdk-crud** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
@@ -84,7 +94,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Open the **script.cs** code file within the **06-sdk-crud** folder.
 
-    > Note: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
+    >**Note**: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
 1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created earlier.
   
@@ -92,7 +102,7 @@ Using the credentials from the newly created account, you will connect with the 
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created earlier.
 
@@ -100,7 +110,7 @@ Using the credentials from the newly created account, you will connect with the 
     string key = "<cosmos-key>";
     ```
 
-    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. Asynchronously invoke the CreateDatabaseIfNotExistsAsync method of the **client** variable passing in the name of the new database (**cosmicworks**) you would like to create, and storing the result in a variable of type **Database**:
 
@@ -160,7 +170,7 @@ You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.C
 
 1. Return to **Visual Studio Code**. Open the **product.cs** code file within the **06-sdk-crud** folder.
 
-    > Note: Do not close the editor for the **script.cs** file.
+    >**Note**: Do not close the editor for the **script.cs** file.
 
 1. Observe the **Product** class within this code file. This class represents a product item that will be stored and manipulated within this container.
 
@@ -169,7 +179,7 @@ You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.C
 1. Create a new object of type **Product** named **saddle** with the following properties:
 
     | Property | Value |
-    | ---: | :--- |
+    | --- | --- |
     | **id** | *706cd7c6-db8b-41f9-aea2-0e0c7e8eb009* |
     | **categoryId** | *9603ca6c-9e28-4a02-9194-51cdb7fea816* |
     | **name** | *Road Saddle* |
@@ -350,11 +360,11 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 1. Select the **Items** node. Select the only item within the container and then observe the values of the **name** and **price** properties of the item.
 
     | **Property** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Name** | *Road Saddle* |
     | **Price** | *$45.99* |
 
-    > Note: At this point in time, these values should not have been changed since you have created the item. You will change these values in this exercise.
+    >**Note**: At this point in time, these values should not have been changed since you have created the item. You will change these values in this exercise.
 
 1. Close your web browser window or tab.
 
@@ -437,11 +447,11 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 1. Select the **Items** node. Select the only item within the container and then observe the values of the **name** and **price** properties of the item.
 
     | **Property** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Name** | *Road LL Saddle* |
     | **Price** | *$32.55* |
 
-    > Note: At this point in time, these values should  have been changed since you have observed the item.
+    >**Note**: At this point in time, these values should  have been changed since you have observed the item.
 
 1. Close your web browser window or tab.
 
@@ -502,3 +512,14 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 [docs.microsoft.com/dotnet/core/tools/dotnet-build]: https://docs.microsoft.com/dotnet/core/tools/dotnet-build
 [docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
 [nuget.org/packages/microsoft.azure.cosmos/3.22.1]: https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.22.1
+
+### Review
+
+In this lab, you have completed:
+
+- Created an Azure Cosmos DB SQL API account.
+- Connected to the Azure Cosmos DB SQL API account from the SDK.
+- Created and read point operations on items with the SDK.
+- Updated and deleted point operations with the SDK.
+
+### You have successfully completed the lab

@@ -1,12 +1,19 @@
-# Module 2 - Plan and implement Azure Cosmos DB SQL API
+# Lab 02a - Plan and implement Azure Cosmos DB SQL API
 
-### Estimated Timing: 30 minutes
+## Lab scenario
 
-## Lab 1: Configure throughput for Azure Cosmos DB SQL API with the Azure portal
-
-One of the most important things to wrap your head around is configuring throughput in Azure Cosmos DB SQL API. To create an Azure Cosmos DB SQL API container, you must first create an account and then a database; in that order.
-
+One of the most important things to wrap your head around is configuring throughput in Azure Cosmos DB SQL API. To create an Azure Cosmos DB SQL API container, you must first create an account and then a database in that order.
 In this lab, you will provision throughput using various methods in the Data Explorer. You will provision throughput either manually or using autoscale, at the database and the container level.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Create a serverless account.
+- Task 2: Create a provisioned account.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Configure throughput for Azure Cosmos DB SQL API with the Azure portal
 
 ### Task 1: Create a serverless account
 
@@ -27,7 +34,7 @@ Let’s start simple by creating a serverless account. There’s not much to con
 1. On the **Basics** tab, enter the following values for each setting:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource Group** | *Select an existing resource group.* |
     | **Account Name** | *Enter a globally unique name* |
@@ -49,7 +56,7 @@ Let’s start simple by creating a serverless account. There’s not much to con
 1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *`cosmicworks`* |
 
 1. Back in the **Data Explorer** pane, observe the **cosmicworks** database node within the hierarchy.
@@ -59,7 +66,7 @@ Let’s start simple by creating a serverless account. There’s not much to con
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *cosmicworks* |
     | **Container id** | *`products`* |
     | **Partition key** | *`/categoryId`* |
@@ -83,7 +90,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. On the **Basics** tab, enter the following values for each setting:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource Group** | *Select an existing resource group.* |
     | **Account Name** | *cosmosdb420-XXXXXX* |
@@ -109,7 +116,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *`nothroughputdb`* |
     | **Provision throughput** | *Do not select* |
 
@@ -120,7 +127,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *nothroughputdb* |
     | **Container id** | *`requiredthroughputcontainer`* |
     | **Partition key** | *`/primarykey`* |
@@ -134,7 +141,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *`manualthroughputdb`* |
     | **Provision throughput** | *Select this option* |
     | **Database throughput** | *Manual* |
@@ -147,7 +154,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *manualthroughputdb* |
     | **Container id** | *`childcontainer`* |
     | **Partition key** | *`/primarykey`* |
@@ -164,3 +171,13 @@ Now, we are going to create a provisioned throughput account with more tradition
     1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
 
     1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
+
+### Review
+
+In this lab, you have completed:
+
+- Created a serverless account.
+- Created a provisioned account.
+
+### You have successfully completed the lab
+

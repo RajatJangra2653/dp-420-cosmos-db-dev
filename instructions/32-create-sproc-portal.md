@@ -1,12 +1,21 @@
-# Module 13: Create server-side programming constructs in Azure Cosmos DB SQL API
+# Lab 13a - Create server-side programming constructs in Azure Cosmos DB SQL API
 
-### Estimated Timing: 30 minutes
-
-## Lab 1: Create a stored procedure with the Azure portal
+## Lab scenario
 
 Stored procedures are one of the ways you can execute business logic server-side in Azure Cosmos DB. With a stored procedure, you can perform basic CRUD (Create, Read, Update, Delete) operations with a container on multiple documents within a single transactional scope.
 
 In this lab, you'll author a stored procedure that creates a document within your container. You will then use a SQL query to validate the results of the stored procedure.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Author a stored procedure.
+- Task 2: Implement best practices for a stored procedure.
+- Task 3: Query documents.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Create a stored procedure with the Azure portal
 
 ### Task 1: Author a stored procedure
 
@@ -25,7 +34,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing or create a new resource group* |
     | **Account Name** | *Enter a globally unique name* |
@@ -42,7 +51,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Database id** | *Create new* &vert; *cosmicworks* |
     | **Share throughput across containers** | *Select this option* |
     | **Database throughput** | *Manual* &vert; *400* |
@@ -84,7 +93,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 1. Create a new object named **doc** with two properties:
 
     | **Property** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Name** | *first document* |
     | **Category ID** | *demo* |
 
@@ -126,7 +135,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 1. Select **Execute** and then execute the stored procedure using the following input parameters:
 
     | **Setting** | **Key** | **Value** |
-    | ---: | :--- | :--- |
+    | --- | --- | --- |
     | **Partition key value** | *String* | *demo* |
 
 1. Observe the empty result. While the stored procedure executed successfully, the JavaScript code never returned a human-readable response.
@@ -244,3 +253,13 @@ To wrap up things, you will use the Data Explorer to issue a SQL query that will
 1. Now back on the **Data Explorer**, select **"..."** next to **cosmicworks** database and select **Delete Database**. On the window that pops up, enter the **cosmicworks** and click on **OK**.
 
     ![](media/delete-database-1.png)
+
+### Review
+
+In this lab, you have completed:
+
+- Task 1: Authored a stored procedure.
+- Task 2: Implemented best practices for a stored procedure.
+- Task 3: Queried documents.
+
+### You have successfully completed the lab

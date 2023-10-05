@@ -1,12 +1,21 @@
-# Module 6 - Define and implement an indexing strategy for Azure Cosmos DB SQL API
+# Lab 06a - Define and implement an indexing strategy for Azure Cosmos DB SQL API
 
-### Estimated Timing: 30 minutes
-
-## Lab 1 :  Review the default index policy for an Azure Cosmos DB SQL API container with the portal
+## Lab scenario
 
 Every container in Azure Cosmos DB has an indexing policy that directs the service on how to index items within the container. By default, this indexing policy indexes every property of every item. The default indexing policy makes it easy to get started with Azure Cosmos DB quickly as you don't have to think about indexing, performance, and management at the start of a project.
 
 In this lab, you'll observe and manipulate the default index policy for a few containers using the Data Explorer.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Create an Azure Cosmos DB SQL API account.
+- Task 2: Seed the Azure Cosmos DB SQL API account with data.
+- Task 3: View and manipulate the default indexing policy.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Review the default index policy for an Azure Cosmos DB SQL API container with the portal
 
 ### Task 1: Create an Azure Cosmos DB SQL API account
 
@@ -25,7 +34,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
@@ -68,7 +77,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -80,7 +89,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
-    > Note: If your getting error, close the visual studio code and reopen it and try to run the command once again.
+    >**Note**: If your getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
 
@@ -197,3 +206,13 @@ When a container is created by code, portal, or a tool; the indexing policy is s
 1. In the **Query** tab, select **Query Stats**.
 
 1. Still in the **Query** tab, observe the value of the **Request Charge** field within the **Query Statistics** section.
+
+### Review
+
+In this lab, you have completed:
+
+- Created an Azure Cosmos DB SQL API account.
+- Seeded the Azure Cosmos DB SQL API account with data.
+- Viewed and manipulated the default indexing policy.
+
+### You have successfully completed the lab

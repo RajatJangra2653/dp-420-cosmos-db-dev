@@ -1,13 +1,23 @@
+# Lab 11a - Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
-# Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
-
-### Estimated Timing: 30 minutes
-
-## Lab 1: Use Azure Monitor to analyze an Azure Cosmos DB SQL API account
+## Lab scenario
 
 Azure Monitor is a full stack monitoring service in Azure that provides a complete set of features to monitor Azure resources.  Azure Cosmos DB creates monitoring data using Azure Monitor.  Azure Monitor captures Cosmos DB's metrics and telemetry data.
 
 In this lab, you'll run a simulated workload against Azure Cosmos DB containers and analyze how that workload affects the Azure Cosmos DB account.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Import the Microsoft.Azure.Cosmos and Newtonsoft.Json libraries into a .NET script.
+- Task 4: Run a script to create the containers and the workload.
+- Task 5: Use Azure Monitor to Analyze the Azure Cosmos DB account usage
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Use Azure Monitor to analyze an Azure Cosmos DB SQL API account
 
 ### Task 1: Prepare your development environment
 
@@ -38,7 +48,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select DP-420-DeploymentID* |
     | **Account Name** | *cosmosdb-DeploymentID* |
@@ -123,7 +133,7 @@ We're now ready to run a workload to monitor its usage of the Azure Cosmos DB Ac
 
     > &#128221; You will notice a couple of warnings in yellow since the compiler detects that the script runs many operations synchronously and does not wait for a reply of the operations. You can ignore these warning since that is the expected behaviour to run multiple SQL scripts simultaneously.
 
-    >**NOTE!!**: Visual studio Code might crash after running the above command, you can rerun the command and continue to the next task.
+    >**Note**: Visual studio Code might crash after running the above command, you can rerun the command and continue to the next task.
 
 ### Task 5: Use Azure Monitor to Analyze the Azure Cosmos DB account usage
 
@@ -188,3 +198,15 @@ We might need to spend some time fine-tuning our Azure Monitor Metrics diagnosti
 1. Close the integrated terminal.
 
 1. Close **Visual Studio Code**.
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Imported the Microsoft.Azure.Cosmos and Newtonsoft.Json libraries into a .NET script.
+- Ran a script to create the containers and the workload.
+- Used Azure Monitor to Analyze the Azure Cosmos DB account usage
+
+### You have successfully completed the lab

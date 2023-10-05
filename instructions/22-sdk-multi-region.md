@@ -1,12 +1,22 @@
-# Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API
+# Lab 09c - Design and implement a replication strategy for Azure Cosmos DB SQL API
 
-### Estimated Timing: 60 minutes
-
-## Lab 3: Connect to a multi-region write account with the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 The **CosmosClientBuilder** class is a fluent class designed to build the SDK client to connect to your container and perform operations. Using the builder, you can configure a preferred application region for write operations if your Azure Cosmos DB SQL API account is already configured for multi-region writes.
 
 In this lab, you will configure an Azure Cosmos DB SQL API account with multiple regions and enable multi-region writes. You will then use the SDK to perform operations against a specific region.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Connect to the Azure Cosmos DB SQL API account from the SDK.
+- Task 4: Configure write region for the SDK.
+
+## Estimated Timing: 60 minutes
+
+## Exercise 1: Connect to a multi-region write account with the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -37,7 +47,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
@@ -70,7 +80,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Create new* &vert; *cosmicworks* |
     | **Share throughput across containers** | *Do not select* |
     | **Container id** | *products* |
@@ -238,3 +248,13 @@ The fluent **WithApplicationRegion** method is used to configure the preferred r
 
 1. Close **Visual Studio Code**.
 
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Connected to the Azure Cosmos DB SQL API account from the SDK.
+- Configured write region for the SDK.
+
+### You have successfully completed the lab

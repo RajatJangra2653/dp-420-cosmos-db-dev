@@ -1,13 +1,22 @@
-# Module 5 - Execute queries in Azure Cosmos DB SQL API
+# Lab 05b - Execute queries in Azure Cosmos DB SQL API
 
-### Estimated Timing: 30 minutes
-
-## Lab 2 : Paginate cross-product query results with the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 Azure Cosmos DB queries will typically have multiple pages of results. Pagination is done automatically server-side when Azure Cosmos DB cannot return all query results in one single execution. In many applications, you will want to write code using the SDK to process your query results in batches in a performant manner.
 
 In this lab, you'll create a feed iterator that can be used in a loop to iterate over your entire result set.
 
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Seed the Azure Cosmos DB SQL API account with data.
+- Task 3: Paginate through small result sets of a SQL query using the SDK.
+- Task 4: Iterate over the results of a SQL query using the SDK.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Paginate cross-product query results with the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -33,12 +42,12 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     dotnet tool install --global cosmicworks
     ```
 
-    > Note: This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
+    >**Note**: This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -47,7 +56,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
     ```
 
-    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
@@ -72,7 +81,7 @@ When processing query results, you must make sure your code progresses through a
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    >Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Update the existing variable named **key** with its value set to the **key** of the Azure Cosmos DB account  you created in previous lab.
 
@@ -80,7 +89,7 @@ When processing query results, you must make sure your code progresses through a
     string key = "<cosmos-key>";
     ```
 
-    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. Create a new variable named **sql** of type *string* with a value of **SELECT p.id, p.name, p.price FROM products p**:
 
@@ -203,7 +212,7 @@ When processing query results, you must make sure your code progresses through a
 
 1. The script will now output the first set of 50 items that match the query. Press any key to get the next set of 50 items until the query has iterated over all matching items.
 
-    > Note: The query will match hundreds of items in the products container.
+    >**Note**: The query will match hundreds of items in the products container.
 
 1. Close the integrated terminal.
 
@@ -221,3 +230,14 @@ When processing query results, you must make sure your code progresses through a
 [docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.queryrequestoptions.maxitemcount]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.queryrequestoptions.maxitemcount
 [docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
 [nuget.org/packages/cosmicworks]: https://www.nuget.org/packages/cosmicworks/
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Seeded the Azure Cosmos DB SQL API account with data.
+- Paginated through small result sets of a SQL query using the SDK.
+- Iterated over the results of a SQL query using the SDK.
+
+### You have successfully completed the lab

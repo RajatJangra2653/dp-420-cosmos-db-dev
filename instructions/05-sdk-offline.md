@@ -1,14 +1,25 @@
-# Module 3 - Connect to Azure Cosmos DB SQL API with the SDK
+# Lab 03b - Connect to Azure Cosmos DB SQL API with the SDK
 
-### Estimated Timing: 30 minutes
-
-## Lab 2 :  Configure the Azure Cosmos DB SQL API SDK for offline development
+## Lab scenario
 
 The Azure Cosmos DB Emulator is a local tool that emulates the Azure Cosmos DB service for development and testing. The emulator supports the SQL API and can be used in place of the cloud service when developing code using the Azure SDK for .NET.
-
 In this lab, you'll connect to the Azure Cosmos DB Emulator from the Azure SDK for .NET.
 
-### Prepare your development environment
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+
+- Task 1: Start the Azure Cosmos DB Emulator.
+- Task 2: Connect to the emulator from the SDK.
+- Task 3: View the changes in the emulator.
+- Task 4: Create and view a new container.
+- Task 5: Stop the Azure Cosmos DB Emulator.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Configure the Azure Cosmos DB SQL API SDK for offline development
+
+## Prepare your development environment
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
@@ -60,9 +71,9 @@ The **Microsoft.Azure.Cosmos** library has already been pre-installed in the .NE
     string connectionString = "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
     ```
 
-    > Note: The URI for the emulator is typically ***localhost:[port]*** using SSL with the default port set to **8081**.
+    >**Note**: The URI for the emulator is typically ***localhost:[port]*** using SSL with the default port set to **8081**.
 
-    > Note: *C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==* is the default key for all installations of the emulator. This key can be changed using command line options.
+     >**Note**: *C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==* is the default key for all installations of the emulator. This key can be changed using command line options.
 
 1. Asynchronously invoke the [CreateDatabaseIfNotExistsAsync][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient.createdatabaseifnotexistsasync] method of the **client** variable passing in the name of the new database (**cosmicworks**) you would like to create within the emulator and storing the result in a variable of type [Database][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database]:
 
@@ -94,7 +105,7 @@ The **Microsoft.Azure.Cosmos** library has already been pre-installed in the .NE
 
 1. In **Visual Studio Code**, open the context menu for the **05-sdk-offline** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    >Note: This command will open the terminal with the starting directory already set to the **05-sdk-offline** folder.
+    >**Note**: This command will open the terminal with the starting directory already set to the **05-sdk-offline** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
@@ -187,7 +198,7 @@ It is important to stop the emulator when you are done using it as it can use sy
 
 1. Navigate to the emulator icon in the Windows system tray, open the context menu, and then select **Exit** to shut down the emulator.
 
-    > Note: It may take a minute for all instances of the emulator to exit.
+    >**Note**: It may take a minute for all instances of the emulator to exit.
 
 [code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
 [docs.microsoft.com/azure/cosmos-db/local-emulator]: https://docs.microsoft.com/azure/cosmos-db/local-emulator
@@ -199,3 +210,15 @@ It is important to stop the emulator when you are done using it as it can use sy
 [docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.id]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.id
 [docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
 [nuget.org/packages/microsoft.azure.cosmos/3.22.1]: https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.22.1
+
+### Review
+
+In this lab, you have completed:
+
+- Task 1: Started the Azure Cosmos DB Emulator.
+- Task 2: Connected to the emulator from the SDK.
+- Task 3: Viewed the changes in the emulator.
+- Task 4: Created and viewed a new container.
+- Task 5: Stopped the Azure Cosmos DB Emulator.
+
+### You have successfully completed the lab
