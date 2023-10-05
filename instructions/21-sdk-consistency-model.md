@@ -1,12 +1,22 @@
-# Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API
+# Lab 09b - Design and implement a replication strategy for Azure Cosmos DB SQL API
 
-### Estimated Timing: 60 minutes
-
-## Lab 2: Configure consistency models in the portal and the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 The default consistency level for new Azure Cosmos DB SQL API accounts is session consistency. This default setting can be modified for all future requests. At an individual request level, you can go a step further and relax the consistency level for that specific request.
 
 In this lab, we will configure the default consistency level for an Azure Cosmos DB SQL API account and then configure a consistency level for an individual operation using the SDK.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Connect to the Azure Cosmos DB SQL API account from the SDK.
+- Task 4: Configure consistency level for a point operation.
+
+## Estimated Timing: 60 minutes
+
+## Exercise 1: Configure consistency models in the portal and the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -37,7 +47,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
@@ -72,7 +82,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Create new* &vert; *cosmicworks* |
     | **Share throughput across containers** | *Do not select* |
     | **Container id** | *products* |
@@ -308,3 +318,14 @@ The **ItemRequestOptions** class contains configuration properties on a per-requ
 ## Cleanup
 
 1. Delete the Azure Cosmos DB accounts that were created by in this lab.
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Connected to the Azure Cosmos DB SQL API account from the SDK.
+- Configured consistency level for a point operation.
+
+### You have successfully completed the lab
