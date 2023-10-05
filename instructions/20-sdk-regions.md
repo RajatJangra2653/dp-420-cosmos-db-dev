@@ -1,8 +1,20 @@
-# Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API
+# Lab 09a - Design and implement a replication strategy for Azure Cosmos DB SQL API
 
-### Estimated Timing: 60 minutes
+## Lab scenario
 
-## Lab 1: Connect to different regions with the Azure Cosmos DB SQL API SDK
+In this exercise, you'll measure the difference for customer entities when you model entities as separate containers versus when you model for a NoSQL database by embedding entities in a single document.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Connect to the Azure Cosmos DB SQL API account from the SDK.
+- Task 4: Configure the .NET SDK with a preferred region list.
+
+## Estimated Timing: 60 minutes
+
+## Exercise 1: Connect to different regions with the Azure Cosmos DB SQL API SDK
 
 When you enable geo-redundancy for an Azure Cosmos DB SQL API account, you can then use the SDK to read data from regions in any order you configure. This technique is beneficial when you distribute your read requests across all of your available read regions.
 
@@ -36,7 +48,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
@@ -70,7 +82,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Create new* &vert; *cosmicworks* |
     | **Share throughput across containers** | *Do not select* |
     | **Container id** | *products* |
@@ -261,5 +273,15 @@ The **CosmosClientOptions** class includes a property to configure the list of r
 
 ## Cleanup
 
-1. Delete the Azure Cosmos DB accounts that were created by in this lab.
+1. Delete the Azure Cosmos DB accounts that were created in this lab.
 
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Connected to the Azure Cosmos DB SQL API account from the SDK.
+- Configured the .NET SDK with a preferred region list.
+
+### You have successfully completed the lab
