@@ -50,7 +50,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
@@ -78,7 +78,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *cosmicworks* |
 
 1. Back in the **Data Explorer** pane, observe the **cosmicworks** database node within the hierarchy.
@@ -88,7 +88,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *cosmicworks* |
     | **Container id** | *products* |
     | **Partition key** | */categoryId* |
@@ -100,7 +100,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *cosmicworks* |
     | **Container id** | *productslease* |
     | **Partition key** | */partitionKey* |
@@ -186,7 +186,7 @@ The **Microsoft.Azure.Cosmos.Container** class ships with a series of methods to
 1. Outside of the foreach loop and anonymous function, create a new variable named **builder** that stores the result of invoking [GetChangeFeedProcessorBuilder<>][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.getchangefeedprocessorbuilder] on the **sourceContainer** variable using the following parameters:
 
     | **Parameter** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **processorName** | *productsProcessor* |
     | **onChangesDelegate** | *handleChanges* |
 
@@ -301,7 +301,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
