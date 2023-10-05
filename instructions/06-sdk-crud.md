@@ -519,7 +519,7 @@ In this lab, you have completed:
 
 - Created an Azure Cosmos DB SQL API account.
 - Connected to the Azure Cosmos DB SQL API account from the SDK.
-- Performed create and read point operations on items with the SDK.
-- Performed update and delete point operations with the SDK.
+- Created and read point operations on items with the SDK.
+- Updated and deleted point operations with the SDK.
 
 ### You have successfully completed the lab
