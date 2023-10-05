@@ -13,7 +13,7 @@ In this lab, you will complete the following tasks:
 - Task 2: Bulk inserting a twenty-five thousand documents.
 - Task 3: Observe the results.
 
-### Estimated Timing: 30 minutes
+## Estimated Timing: 30 minutes
 
 ## Exercise 1: Move multiple documents in bulk with the Azure Cosmos DB SQL API SDK
 
