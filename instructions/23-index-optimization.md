@@ -1,12 +1,22 @@
-# Module 10 - Optimize query performance in Azure Cosmos DB SQL API
+# Lab 10a - Optimize query performance in Azure Cosmos DB SQL API
 
-### Estimated Timing: 60 minutes
-
-## Lab 1: Optimize an Azure Cosmos DB SQL API container's indexing policy for write operations
+## Lab scenario
 
 For write-heavy workloads or workloads with large JSON objects, it can be advantageous to optimize the indexing policy to only index properties that you know you will want to use in your queries.
 
 In this lab, we will use a test .NET application to insert a large JSON item into an Azure Cosmos DB SQL API container using the default indexing policy, and then using an indexing policy that has been tuned slightly.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Run the test .NET application using the default indexing policy.
+- Task 4: Update the indexing policy and rerun the .NET application.
+
+### Estimated Timing: 60 minutes
+
+## Exercise 1: Optimize an Azure Cosmos DB SQL API container's indexing policy for write operations
 
 ### Task 1: Prepare your development environment
 
@@ -37,7 +47,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
@@ -57,7 +67,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Create new* &vert; *cosmicworks* |
     | **Container id** | *products* |
     | **Partition key** | */categoryId* |
@@ -244,4 +254,13 @@ This lab scenario will assume that our future queries focus primarily on the nam
 
 1. Delete the Azure Cosmos DB accounts that were created by in this lab.
 
+### Review
 
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Ran the test .NET application using the default indexing policy.
+- Updated the indexing policy and rerun the .NET application.
+
+### You have successfully completed the lab
