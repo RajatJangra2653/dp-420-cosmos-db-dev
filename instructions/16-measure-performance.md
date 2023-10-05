@@ -84,7 +84,7 @@ In Database-v1, run a query to get the customer entity and review the request ch
 
 1. Select the **Query Stats** tab and note the request charge of 2.83.
 
-    ![Screenshot that shows the query stats for customer query in the database.](media/17-customer-query-v1.png)
+    ![Screenshot that shows the query stats for customer query in the database.](media/17-customer-query-v1-1.png)
 
 ### Task 3: Query for customer address
 
@@ -100,7 +100,7 @@ Run a query to get the customer address entity and review the request charge.
 
 1. Select the **Query Stats** tab and note the request charge of 2.83.
 
-    ![Screenshot that shows the query stats for customer address query in the database.](media/17-customer-address-query-v1.png)
+    ![Screenshot that shows the query stats for customer address query in the database.](media/17-customer-address-query-v1-1.png)
 
 ### Task 4: Query for customer password
 
@@ -116,7 +116,7 @@ Run a query to get the customer password entity and review the request charge.
 
 1. Select the **Query Stats** tab and note the request charge of 2.83.
 
-    ![Screenshot that shows the query stats for customer password query in the database.](media/17-customer-password-query-v1.png)
+    ![Screenshot that shows the query stats for customer password query in the database.](media/17-customer-password-query-v1-1.png)
 
 ### Task 5: Add up the request charges
 
@@ -143,7 +143,7 @@ Now we're going to query for the same information but with the entities embedded
 
 1. Observe that the data coming back is now a hierarchy of customer, address, and password data.
 
-    ![Screenshot that shows the query results for customer in the database.](media/17-customer-query-v2.png)
+    ![Screenshot that shows the query results for customer in the database.](media/17-customer-query-v2-1.png)
 
 1. Select **Query Stats**. Note the request charge of 2.83, versus the 8.49 RU/s for the three queries that you ran earlier.
 
