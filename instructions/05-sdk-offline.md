@@ -218,7 +218,7 @@ In this lab, you have completed:
 - Task 1: Started the Azure Cosmos DB Emulator.
 - Task 2: Connected to the emulator from the SDK.
 - Task 3: Viewed the changes in the emulator.
-- Task 4: Created and view a new container.
+- Task 4: Created and viewed a new container.
 - Task 5: Stopped the Azure Cosmos DB Emulator.
 
 ### You have successfully completed the lab
