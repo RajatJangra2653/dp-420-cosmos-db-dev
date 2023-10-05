@@ -201,7 +201,7 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
 
 In this lab, you have completed:
 
-- Created and seed your Azure Cosmos DB SQL API account.
+- Created and seeded your Azure Cosmos DB SQL API account.
 - Created Azure Data Factory resource.
 
 ### You have successfully completed the lab
