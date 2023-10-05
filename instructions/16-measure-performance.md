@@ -1,10 +1,22 @@
-# Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API
+# Lab 08a - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API
+
+## Lab scenario
+
+In this exercise, you'll measure the difference for customer entities when you model entities as separate containers versus when you model for a NoSQL database by embedding entities in a single document.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Query for customer entity.
+- Task 3: Query for customer address.
+- Task 4: Query for customer password.
+- Task 5: Add up the request charges.
+- Task 6: Measure performance of embedded entities.
 
 ### Estimated Timing: 30 minutes
 
-## Lab 1: Measure performance of entities in separate and embeded containers
-
-In this exercise, you'll measure the difference for customer entities when you model entities as separate containers versus when you model for a NoSQL database by embedding entities in a single document.
+## Exercise 1: Measure performance of entities in separate and embeded containers
 
 ### Task 1: Prepare your development environment
 
@@ -111,7 +123,7 @@ Run a query to get the customer password entity and review the request charge.
 Now that we've run all of our queries, let's add up all of the Request Unit costs for them.
 
 |**Query**|**RU/s cost**|
-|---------|---------|
+| --- | --- |
 |Customer|2.83|
 |Customer Address|2.83|
 |Customer Password|2.83|
@@ -141,3 +153,15 @@ When you compare the RU/s for each query that you ran, you see that the last que
 
 When you're searching for a single item and know the partition key and ID of the data, you can retrieve this data via a *point-read* by calling `ReadItemAsync()` in the Azure Cosmos DB SDK. A point-read is even faster than our query. For the same customer data, the cost is just 1 RU/s, which is a nearly threefold improvement.
 
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Queried for customer entity.
+- Queried for customer address.
+- Queried for customer password.
+- Added up the request charges.
+- Measured performance of embedded entities.
+
+### You have successfully completed the lab
