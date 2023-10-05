@@ -1,13 +1,23 @@
+# Lab 07a - Integrate Azure Cosmos DB SQL API with Azure services
 
-# Module 7 - Integrate Azure Cosmos DB SQL API with Azure services
-
-### Estimated Timing: 60 minutes
-
-## Lab 1: Process change feed events using the Azure Cosmos DB SQL API SDK
+## Lab scenario
 
 The Azure Cosmos DB SQL API change feed is the key to creating supplemental applications driven by events from the platform. The .NET SDK for the Azure Cosmos DB SQL API ships with a suite of classes to build your applications that integrate with the change feed and listen for notifications about operations within your containers.
 
 In this lab, you will use the change feed processor functionality in the .NET SDK to create an application that is notified with a create or update operation is performed on an item in the specified container.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Implement the change feed processor in the .NET SDK.
+- Task 4: Seed your Azure Cosmos DB SQL API account with sample data
+
+
+## Estimated Timing: 60 minutes
+
+## Exercise 1: Process change feed events using the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -312,3 +322,14 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Close both integrated terminals.
 
 1. Close **Visual Studio Code**.
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Implemented the change feed processor in the .NET SDK.
+- Seeded your Azure Cosmos DB SQL API account with sample data
+
+### You have successfully completed the lab
