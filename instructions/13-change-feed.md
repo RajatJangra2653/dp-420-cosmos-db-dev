@@ -12,7 +12,7 @@ In this lab, you will complete the following tasks:
 - Task 1: Prepare your development environment.
 - Task 2: Create an Azure Cosmos DB SQL API account.
 - Task 3: Implement the change feed processor in the .NET SDK.
-- Task 4: Seed your Azure Cosmos DB SQL API account with sample data
+- Task 4: Seed your Azure Cosmos DB SQL API account with sample data.
 
 
 ## Estimated Timing: 60 minutes
