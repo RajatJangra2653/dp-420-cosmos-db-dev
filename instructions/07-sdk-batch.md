@@ -13,7 +13,7 @@ In this lab, you will complete the following tasks:
 - Task 2: Creating a transactional batch.
 - Task 3: Creating an errant transactional batch.
 
-### Estimated Timing: 30 minutes
+## Estimated Timing: 30 minutes
 
 ## Exercise 1: Batch multiple point operations together with the Azure Cosmos DB SQL API SDK
 
