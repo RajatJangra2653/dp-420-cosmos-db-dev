@@ -37,7 +37,8 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
 
 1. Select **Data Explorer** from the menu.
-   > Note: Delete the **productslease**, which is already created in previous lab( click on **...** and select delete container).
+
+   >**Note**: Delete the **productslease**, which is already created in previous lab( click on **...** and select delete container).
 
 1. In the **Data Explorer** pane, select **New Container** again.
 
@@ -263,7 +264,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
     > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
-    > Note: If you are getting error, close the visual studio code and reopen it and try to run the command once again.
+    >**Note**: If you are getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
 
