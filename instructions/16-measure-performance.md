@@ -14,7 +14,7 @@ In this lab, you will complete the following tasks:
 - Task 5: Add up the request charges.
 - Task 6: Measure performance of embedded entities.
 
-### Estimated Timing: 30 minutes
+## Estimated Timing: 30 minutes
 
 ## Exercise 1: Measure performance of entities in separate and embeded containers
 
