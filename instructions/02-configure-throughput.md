@@ -34,7 +34,7 @@ Let’s start simple by creating a serverless account. There’s not much to con
 1. On the **Basics** tab, enter the following values for each setting:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource Group** | *Select an existing resource group.* |
     | **Account Name** | *Enter a globally unique name* |
@@ -56,7 +56,7 @@ Let’s start simple by creating a serverless account. There’s not much to con
 1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *`cosmicworks`* |
 
 1. Back in the **Data Explorer** pane, observe the **cosmicworks** database node within the hierarchy.
@@ -66,7 +66,7 @@ Let’s start simple by creating a serverless account. There’s not much to con
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *cosmicworks* |
     | **Container id** | *`products`* |
     | **Partition key** | *`/categoryId`* |
@@ -90,7 +90,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. On the **Basics** tab, enter the following values for each setting:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource Group** | *Select an existing resource group.* |
     | **Account Name** | *cosmosdb420-XXXXXX* |
@@ -116,7 +116,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *`nothroughputdb`* |
     | **Provision throughput** | *Do not select* |
 
@@ -127,7 +127,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *nothroughputdb* |
     | **Container id** | *`requiredthroughputcontainer`* |
     | **Partition key** | *`/primarykey`* |
@@ -141,7 +141,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *`manualthroughputdb`* |
     | **Provision throughput** | *Select this option* |
     | **Database throughput** | *Manual* |
@@ -154,7 +154,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | --- | --- |
     | **Database id** | *Use existing* &vert; *manualthroughputdb* |
     | **Container id** | *`childcontainer`* |
     | **Partition key** | *`/primarykey`* |
