@@ -1,12 +1,27 @@
-# Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
+# Lab 11c - Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
-### Estimated Timing: 30 minutes
-
-## Lab 3: Recover a database or container from a recovery point 
+## Lab scenario
 
 Azure Automatically takes encrypted backups of your data. These backups are taken in two modes, **Periodic** and **Continuous** backup modes.
 
 In this lab, you'll do `backup` and `restores` using the continuous backup mode. First, you'll Create an Azure Cosmos DB account. You'll then create two containers and add a few documents to them. Next, you'll then update a couple of the documents in those containers. Finally you'll create restores of the account to a point before each delete.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Create an Azure Cosmos DB SQL API account.
+- Task 2: Add a database and two containers to the account.
+- Task 3: Add items to the containers.
+- Task 4: Change the default backup mode to continuous.
+- Task 5: Delete one of the salesOrder documents.
+- Task 6: Restore the database to the point before you deleted the salesOrder document.
+- Task 7: Delete the customer container.
+- Task 8: Restore the database to the point before you deleted the salesOrder document.
+- Task 9: Review the data restored.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Recover a database or container from a recovery point 
 
 ### Task 1: Create an Azure Cosmos DB SQL API account
 
@@ -25,7 +40,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
@@ -36,11 +51,11 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
     >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
     
-    >&#128221; Note that you can enabled **Continuous** mode during the creation of the Azure Cosmos DB account, by selecting it under the **Backup Policy** tab. In this Lab you have the choice of enabling this feature during account creation or after the account is created in the optional section below. **Enabling the feature *after* the account is created *could take longer than 5 minutes*.**
+    >&#128221;**Note**: That you can enabled **Continuous** mode during the creation of the Azure Cosmos DB account, by selecting it under the **Backup Policy** tab. In this Lab you have the choice of enabling this feature during account creation or after the account is created in the optional section below. **Enabling the feature *after* the account is created *could take longer than 5 minutes*.**
     
-    > &#128221; Note that *[Multi-regions write accounts are not currently supported for continuous backups][/azure/cosmos-db/continuous-backup-restore-introduction]*.
+    > &#128221;**Note** : That *[Multi-regions write accounts are not currently supported for continuous backups][/azure/cosmos-db/continuous-backup-restore-introduction]*.
     
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+    > &#128221; **Note** : Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
    
 1. Click on **Next: Networking**, in Networking blade leave it default. Click on **Next: Backup Policy**.
 
@@ -59,7 +74,7 @@ Let's create a database and a couple of containers.
 1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Database id** | *`Sales`* |
     | **Provision throughput** | *Do not select* |
 
@@ -68,7 +83,7 @@ Let's create a database and a couple of containers.
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Database id** | *Use existing* name: *Sales* |
     | **Container id** | *`customer`* |
     | **Partition key** | *`/id`* |
@@ -79,7 +94,7 @@ Let's create a database and a couple of containers.
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Database id** | *Use existing* name: *Sales* |
     | **Container id** | *`salesOrder`* |
     | **Partition key** | *`/id`* |
@@ -91,9 +106,9 @@ Let's add some documents to those containers.
 
 1. On the Azure portal, navigate to your Azure Cosmos DB account page.
 
-1. Under **Data Explorer**, add the following two documents to the **customer** container.
+2. Under **Data Explorer**, add the following two documents to the **customer** container.
 
-1. Under **customer** container. Select **Items**, click on **New Items**, and click on **Save**.
+3. Under **customer** container. Select **Items**, click on **New Items**, and click on **Save**.
 
 ```
   {
@@ -121,7 +136,7 @@ Let's add some documents to those containers.
   }
 ```
 
-1. Select **Items**, click on **New Items**, and click on **Save**.
+4. Select **Items**, click on **New Items**, and click on **Save**.
 
 ```
   {
@@ -148,9 +163,9 @@ Let's add some documents to those containers.
     }
   }
 ```
-1. Under **Data Explorer**, add the following three documents to the **salesOrder** container.
+5. Under **Data Explorer**, add the following three documents to the **salesOrder** container.
 
-1. Select **Items**, click on **New Items**, and click on **Save**.
+6. Select **Items**, click on **New Items**, and click on **Save**.
 
 ```
   {
@@ -175,7 +190,7 @@ Let's add some documents to those containers.
   }
   ```
 
-1. Select **Items**, click on **New Items**, and click on **Save**.
+7. Select **Items**, click on **New Items**, and click on **Save**.
 
   ```
   {
@@ -200,7 +215,7 @@ Let's add some documents to those containers.
   }
   ```
 
-1. Select **Items**, click on **New Items**, and click on **Save**.
+8. Select **Items**, click on **New Items**, and click on **Save**.
 
   ```
   {
@@ -260,7 +275,7 @@ Let's add some documents to those containers.
 1. Under the *Settings* section, select **Point in Time Restore**. Use the following settings, then click on **Submit**.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Restore Point (UTC)** | Convert the date and time appropriately. The time will need to be in AM/PM format|
     | **Location** | *Selected an available location* |
     | **Select resources you would like to restore** | *Selected database/containers* |
@@ -291,7 +306,7 @@ Let's add some documents to those containers.
 1. Under the *Settings* section, select **Point in Time Restore**. Use the following settings:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Location** | *Selected an available location* |
     | **Restore Point (UTC)** | Convert the date and time appropriately. The time will need to be in AM/PM format|
     | **Select resources you would like to restore** | *Selected database/containers* |
@@ -318,4 +333,18 @@ Restores can take a long time depending on the size of the database and other fa
 
 1. Delete the Sales database and if needed, delete the original Azure Cosmos DB account.
 
+### Review
 
+In this lab, you have completed:
+
+- Created an Azure Cosmos DB SQL API account.
+- Added a database and two containers to the account.
+- Added items to the containers.
+- Changed the default backup mode to continuous.
+- Deleted one of the salesOrder documents.
+- Restored the database to the point before you deleted the salesOrder document.
+- Deleted the customer container.
+- Restored the database to the point before you deleted the salesOrder document.
+- Reviewed the data restored.
+
+### You have successfully completed the lab
