@@ -1,12 +1,23 @@
-# Module 12 - Manage an Azure Cosmos DB SQL API solution using DevOps practices
+# Lab 12b - Manage an Azure Cosmos DB SQL API solution using DevOps practices
 
-### Estimated Timing: 30 minutes
-
-## Lab 2: Create an Azure Cosmos DB SQL API container using Azure Resource Manager templates
+## Lab scenario
 
 Azure Resource Manager templates are JSON files that declaratively define the infrastructure that you wish to deploy to Azure. Azure Resource Manager templates are a common infrastrucutre-as-code solution to deploying services to Azure. Bicep, takes the concept a bit further by defining an easier to read domain-specific language that can be used to create JSON templates.
 
 In this lab, you'll create a new Azure Cosmos DB account, database, and container using an Azure Resource Manager template. You will first create the template from raw JSON, then you will create the template using the Bicep domain-specific language.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create Azure Cosmos DB SQL API resources using Azure Resource Manager templates.
+- Task 3: Observe deployed Azure Cosmos DB resources.
+- Task 4: Create Azure Cosmos DB SQL API resources using Bicep templates.
+- Task 5: Observe Bicep template deployment results.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Create an Azure Cosmos DB SQL API container using Azure Resource Manager templates
 
 ### Task 1: Prepare your development environment
 
@@ -24,7 +35,7 @@ In this lab, you'll create a new Azure Cosmos DB account, database, and containe
 
 The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes it possible to deploy accounts, databases, and containers using JSON files. While the files may be complex, they do follow a predictable format and can be written with the assistance of a Visual Studio Code extension.
 
-> **Note** If you are stuck and cannot figure out a syntax error with your template, use this [solution Azure Resource Manager template][github.com/arm-template-guide] as a guide.
+> **Note** : If you are stuck and cannot figure out a syntax error with your template, use this [solution Azure Resource Manager template][github.com/arm-template-guide] as a guide.
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **31-create-container-arm-template** folder.
 
@@ -63,7 +74,7 @@ The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes i
     The object is configured with the following settings:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Resource type** | *Microsoft.DocumentDB/databaseAccounts* |
     | **API version** | *2021-05-15* |
     | **Account name** | *csmsarm* &amp; *unique string generated from account name*  |
@@ -75,7 +86,7 @@ The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes i
 
 1. Open the context menu for the **31-create-container-arm-template** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > **Note** This command will open the terminal with the starting directory already set to the **31-create-container-arm-template** folder.
+    > **Note** : This command will open the terminal with the starting directory already set to the **31-create-container-arm-template** folder.
 
 1. Begin the interactive login procedure for the Azure CLI using the following command:
 
@@ -114,7 +125,7 @@ The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes i
     $resourceGroup="<resource-group-name>"
     ```
 
-    > **Note** For example, if your resource group is named **DP-420-xxxxxx**, the command will be **$resourceGroup="DP-420-xxxxxx"**.
+    > **Note** : For example, if your resource group is named **DP-420-xxxxxx**, the command will be **$resourceGroup="DP-420-xxxxxx"**.
 
 1. Use the **echo** cmdlet to write the value of the **$resourceGroup** variable to the terminal output using the following command:
 
@@ -152,7 +163,7 @@ The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes i
     The object is configured with the following settings:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Resource type** | *Microsoft.DocumentDB/databaseAccounts/sqlDatabases* |
     | **API version** | *2021-05-15* |
     | **Account name** | *csmsarm* &amp; *unique string generated from account name* &amp; */cosmicworks*  |
@@ -202,7 +213,7 @@ The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes i
     The object is configured with the following settings:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Resource type** | *Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers* |
     | **API version** | *2021-05-15* |
     | **Account name** | *csmsarm* &amp; *unique string generated from account name* &amp; */cosmicworks/products*  |
@@ -249,7 +260,7 @@ Once your Azure Cosmos DB SQL API resources are deployed, you can navigate to th
 
 Bicep is an efficient domain-specific language that makes it simpler and easier to deploy Azure resources than Azure Resource Manager templates. You will deploy the same exact resource using Bicep and a different name to illustrate the difference\[s\].
 
-> **Note** If you are stuck and cannot figure out a syntax error with your template, use this [solution Bicep template][github.com/bicep-template-guide] as a guide.
+> **Note** : If you are stuck and cannot figure out a syntax error with your template, use this [solution Bicep template][github.com/bicep-template-guide] as a guide.
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **31-create-container-arm-template** folder.
 
@@ -275,7 +286,7 @@ Bicep is an efficient domain-specific language that makes it simpler and easier 
     The object is configured with the following settings:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Alias** | *Account* |
     | **Name** | *csmsarm* &amp; *unique string generated from account name* |
     | **Resource type** | *Microsoft.DocumentDB/databaseAccounts/sqlDatabases* |
@@ -294,7 +305,7 @@ Bicep is an efficient domain-specific language that makes it simpler and easier 
     $resourceGroup="<resource-group-name>"
     ```
 
-    > **Note** For example, if your resource group is named **DP-420-xxxxxx**, the command will be **$resourceGroup="DP-420-xxxxxx"**.
+    > **Note** : For example, if your resource group is named **DP-420-xxxxxx**, the command will be **$resourceGroup="DP-420-xxxxxx"**.
 
 1. Deploy the Bicep template using the **az deployment group create** command:
 
@@ -321,7 +332,7 @@ Bicep is an efficient domain-specific language that makes it simpler and easier 
     The object is configured with the following settings:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Parent** | *Account created earlier in the template* |
     | **Alias** | *Database* |
     | **Name** | *cosmicworks*  |
@@ -366,7 +377,7 @@ Bicep is an efficient domain-specific language that makes it simpler and easier 
     The object is configured with the following settings:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Parent** | *Database created earlier in the template* |
     | **Alias** | *Container* |
     | **Name** | *products*  |
@@ -417,3 +428,15 @@ Bicep deployments can be validated using many of the same techniques as Azure Re
 1. Observe the values within the **Settings** section. Specifically, observe that the **Partition key** value is set to **/categoryId**.
 
 1. Close your web browser window or tab.
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created Azure Cosmos DB SQL API resources using Azure Resource Manager templates.
+- Observed deployed Azure Cosmos DB resources.
+- Created Azure Cosmos DB SQL API resources using Bicep templates.
+- Observed Bicep template deployment results.
+
+### You have successfully completed the lab
