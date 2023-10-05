@@ -35,7 +35,7 @@ In this lab, you will complete the following tasks:
 
 1. Open the **script.cs** code file within the **07-sdk-batch** folder.
 
-    > Note: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
+    >**Note**: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
 1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created in previous lab.
   
@@ -43,7 +43,7 @@ In this lab, you will complete the following tasks:
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    >Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created in previous lab..
 
@@ -51,13 +51,13 @@ In this lab, you will complete the following tasks:
     string key = "<cosmos-key>";
     ```
 
-    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. **Save** the **script.cs** code file.
 
 1. Open the context menu for the **07-sdk-batch** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > Note: This command will open the terminal with the starting directory already set to the **07-sdk-batch** folder.
+    >**Note**: This command will open the terminal with the starting directory already set to the **07-sdk-batch** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
