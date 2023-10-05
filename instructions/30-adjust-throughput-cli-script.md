@@ -74,7 +74,7 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
     $suffix=Get-Random -Maximum 1000000
     ```
 
-    > **Note** The Get-Random cmdlet generates a random integer between 0 and 1,000,000. This is useful because our services requires a globally unique name.
+    >**Note**: The Get-Random cmdlet generates a random integer between 0 and 1,000,000. This is useful because our services requires a globally unique name.
 
 1. Create another new variable name **accountName** using the hard-coded string **csms** and variable substitution to inject the value of the **$suffix** variable using the following command:
 
@@ -88,7 +88,7 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
     $resourceGroup="<resource-group-name>"
     ```
 
-    > **Note** For example, if your resource group is named **DP-420-xxxxx**, the command will be **$resourceGroup="DP-420-xxxxx"**.
+    >**Note**: For example, if your resource group is named **DP-420-xxxxx**, the command will be **$resourceGroup="DP-420-xxxxx"**.
 
 1. Use the **echo** cmdlet to write the value of the **$accountName** and **$resourceGroup** variables to the terminal output using the following command:
 
@@ -111,7 +111,7 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
 
 1. Wait for the **create** command to finish execution and return before proceeding forward with this lab.
 
-    > **Note** The **create** command can take anywhere from two to twelve minutes to complete, on average.
+    >**Note**: The **create** command can take anywhere from two to twelve minutes to complete, on average.
 
 ### Task 3: Create Azure Cosmos DB NOSQL API resources using the Azure CLI
 
