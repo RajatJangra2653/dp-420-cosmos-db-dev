@@ -42,7 +42,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     dotnet tool install --global cosmicworks
     ```
 
-    > Note: This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
+    >**Note**: This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
@@ -56,7 +56,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
     ```
 
-    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
@@ -81,7 +81,7 @@ When processing query results, you must make sure your code progresses through a
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    >Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Update the existing variable named **key** with its value set to the **key** of the Azure Cosmos DB account  you created in previous lab.
 
@@ -89,7 +89,7 @@ When processing query results, you must make sure your code progresses through a
     string key = "<cosmos-key>";
     ```
 
-    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. Create a new variable named **sql** of type *string* with a value of **SELECT p.id, p.name, p.price FROM products p**:
 
@@ -212,7 +212,7 @@ When processing query results, you must make sure your code progresses through a
 
 1. The script will now output the first set of 50 items that match the query. Press any key to get the next set of 50 items until the query has iterated over all matching items.
 
-    > Note: The query will match hundreds of items in the products container.
+    >**Note**: The query will match hundreds of items in the products container.
 
 1. Close the integrated terminal.
 
