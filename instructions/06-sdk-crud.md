@@ -46,7 +46,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
@@ -179,7 +179,7 @@ You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.C
 1. Create a new object of type **Product** named **saddle** with the following properties:
 
     | Property | Value |
-    | ---: | :--- |
+    | --- | --- |
     | **id** | *706cd7c6-db8b-41f9-aea2-0e0c7e8eb009* |
     | **categoryId** | *9603ca6c-9e28-4a02-9194-51cdb7fea816* |
     | **name** | *Road Saddle* |
@@ -360,7 +360,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 1. Select the **Items** node. Select the only item within the container and then observe the values of the **name** and **price** properties of the item.
 
     | **Property** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Name** | *Road Saddle* |
     | **Price** | *$45.99* |
 
@@ -447,7 +447,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 1. Select the **Items** node. Select the only item within the container and then observe the values of the **name** and **price** properties of the item.
 
     | **Property** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Name** | *Road LL Saddle* |
     | **Price** | *$32.55* |
 
