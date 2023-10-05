@@ -51,7 +51,7 @@ In this lab, you will complete the following tasks:
 
 1. Open the **script.cs** code file within the **08-sdk-bulk** folder.
 
-    > Note: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
+    >**Note**: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
 1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB accountyou created in previous lab.
   
@@ -59,7 +59,7 @@ In this lab, you will complete the following tasks:
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created in previous lab.
 
@@ -67,13 +67,13 @@ In this lab, you will complete the following tasks:
     string key = "<cosmos-key>";
     ```
 
-    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. **Save** the **script.cs** code file.
 
 1. Open the context menu for the **08-sdk-bulk** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > Note: This command will open the terminal with the starting directory already set to the **08-sdk-bulk** folder.
+    >**Note**: This command will open the terminal with the starting directory already set to the **08-sdk-bulk** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
@@ -128,7 +128,7 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
         .Generate(25000);
     ```
 
-    > Note: The [Bogus][nuget.org/packages/bogus/33.1.1] library is an open-source library used to design fictitious data to test user interface applications and is great for learning how to develop bulk import/export applications.
+    >**Note**: The [Bogus][nuget.org/packages/bogus/33.1.1] library is an open-source library used to design fictitious data to test user interface applications and is great for learning how to develop bulk import/export applications.
 
 1. Create a new generic **List<>** of type **Task** named **concurrentTasks**:
 
