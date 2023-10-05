@@ -1,13 +1,28 @@
+# Lab 11d - Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
-# Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
-
-### Estimated Timing: 30 minutes
-
-## Lab 4: Store Azure Cosmos DB SQL API account keys in Azure Key Vault
+## Lab scenario
 
 Adding an Azure Cosmos DB account connection code to your application is as simple as providing the account's URI and keys. This security information might sometimes be hard-coded into the application code. However, if your application is being deployed to the Azure App Service, you can save the encrypt connection information into Azure Key Vault.
 
 In this lab, we'll encrypt and store the Azure Cosmos DB account connection string into the Azure Key Vault. We will then create an Azure App Service webapp that will retrieve those credentials from the Azure Key Vault. The application will use these credentials and connect to the Azure Cosmos DB account. The application will then create some documents in the Azure Cosmos DB account containers and return its status back to a web page.
+
+## Lab objectives
+
+In this lab, you will complete the following tasks:
+- Task 1: Prepare your development environment.
+- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 3: Create an Azure Key Vault and store the Azure Cosmos DB account credentials as a secret.
+- Task 4: Create an Azure App Service webapp.
+- Task 5: Import the multiple missing libraries into the .NET script.
+- Task 6: Adding the Secret Identifier to your webapp.
+- Task 7: (Optional) Install the Azure App Services Extension.
+- Task 8: Deploy your application to Azure App Services.
+- Task 9: Allow our app to use a managed identity.
+- Task 10: Granting our web application an access policy to the Key Vault secrets.
+
+## Estimated Timing: 30 minutes
+
+## Exercise 1: Store Azure Cosmos DB SQL API account keys in Azure Key Vault
 
 ### Task 1: Prepare your development environment
 
@@ -21,7 +36,7 @@ In this lab, we'll encrypt and store the Azure Cosmos DB account connection stri
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-## Create an Azure Cosmos DB SQL API account
+### Task 2: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you'll select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key. Use the endpoint and key to connect to the Azure Cosmos DB SQL API account programatically. Use the endpoint and key on the connection strings of the Azure SDK for .NET or any other SDK.
 
@@ -38,7 +53,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
@@ -58,7 +73,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
     1. Record the value of the **PRIMARY CONNECTION STRING** field. You'll use this **connection string** value later in this exercise.
 
-## Create an Azure Key Vault and store the Azure Cosmos DB account credentials as a secret
+### Task 3: Create an Azure Key Vault and store the Azure Cosmos DB account credentials as a secret
 
 Before we create our web app, we will secure the Azure Cosmos DB account connection string by copying them to an *Azure Key Vault* encrypted *secret*. Let's do that now.
 
@@ -67,7 +82,7 @@ Before we create our web app, we will secure the Azure Cosmos DB account connect
 1. Add a vault by selecting the ***+ Create*** button, and fill out the vault with the following settings, *leaving all remaining settings to their default values*, then select to create the vault:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing or create a new resource group* |
     | **Key vault name** | *Enter a globally unique name* |
@@ -82,7 +97,7 @@ Before we create our web app, we will secure the Azure Cosmos DB account connect
 1. Select the **+ Generate/Import** to encrypt our credential connection string and fill in the *secret* values with the following settings, *leaving all remaining settings to their default values*, then select to create the secret:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Upload options** | *Manual* |
     | **Name** | *The name you will label your secret with* |
     | **Value** | *This field is the most important field to fill out. This value is the PRIMARY CONNECTION STRING you previously copied from the key section of your Azure Cosmos DB account. This value will be convert into a secret.* |
@@ -96,7 +111,7 @@ Before we create our web app, we will secure the Azure Cosmos DB account connect
 
 1. Record the value of the **Secret Identifier** field. This value is what we will use in our application's code to get the secret from the Key Vault.  Notice that this value is a URL. There is one more step we need to get this secret working properly, but we will do that step a little later.
 
-## Create an Azure App Service webapp
+### Task 4: Create an Azure App Service webapp
 
 We'll create a webapp that will connect to the Azure Cosmos DB account and create some containers and documents. We won't hard code the Azure Cosmos DB *credentials* in this app, but instead, hard code the **Secret Identifier** from the key vault. We'll see how this identifier is useless without the proper rights assigned to the webapp on the Azure layer. Let's start coding.
 
@@ -118,7 +133,7 @@ We'll create a webapp that will connect to the Azure Cosmos DB account and creat
 
 1. Once you replace the files ***DELETE*** the **.\KeyvaultFiles** directory.
 
-## Import the multiple missing libraries into the .NET script
+### Task 5: Import the multiple missing libraries into the .NET script
 
 The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotnet-add-package] command to import packages from a pre-configured package feed. A .NET installation uses NuGet as its default package feed.
 
@@ -152,7 +167,7 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
     dotnet add package Microsoft.Azure.Services.AppAuthentication
     ```
 
-## Adding the Secret Identifier to your webapp
+### Task 6: Adding the Secret Identifier to your webapp
 
 1. In visual studio, open the `.\Controllers\HomeControler.cs` file
 
@@ -194,7 +209,7 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
         var KeyVaultSecret = await KVClient.GetSecretAsync("<Key Vault Secret Identifier>")
 ```
 
-## (Optional) Install the Azure App Services Extension
+### Task 7: (Optional) Install the Azure App Services Extension
 
 In Visual studio, if you bring up the command pallet (**CTRL+SHIFT+P**), and it does not return anything when searching for Azure App Resource commands, we need to install the extension.
 
@@ -206,7 +221,7 @@ In Visual studio, if you bring up the command pallet (**CTRL+SHIFT+P**), and it 
 
 1. Close the **Extensions** Tab and go back to your code.
 
-## Deploy your application to Azure App Services
+### Task 8: Deploy your application to Azure App Services
 
 The rest of the code is straight forward, get the connection string, connect to Azure Cosmos DB, and add some documents. The application should also provide us with some feedback on any issues. We should not need to do any more changes after we deploy the application. Let's get started. 
 
@@ -252,7 +267,7 @@ The rest of the code is straight forward, get the connection string, connect to 
 
 1. Select Browse Website when prompted.  Alternatively, open a browser and go to **`https://<yourwebappname>.azurewebsites.net`**. In either case, we have a problem. We should have gotten a user-defined message on our web page. The message should be, **Key Vault was not accessible** with an extended error message. Let's fix that.
 
-## Allow our app to use a managed identity
+### Task 9: Allow our app to use a managed identity
 
 The first problem we need to fix is to allow our app use a managed identity. Using a managed identity, will allow our app to use Azure Services like Azure Key Vault.
 
@@ -268,7 +283,7 @@ The first problem we need to fix is to allow our app use a managed identity. Usi
 
 1. There is still one problem. While the first message is a user-defined message our program is sending, the second one is a System generated one. What the second message means is that we have been granted access to the connect to the Key vault, but we have not been granted access to view the secret inside the vault.  Let's set one final setting to fix this issue.
 
-## Granting our web application an access policy to the Key Vault secrets
+### Task 10: Granting our web application an access policy to the Key Vault secrets
 
 The original goal of this lab was to prevent our Azure Cosmos DB Accounts from being hard-coded in our applications. But, we did hard coded our **Secret Identifier** URL which anybody can see. So how can we secure our credentials? The good news is that the Secret Identifier by itself is useless. The **Secret Identifier** only gets you to the Azure Key vault door, but the vault will decide who comes in and who stays at the door. What this means is that we'll need to create a Key Vault access policy for our application so it can see the secrets in that vault. Let's take a look at that solution.
 
@@ -283,7 +298,7 @@ The original goal of this lab was to prevent our Azure Cosmos DB Accounts from b
 1. Fill in the *Access policy* values with the following settings, *leaving all remaining settings to their default values*, then select to add the policy:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | --- | --- |
     | **Key permissions** | *Get* |
     | **Secret permissions** | *Get* |
   
@@ -310,3 +325,20 @@ We have now successfully used Azure Key Vault to protect the keys of your Azure 
 1. Delete the Azure Cosmos DB accounts that were created by in this lab.
 
 1. Delete the original Azure Cosmos DB account.
+
+### Review
+
+In this lab, you have completed:
+
+- Prepared your development environment.
+- Created an Azure Cosmos DB SQL API account.
+- Created an Azure Key Vault and store the Azure Cosmos DB account credentials as a secret.
+- Created an Azure App Service webapp.
+- Imported the multiple missing libraries into the .NET script.
+- Added the Secret Identifier to your webapp.
+- (Optional) Installed the Azure App Services Extension.
+- Deployed your application to Azure App Services.
+- Allowed our app to use a managed identity.
+- Granted our web application an access policy to the Key Vault secrets.
+
+### You have successfully completed the lab
