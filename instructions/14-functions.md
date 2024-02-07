@@ -1,15 +1,15 @@
-# Lab 07b - Integrate Azure Cosmos DB SQL API with Azure services
+# Process Azure Cosmos DB for NoSQL data using Azure Functions
 
 ## Lab scenario
 
-The Azure Cosmos DB trigger for Azure Functions is implemented using a change feed processor. You can create functions that respond to create and update operations in your Azure Cosmos DB SQL API container with this knowledge. If you have implemented a change feed processor manually, the setup for Azure Functions is similar.
+The Azure Cosmos DB trigger for Azure Functions is implemented using a change feed processor. You can create functions that respond to create and update operations in your Azure Cosmos DB for NoSQL container with this knowledge. If you have implemented a change feed processor manually, the setup for Azure Functions is similar.
 
-In this lab, you will process Azure Cosmos DB SQL API data using Azure Functions.
+In this lab, you will
 
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
-- Task 1: Create an Azure Cosmos DB SQL API account.
+- Task 1: Create an Azure Cosmos DB NoSQL API account.
 - Task 2: Create an Azure Function app and Azure Cosmos DB-triggered function.
 - Task 3: Create an Log Analytics workspaces.
 - Task 4: Create an Application Insights.
@@ -18,15 +18,29 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
-## Exercise 1: Process Azure Cosmos DB SQL API data using Azure Functions
-
 ### Task 1: Create an Azure Cosmos DB SQL API account
 
-Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
+Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
+
+1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
+
+    | **Setting** | **Value** |
+    | ---: | :--- |
+    | **Subscription** | *Your existing Azure subscription* |
+    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Account Name** | *Enter a globally unique name* |
+    | **Location** | *Choose any available region* |
+    | **Capacity mode** | *Serverless* |
+
+    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+
+1. Wait for the deployment task to complete before continuing with this task.
+
+1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
 
 1. Go to the created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
 
@@ -282,11 +296,11 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 
 In this lab, you have completed:
 
-- Created an Azure Cosmos DB SQL API account.
+- Created an Azure Cosmos DB NoSQL API account.
 - Created an Azure Function app and Azure Cosmos DB-triggered function.
 - Created an Log Analytics workspaces.
 - Created an Application Insights.
 - Implemented function code in .NET.
-- Seeded your Azure Cosmos DB SQL API account with sample data.
+- Seeded your Azure Cosmos DB NoSQL API account with sample data.
 
 ### You have successfully completed the lab
