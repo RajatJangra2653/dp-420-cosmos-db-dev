@@ -1,4 +1,4 @@
-# Lab 03a - Connect to Azure Cosmos DB SQL API with the SDK
+# Connect to Azure Cosmos DB for NoSQL with the SDK
 
 ## Lab scenario
 
@@ -17,8 +17,6 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
-## Exercise 1: Connect to Azure Cosmos DB SQL API with the SDK
-
 ### Task 1: Prepare your development environment
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
@@ -34,7 +32,7 @@ In this lab, you will complete the following tasks:
 
 ### Task 2: Create an Azure Cosmos DB SQL API account
 
-Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
+Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB NoSQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
@@ -229,7 +227,7 @@ Now that the .NET code to connect to the Azure Cosmos DB SQL API account is comp
 In this lab, you have completed:
 
 - Prepared your development environment.
-- Created an Azure Cosmos DB SQL API account.
+- Created an Azure Cosmos DB NoSQL API account.
 - Viewed the Microsoft.Azure.Cosmos library on NuGet.
 - Imported the Microsoft.Azure.Cosmos library into a .NET project.
 - Used the Microsoft.Azure.Cosmos library.
