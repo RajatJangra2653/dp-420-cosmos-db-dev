@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Implement and then use user-defined functions with the SDK",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabs-MOC/dp-420-cosmos-db-dev/tree/stage",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/prod/labintro.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/guided-labs/instructions/33-create-use-udf-sdk.md",
+        "Order": 2
+      }
+    ]
+  }
+]
