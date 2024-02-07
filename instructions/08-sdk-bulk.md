@@ -1,21 +1,19 @@
-# Lab 04c - Implement Azure Cosmos DB SQL API point operations
+# Move multiple documents in bulk with the Azure Cosmos DB for NoSQL SDK
 
 ## Lab scenario
 
-The easiest way to learn how to perform a bulk operation is to attempt to push many documents to an Azure Cosmos DB SQL API account in the cloud. Using the bulk features of the SDK, this can be done with some minor help from the [System.Threading.Tasks][docs.microsoft.com/dotnet/api/system.threading.tasks] namespace.
+The easiest way to learn how to perform a bulk operation is to attempt to push many documents to an Azure Cosmos DB for NoSQL account in the cloud. Using the bulk features of the SDK, this can be done with some minor help from the [System.Threading.Tasks][docs.microsoft.com/dotnet/api/system.threading.tasks] namespace.
 
 In this lab, you'll use the [Bogus][nuget.org/packages/bogus/33.1.1] library from NuGet to generate fictional data and place that into an Azure Cosmos DB account.
 
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
-- Task 1: Use an Azure Cosmos DB SQL API account and configure the SDK project.
+- Task 1: Create an Azure Cosmos DB for NoSQL account and configure the SDK project.
 - Task 2: Bulk inserting a twenty-five thousand documents.
 - Task 3: Observe the results.
 
 ## Estimated Timing: 30 minutes
-
-## Exercise 1: Move multiple documents in bulk with the Azure Cosmos DB SQL API SDK
 
 ## Prepare your development environment
 
@@ -29,15 +27,34 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-### Task 1: Use an Azure Cosmos DB SQL API account and configure the SDK project
+### Task 1: Create an Azure Cosmos DB for NoSQL account and configure the SDK project
 
-1. Go to the **Azure Cosmos DB** account resource, which you created in previous lab and navigate to the **Keys** pane.
+1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
+
+1. Sign into the portal using the Microsoft credentials associated with your subscription.
+
+1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
+
+    | **Setting** | **Value** |
+    | ---: | :--- |
+    | **Subscription** | *Your existing Azure subscription* |
+    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Account Name** | *Enter a globally unique name* |
+    | **Location** | *Choose any available region* |
+    | **Capacity mode** | *Provisioned throughput* |
+    | **Apply Free Tier Discount** | *Do Not Apply* |
+
+    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+
+1. Wait for the deployment task to complete before continuing with this task.
+
+1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
-    1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
+    1. Notice the **URI** field. You will use this **endpoint** value later in this exercise.
 
-    1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
+    1. Notice the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
 
 1. Still **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
@@ -91,7 +108,7 @@ In this lab, you will complete the following tasks:
 
 ### Task 2: Bulk inserting a twenty-five thousand documents
 
-Let's "go for the gusto" and try to insert a lot of documents to see how this works. In our internal testing, this can take approximately 1-2 minutes if the lab virtual machine and Azure Cosmos DB SQL API account are relatively close to each other geographically speaking.
+Let's "go for the gusto" and try to insert a lot of documents to see how this works. In our internal testing, this can take approximately 1-2 minutes if the lab virtual machine and Azure Cosmos DB NoSQL API account are relatively close to each other geographically speaking.
 
 1. Return to the editor tab for the **script.cs** code file.
 
@@ -144,7 +161,7 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
     }
     ```
 
-1. Within the foreach loop, create a **Task** to asynchornously insert a product into Azure Cosmos DB SQL API being sure to explicitly specify the partition key and to add the task to list of tasks named **concurrentTasks**:
+1. Within the foreach loop, create a **Task** to asynchornously insert a product into Azure Cosmos DB NoSQL API being sure to explicitly specify the partition key and to add the task to list of tasks named **concurrentTasks**:
 
     ```
     concurrentTasks.Add(
@@ -233,11 +250,11 @@ Now that you have sent 25,000 items to Azure Cosmos DB let’s go and look at th
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the **products** container node within the **NoSQL API** navigation tree.
 
 1. Expand the **products** node, and then select the **Items** node. Observe the list of items within your container.
 
-1. Select the **products** container node within the **SQL API** navigation tree, and click on **...** then select **New SQL Query**.
+1. Select the **products** container node within the **NoSQL API** navigation tree, and click on **...** then select **New SQL Query**.
 
 1. Delete the contents of the editor area.
 
@@ -265,7 +282,7 @@ Now that you have sent 25,000 items to Azure Cosmos DB let’s go and look at th
 
 In this lab, you have completed:
 
-- Used an Azure Cosmos DB SQL API account and configure the SDK project.
+- Create an Azure Cosmos DB for NoSQL account and configure the SDK project
 - Bulk inserted a twenty-five thousand documents.
 - Observed the results.
 

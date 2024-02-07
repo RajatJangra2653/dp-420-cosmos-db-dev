@@ -1,4 +1,4 @@
-# Lab 13b - Create server-side programming constructs in Azure Cosmos DB SQL API'
+# Implement and then use user-defined functions with the SDK
 
 ## Lab scenario
 
@@ -10,15 +10,12 @@ In this lab, you'll create a new UDF using the .NET SDK and then use the Data Ex
 
 In this lab, you will complete the following tasks:
 - Task 1: Prepare your development environment.
-- Task 2: Fetch the Keys and endpoint from Cosmos DB account.
+- Task 2: Create an Azure Cosmos DB for NoSQL account.
 - Task 3: Seed the Azure Cosmos DB SQL API account with data.
 - Task 4: Create a user-defined function (UDF) using the .NET SDK.
 - Task 5: Test the UDF using the Data Explorer.
 
-
 ## Estimated Timing: 30 minutes
-
-## Exercise 1: Implement and then use a UDF using the SDK
 
 ### Task 1: Prepare your development environment
 
@@ -33,15 +30,28 @@ In this lab, you will complete the following tasks:
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
 
-### Task 2: Fetch the Keys and endpoint from Cosmos DB account
+### Task 2: Create an Azure Cosmos DB for NoSQL account
 
-On the Azure Cosmos DB SQL API account ,you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
+Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
-1. If not already signed in, sign into the portal using the Microsoft credentials associated with your subscription.
+1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select your resource group **DP-420-DeploymentID**, and select the **Cosmos DB** account you created in lab 1.
+1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
+
+    | **Setting** | **Value** |
+    | ---: | :--- |
+    | **Subscription** | *Your existing Azure subscription* |
+    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Account Name** | *Enter a globally unique name* |
+    | **Location** | *Choose any available region* |
+    | **Capacity mode** | *Provisioned throughput* |
+    | **Apply Free Tier Discount** | *Do Not Apply* |
+
+    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+
+1. Wait for the deployment task to complete before continuing with this task.
 
 1. Navigate to the **Keys** pane.
 
@@ -232,7 +242,7 @@ Now that a new UDF has been created in the Azure Cosmos DB container, you will u
 In this lab, you have completed:
 
 - Prepared your development environment.
-- Fetched the Keys and endpoint from Cosmos DB account.
+- Create an Azure Cosmos DB for NoSQL account.
 - Seeded the Azure Cosmos DB SQL API account with data.
 - Created a user-defined function (UDF) using the .NET SDK.
 - Tested the UDF using the Data Explorer.

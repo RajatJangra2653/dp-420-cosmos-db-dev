@@ -1,25 +1,23 @@
-# Lab 05a - Execute queries in Azure Cosmos DB SQL API
+# Execute a query with the Azure Cosmos DB for NoSQL SDK
 
 ## Lab scenario
 
-The latest version of the .NET SDK for the Azure Cosmos DB SQL API makes it easier than ever to query a container and asynchronously iterate over result sets using the latest best practices and language features from C#.
+The latest version of the .NET SDK for Azure Cosmos DB for NoSQL makes it easier than ever to query a container and asynchronously iterate over result sets using the latest best practices and language features from C#.
 
-> &#128161; This lab uses the *4.0.0-preview3* release of the [Azure.Cosmos][nuget.org/packages/azure.cosmos/4.0.0-preview3] library on NuGet. This library has special functionality to make it easier to query Azure Cosmos DB using [asynchronous streams][docs.microsoft.com/dotnet/csharp/whats-new/csharp-8#asynchronous-streams].
+This library has special functionality to make it easier to query Azure Cosmos DB using [https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.cosmos.feediterator?view=azure-dotnet].
 
-In this lab, you'll use an asynchronous stream to iterate over a large result set returned from Azure Cosmos DB SQL API. You will use the .NET SDK to query and iterate over results.
+In this lab, you'll use an asynchronous stream to iterate over a large result set returned from Azure Cosmos DB for NoSQL. You will use the .NET SDK to query and iterate over results.
 
 
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
 - Task 1: Prepare your development environment.
-- Task 2: Create an Azure Cosmos DB SQL API account.
-- Task 3: Seed the Azure Cosmos DB SQL API account with data.
+- Task 2: Create an Azure Cosmos DB NoSQL API account.
+- Task 3: Seed the Azure Cosmos DB NoSQL API account with data.
 - Task 4: Iterate over the results of a SQL query using the SDK.
 
 ## Estimated Timing: 30 minutes
-
-## Exercise 1: Execute a query with the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
 
@@ -33,7 +31,7 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-### Task 2: Create an Azure Cosmos DB SQL API account
+### Task 2: Create an Azure Cosmos DB NoSQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -72,7 +70,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Close your web browser window or tab.
 
-### Task 3: Seed the Azure Cosmos DB SQL API account with data
+### Task 3: Seed the Azure Cosmos DB NoSQL API account with data
 
 The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB SQL API account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
 
@@ -106,7 +104,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
 
 1. Close the integrated terminal.
 
-### Task 4: Iterate over the results of a SQL query using the SDK
+### Task 4: Iterate over the results of a NoSQL query using the SDK
 
 You will now use an asynchronous stream to create a simple-to-understand foreach loop over paginated results from Azure Cosmos DB. Behind the scenes, the SDK will manage the feed iterator and making sure subsequent requests are invoked correctly.
 
@@ -215,8 +213,8 @@ You will now use an asynchronous stream to create a simple-to-understand foreach
 In this lab, you have completed:
 
 - Prepared your development environment.
-- Created an Azure Cosmos DB SQL API account.
-- Seeded the Azure Cosmos DB SQL API account with data.
-- Iterated over the results of a SQL query using the SDK.
+- Created an Azure Cosmos DB NoSQL API account.
+- Seeded the Azure Cosmos DB NoSQL API account with data.
+- Iterated over the results of a NoSQL query using the SDK.
 
 ### You have successfully completed the lab

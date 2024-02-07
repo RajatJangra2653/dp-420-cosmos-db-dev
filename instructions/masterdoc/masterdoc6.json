@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Move multiple documents in bulk with the Azure Cosmos DB for NoSQL SDK",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabs-MOC/dp-420-cosmos-db-dev/tree/stage",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/prod/labintro.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/guided-labs/instructions/08-sdk-bulk.md",
+        "Order": 2
+      }
+    ]
+  }
+]

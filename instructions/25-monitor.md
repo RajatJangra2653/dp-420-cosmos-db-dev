@@ -1,8 +1,8 @@
-# Lab 11a - Monitor and troubleshoot an Azure Cosmos DB SQL API solution
+# Use Azure Monitor to analyze an Azure Cosmos DB for NoSQL account
 
 ## Lab scenario
 
-Azure Monitor is a full stack monitoring service in Azure that provides a complete set of features to monitor Azure resources.  Azure Cosmos DB creates monitoring data using Azure Monitor.  Azure Monitor captures Cosmos DB's metrics and telemetry data.
+Azure Monitor is a full stack monitoring service in Azure that provides a complete set of features to monitor Azure resources. Azure Cosmos DB creates monitoring data using Azure Monitor. Azure Monitor captures Cosmos DB's metrics and telemetry data.
 
 In this lab, you'll run a simulated workload against Azure Cosmos DB containers and analyze how that workload affects the Azure Cosmos DB account.
 
@@ -10,7 +10,7 @@ In this lab, you'll run a simulated workload against Azure Cosmos DB containers 
 
 In this lab, you will complete the following tasks:
 - Task 1: Prepare your development environment.
-- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 2: Create an Azure Cosmos DB NoSQL API account.
 - Task 3: Import the Microsoft.Azure.Cosmos and Newtonsoft.Json libraries into a .NET script.
 - Task 4: Run a script to create the containers and the workload.
 - Task 5: Use Azure Monitor to Analyze the Azure Cosmos DB account usage
@@ -31,9 +31,9 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-### Task 2: Create an Azure Cosmos DB SQL API account
+### Task 2: Create an Azure Cosmos DB NoSQL API account
 
-Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you'll select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key. Use the endpoint and key to connect to the Azure Cosmos DB SQL API account programatically. Use the endpoint and key on the connection strings of the Azure SDK for .NET or any other SDK.
+Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you'll select which of the APIs you want the account to support (for example, Mongo API or NoSQL API). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key. Use the endpoint and key to connect to the Azure Cosmos DB for NoSQL account programatically. Use the endpoint and key on the connection strings of the Azure SDK for .NET or any other SDK.
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
@@ -204,7 +204,7 @@ We might need to spend some time fine-tuning our Azure Monitor Metrics diagnosti
 In this lab, you have completed:
 
 - Prepared your development environment.
-- Created an Azure Cosmos DB SQL API account.
+- Created an Azure Cosmos DB NoSQL API account.
 - Imported the Microsoft.Azure.Cosmos and Newtonsoft.Json libraries into a .NET script.
 - Ran a script to create the containers and the workload.
 - Used Azure Monitor to Analyze the Azure Cosmos DB account usage

@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Connect to Azure Cosmos DB for NoSQL with the SDK",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabs-MOC/dp-420-cosmos-db-dev/tree/stage",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/prod/labintro.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/guided-labs/instructions/04-sdk-connect.md",
+        "Order": 2
+      }
+    ]
+  }
+]

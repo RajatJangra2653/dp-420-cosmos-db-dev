@@ -1,4 +1,4 @@
-# Lab 13a - Create server-side programming constructs in Azure Cosmos DB SQL API
+# Create a stored procedure with the Azure portal
 
 ## Lab scenario
 
@@ -15,7 +15,7 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
-## Exercise 1: Create a stored procedure with the Azure portal
+## Exercise 1: 
 
 ### Task 1: Author a stored procedure
 
