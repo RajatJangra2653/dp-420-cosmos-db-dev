@@ -1,4 +1,4 @@
-# Lab 10a - Optimize query performance in Azure Cosmos DB SQL API
+# Optimize an Azure Cosmos DB for NoSQL container's indexing policy for common operations
 
 ## Lab scenario
 
@@ -10,13 +10,11 @@ In this lab, we will use a test .NET application to insert a large JSON item int
 
 In this lab, you will complete the following tasks:
 - Task 1: Prepare your development environment.
-- Task 2: Create an Azure Cosmos DB SQL API account.
+- Task 2: Create an Azure Cosmos DB NoSQL API account.
 - Task 3: Run the test .NET application using the default indexing policy.
 - Task 4: Update the indexing policy and rerun the .NET application.
 
 ### Estimated Timing: 60 minutes
-
-## Exercise 1: Optimize an Azure Cosmos DB SQL API container's indexing policy for write operations
 
 ### Task 1: Prepare your development environment
 
@@ -32,7 +30,7 @@ In this lab, you will complete the following tasks:
 
 ### Task 2: Create an Azure Cosmos DB SQL API account
 
-Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
+Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, Mongo API or NoSQL API). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
@@ -86,7 +84,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 ### Task 3: Run the test .NET application using the default indexing policy
 
-This lab has a pre-built test .NET application that will take a large JSON object and create a new item in the Azure Cosmos DB SQL API container. Once the single write operation is complete, the application will output the item’s unique identifier and RU charge to the console window.
+This lab has a pre-built test .NET application that will take a large JSON object and create a new item in the Azure Cosmos DB for NoSQL container. Once the single write operation is complete, the application will output the item’s unique identifier and RU charge to the console window.
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **23-index-optimization** folder.
 
