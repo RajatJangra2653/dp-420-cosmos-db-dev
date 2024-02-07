@@ -1,4 +1,4 @@
-# Lab 06a - Define and implement an indexing strategy for Azure Cosmos DB SQL API
+# Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
 
 ## Lab scenario
 
@@ -9,17 +9,15 @@ In this lab, you'll observe and manipulate the default index policy for a few co
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
-- Task 1: Create an Azure Cosmos DB SQL API account.
-- Task 2: Seed the Azure Cosmos DB SQL API account with data.
+- Task 1: Create an Azure Cosmos DB NoSQL API account.
+- Task 2: Seed the Azure Cosmos DB NoSQL API account with data.
 - Task 3: View and manipulate the default indexing policy.
 
 ## Estimated Timing: 30 minutes
 
 ## Exercise 1: Review the default index policy for an Azure Cosmos DB SQL API container with the portal
 
-### Task 1: Create an Azure Cosmos DB SQL API account
-
-Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
+Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, Mongo API or NoSQL API). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
@@ -56,7 +54,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Close your web browser window or tab.
 
-### Task 2: Seed the Azure Cosmos DB SQL API account with data
+### Task 2: Seed the Azure Cosmos DB NoSQL API account with data
 
 The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB SQL API account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
 
@@ -211,8 +209,8 @@ When a container is created by code, portal, or a tool; the indexing policy is s
 
 In this lab, you have completed:
 
-- Created an Azure Cosmos DB SQL API account.
-- Seeded the Azure Cosmos DB SQL API account with data.
+- Create an Azure Cosmos DB for NoSQL account.
+- Seed the Azure Cosmos DB for NoSQL account with data.
 - Viewed and manipulated the default indexing policy.
 
 ### You have successfully completed the lab
