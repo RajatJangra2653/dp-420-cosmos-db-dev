@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabs-MOC/dp-420-cosmos-db-dev/tree/stage",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/prod/labintro.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/guided-labs/instructions/11-default-indexing-policy.md",
+        "Order": 2
+      }
+    ]
+  }
+]
