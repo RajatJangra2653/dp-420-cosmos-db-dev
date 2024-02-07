@@ -1,21 +1,21 @@
-# Lab 04a - Implement Azure Cosmos DB SQL API point operations
+# Create and update documents with the Azure Cosmos DB NoSQL API SDK
 
 ## Lab scenario
 
-The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB SQL API container. Together, these methods perform some of the most common “CRUD” operations across various items within SQL API containers.<br>
-In this lab, you’ll use the SDK to perform everyday CRUD operations on an item within an Azure Cosmos DB SQL API container.
+
+The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB for NoSQL container. Together, these methods perform some of the most common “CRUD” operations across various items within NoSQL API containers.
+
+In this lab, you’ll use the SDK to perform everyday CRUD operations on an item within an Azure Cosmos DB for NoSQL container.
 
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
-- Task 1: Create an Azure Cosmos DB SQL API account.
-- Task 2: Connect to the Azure Cosmos DB SQL API account from the SDK.
+- Task 1: Create an Azure Cosmos DB NoSQL API account.
+- Task 2: Connect to the Azure Cosmos DB NoSQL API account from the SDK.
 - Task 3: Perform create and read point operations on items with the SDK.
 - Task 4: Perform update and delete point operations with the SDK.
 
 ## Estimated Timing: 60 minutes
-
-## Exercise 1: Create and update documents with the Azure Cosmos DB SQL API SDK
 
 ## Prepare your development environment
 
@@ -29,7 +29,7 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-### Task 1: Create an Azure Cosmos DB SQL API account
+### Task 1: Create an Azure Cosmos DB NoSQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -37,24 +37,18 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
-
-    > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
-
-1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
-
-1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
+1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | --- | --- |
+    | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
+    | **Resource group** | *Select an existing or create a new resource group* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
-1. Click on **Review + Create** and after validation get Success click on **Create**.
+    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -62,13 +56,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
-    1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
+    1. Notice the **URI** field. You will use this **endpoint** value later in this exercise.
 
-    1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
+    1. Notice the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
 
-1. Close your web browser window or tab.
+1. Switch back to **Visual Studio Code**.
 
-### Task 2: Connect to the Azure Cosmos DB SQL API account from the SDK
+### Task 2: Connect to the Azure Cosmos DB NoSQL API account from the SDK
 
 Using the credentials from the newly created account, you will connect with the SDK classes and create a new database and container instance. Then, you will use the Data Explorer to validate that the instances exist in the Azure portal.
 
@@ -160,13 +154,13 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **NoSQL API** navigation tree.
 
 1. Close your web browser window or tab.
 
 ### Task 3: Perform create and read point operations on items with the SDK
 
-You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.Container class to perform common operations on items within a SQL API container. These operations are all done using the task asynchronous programming model in C#.
+You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.Container class to perform common operations on items within a NoSQL API container. These operations are all done using the task asynchronous programming model in C#.
 
 1. Return to **Visual Studio Code**. Open the **product.cs** code file within the **06-sdk-crud** folder.
 
@@ -355,7 +349,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then expand the new **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then expand the new **products** container node within the **NoSQL API** navigation tree.
 
 1. Select the **Items** node. Select the only item within the container and then observe the values of the **name** and **price** properties of the item.
 
@@ -442,7 +436,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then expand the new **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then expand the new **products** container node within the **NoSQL API** navigation tree.
 
 1. Select the **Items** node. Select the only item within the container and then observe the values of the **name** and **price** properties of the item.
 
@@ -494,7 +488,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then expand the new **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then expand the new **products** container node within the **NoSQL API** navigation tree.
 
 1. Select the **Items** node. Observe that the items list is now empty.
 
@@ -517,8 +511,8 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 
 In this lab, you have completed:
 
-- Created an Azure Cosmos DB SQL API account.
-- Connected to the Azure Cosmos DB SQL API account from the SDK.
+- Created an Azure Cosmos DB NoSQL API account.
+- Connected to the Azure Cosmos DB NoSQL API account from the SDK.
 - Created and read point operations on items with the SDK.
 - Updated and deleted point operations with the SDK.
 
