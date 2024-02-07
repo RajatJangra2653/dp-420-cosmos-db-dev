@@ -1,6 +1,6 @@
 [
   {
-    "Name": "",
+    "Name": "Migrate existing data using Azure Data Factory",
     "Language": "English",
     "BaseURL": "https://github.com/CloudLabs-MOC/dp-420-cosmos-db-dev/tree/stage",
     "Files": [
