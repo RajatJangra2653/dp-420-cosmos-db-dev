@@ -1,5 +1,4 @@
-# Lab 02b - Plan and implement Azure Cosmos DB SQL API
-
+# Migrate existing data using Azure Data Factory
 
 ## Lab scenario
 
@@ -13,8 +12,6 @@ In this lab, you will complete the following tasks:
 - Task 2: Create Azure Data Factory resource.
 
 ### Estimated Timing: 30 minutes
-
-## Exercise 1: Migrate existing data using Azure Data Factory
 
 ### Task 1: Create and seed your Azure Cosmos DB SQL API account
 
