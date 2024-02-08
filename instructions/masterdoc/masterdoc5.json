@@ -1,15 +1,15 @@
 [
   {
-    "Name": "Create and update documents with the Azure Cosmos DB NoSQL API SDK",
+    "Name": "Batch multiple point operations together with the Azure Cosmos DB for NoSQL SDK",
     "Language": "English",
-    "BaseURL": "https://github.com/CloudLabs-MOC/dp-420-cosmos-db-dev/tree/stage",
+    "BaseURL": "https://github.com/CloudLabs-MOC/dp-420-cosmos-db-dev/tree/guided-labs",
     "Files": [
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/prod/labintro.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/guided-labs/labintro.md",
         "Order": 1
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/guided-labs/instructions/06-sdk-crud.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/guided-labs/instructions/07-sdk-batch.md",
         "Order": 2
       }
     ]

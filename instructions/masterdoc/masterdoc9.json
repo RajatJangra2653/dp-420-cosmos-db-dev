@@ -2,10 +2,10 @@
   {
     "Name": "Process Azure Cosmos DB for NoSQL data using Azure Functions",
     "Language": "English",
-    "BaseURL": "https://github.com/CloudLabs-MOC/dp-420-cosmos-db-dev/tree/stage",
+    "BaseURL": "https://github.com/CloudLabs-MOC/dp-420-cosmos-db-dev/tree/guided-labs",
     "Files": [
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/prod/labintro.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-420-cosmos-db-dev/guided-labs/labintro.md",
         "Order": 1
       },
       {
