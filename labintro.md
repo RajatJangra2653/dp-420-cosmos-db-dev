@@ -1,4 +1,4 @@
-# Getting Started with Your DP-420: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB Workshop
+# Developing Cloud-Native Applications Using Microsoft Azure Cosmos DB
  
 Welcome to your DP-420: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB workshop! We've prepared a seamless environment is designed to facilitate hands-on learning and exploration of Microsoft Azure Cosmos DB for building cloud-native applications. Let's begin by making the most of this experience:
  
