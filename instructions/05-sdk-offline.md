@@ -17,25 +17,9 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
-## Prepare your development environment
-
-1. Start Visual Studio Code (the program icon is pinned to the Desktop).
-
-2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
-
-    ![](media/C-hash-extension.png)
-
-3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
-
-4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
-
 ### Task 1: Start the Azure Cosmos DB Emulator
 
 Your environment should already have the emulator pre-installed. If not, refer to the [installation instructions][docs.microsoft.com/azure/cosmos-db/local-emulator] to install the Azure Cosmos DB Emulator. Once the emulator has started, you can retrieve the connection string and use it to connect to the emulator using the Azure SDK for .NET or any other SDK of your choice.
-
-1. Seach for Default apps in the Windows search bar and select it.
-
-1. On the Default apps blade, click on Internet Explorer and select Microsoft Edge for setting Edge as the default browser.
 
 1. Start the **Azure Cosmos DB Emulator** from Start Menu of window. then click on the ^ key on right side of window and then select icon of Azure Cosmos DB Emulator and click on the Open Data explorer.
 
@@ -51,7 +35,7 @@ Your environment should already have the emulator pre-installed. If not, refer t
 
 1. Navigate to the **Explorer** pane.
 
-1. In the **Data Explorer**, observe that there are no nodes within the **NoSQL API** navigation tree.
+1. In the **Data Explorer**, observe that there are no nodes within the **SQL API** navigation tree.
 
 1. Close your web browser window or tab.
 
@@ -127,7 +111,7 @@ Now that you have created a new database in the Azure Cosmos DB emulator, you wi
 
 1. In the **Azure Cosmos DB Emulator** landing page, navigate to the **Explorer** pane.
 
-1. In the **Data Explorer**, observe the new **cosmicworks** database node within the **NoSQL API** navigation tree.
+1. In the **Data Explorer**, observe the new **cosmicworks** database node within the **SQL API** navigation tree.
 
 1. Close your web browser window or tab.
 
@@ -186,28 +170,9 @@ Creating a new container is similar to the pattern used to create a new database
 
 1. In the **Azure Cosmos DB Emulator** landing page, navigate to the **Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **NoSQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **SQL API** navigation tree.
 
 1. Close your web browser window or tab.
-
-###  Task 5: Stop the Azure Cosmos DB Emulator
-
-It is important to stop the emulator when you are done using it as it can use system resources in your environment. You will use the system tray icon to stop the emulator and all running instances.
-
-1. Navigate to the emulator icon in the Windows system tray, open the context menu, and then select **Exit** to shut down the emulator.
-
-    >**Note**: It may take a minute for all instances of the emulator to exit.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/azure/cosmos-db/local-emulator]: https://docs.microsoft.com/azure/cosmos-db/local-emulator
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.id]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.id
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient.createdatabaseifnotexistsasync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient.createdatabaseifnotexistsasync
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.id]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.id
-[docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
-[nuget.org/packages/microsoft.azure.cosmos/3.22.1]: https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.22.1
 
 ### Review
 
@@ -217,6 +182,5 @@ In this lab, you have completed:
 - Task 2: Connected to the emulator from the SDK.
 - Task 3: Viewed the changes in the emulator.
 - Task 4: Created and viewed a new container.
-- Task 5: Stopped the Azure Cosmos DB Emulator.
 
 ### You have successfully completed the lab
