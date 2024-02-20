@@ -28,18 +28,16 @@ To accompany the products container, you will create a **flatproducts** containe
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Resource group** | *Select an existing DP-420-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Account Name** | *cosmos<inject key="DeploymentID" enableCopy="false"/>* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
-
 1. Wait for the deployment task to complete before continuing with this task.
 
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
+1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** under the settings pane.
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
@@ -53,15 +51,15 @@ To accompany the products container, you will create a **flatproducts** containe
 
     > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. In **Visual Studio Code**, open the **Terminal** menu and then select **New Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, open the **View** menu and then select **Terminal** to open a new terminal instance.
 
 1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
 
     ```
-    dotnet tool install --global cosmicworks
+    dotnet tool install cosmicworks --global --version 1.*
     ```
 
-    > &#128161; This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
+    > **Note:** This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
@@ -77,6 +75,7 @@ To accompany the products container, you will create a **flatproducts** containe
 
     > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+    > **Note:** If you get an error while running the above command, close the visual studio code and re-open to run the above command.
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
 
@@ -88,7 +87,7 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **cosmosdb420-XXXXX** Azure Cosmos DB account resource you created in this lab.
+1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **DP-420-<inject key="DeploymentID" enableCopy="false"/>** Azure Cosmos DB account resource you created in this lab.
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
@@ -123,14 +122,12 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
     | **Setting** | **Value** |
     | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
-    | **Name** | *Enter a globally unique name* |
+    | **Resource group** | *DP-420-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Name** | *datafactory<inject key="DeploymentID" enableCopy="false"/>* |
     | **Region** | *Choose any available region* |
     | **Version** | *V2* |
    
 1. Click on **Next: Git configuration**. In **Git configuration** blade tick *Configure Git later*
-
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
 1. Select **Review + Create** to navigate to the **Review + Create** tab, and then select **Create**.
 
@@ -138,7 +135,7 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
     > &#128161; Alternatively, you can navigate to (``adf.azure.com/home``), select your newly created Data Factory resource, and then select the home icon.
 
-1. From the home screen. Select the **Ingest** option to begin the quick wizard to perform a one-time copy data at scale operation and move to the **Properties** step of the wizard.
+1. From the **Home** screen. Select the **Ingest** option to begin the quick wizard to perform a one-time copy data at scale operation and move to the **Properties** step of the wizard.
 
 1. Starting with the **Properties** step of the wizard, in the **Task type** section, select **Built-in copy task**.
 
@@ -148,7 +145,7 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
 1. In the **Connection** section, select **+ New connection**.
 
-1. In the **New connection (Azure Cosmos DB (NoSQL API))** popup, configure the new connection with the following values, and then select **Create**:
+1. In the **New connection (Azure Cosmos DB for NoSQL)** popup, configure the new connection with the following values, and then select **Create**:
 
     | **Setting** | **Value** |
     | --- | --- |
@@ -177,7 +174,7 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
 1. Select **Preview data** to test the query's validity. Select **Next** to move to the **Destination** step of the wizard.
 
-1. In the **Destination** step of the wizard, in the **Destination type** list, select **Azure Cosmos DB (NoSQL API)**.
+1. In the **Destination** step of the wizard, in the **Destination type** list, select **Azure Cosmos DB for NoSQL**.
 
 1. In the **Connection** list, select **CosmosSqlConn**.
 
@@ -197,7 +194,7 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **cosmosdb420-XXXXX** Azure Cosmos DB account resource you created in this lab.
+1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **DP-420-<inject key="DeploymentID" enableCopy="false"/>** Azure Cosmos DB account resource you created in this lab.
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
