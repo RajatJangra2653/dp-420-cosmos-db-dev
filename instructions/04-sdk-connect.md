@@ -100,7 +100,7 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.*
     ```
 
 1. Close the integrated terminal.
@@ -202,8 +202,8 @@ Now that the .NET code to connect to the Azure Cosmos DB SQL API account is comp
 1. The script will now output the name of the account, and the first writable region. For example, if you named the account **dp420**, and the first writable region was **West US 2**, the script would output:
 
     ```
-    Account Name:   dp420
-    Primary Region: West US 2
+    Account Name:   sql-<inject key="DeploymentID" enableCopy="false"/>
+    Primary Region: West US 3
     ```
 
 1. Close the integrated terminal.
