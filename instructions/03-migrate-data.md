@@ -28,8 +28,8 @@ To accompany the products container, you will create a **flatproducts** containe
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing DP-420-<inject key="DeploymentID" enableCopy="false"/>* |
-    | **Account Name** | *cosmos<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Resource group** | *Select an existing Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Account Name** | *sql-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
@@ -87,7 +87,7 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **DP-420-<inject key="DeploymentID" enableCopy="false"/>** Azure Cosmos DB account resource you created in this lab.
+1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** Azure Cosmos DB account resource you created in this lab.
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
@@ -122,8 +122,8 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
     | **Setting** | **Value** |
     | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *DP-420-<inject key="DeploymentID" enableCopy="false"/>* |
-    | **Name** | *datafactory<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Resource group** | *Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Name** | *datafactory-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Region** | *Choose any available region* |
     | **Version** | *V2* |
    
@@ -141,7 +141,7 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
 1. In the **Task cadence or task schedule** section, select **Run once now** and then select **Next** to move to the **Source** step of the wizard.
 
-1. In the **Source** step of the wizard, in the **Source type** list, select **Azure Cosmos DB (NoSQL API)**.
+1. In the **Source** step of the wizard, in the **Source type** list, select **Azure Cosmos DB NoSQL**.
 
 1. In the **Connection** section, select **+ New connection**.
 
@@ -194,7 +194,7 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **DP-420-<inject key="DeploymentID" enableCopy="false"/>** Azure Cosmos DB account resource you created in this lab.
+1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** Azure Cosmos DB account resource you created in this lab.
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
