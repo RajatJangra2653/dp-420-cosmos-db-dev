@@ -29,7 +29,6 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-
 ### Task 2: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB NoSQL API account using the Azure SDK for .NET or any other SDK of your choice.
@@ -49,14 +48,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Resource group** | *Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Account Name** | *sql-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
    
-
 1. Click on **Review+ Create** and after validation click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
@@ -80,6 +78,8 @@ The NuGet website contains a searchable index of packages that are available to 
 1. Review the description of NuGet, the package manager for .NET, and its capabilities.
 
 1. Search for the **Microsoft.Azure.Cosmos** library on NuGet.org.
+
+1. Click on the link **.Net Standard 2.0**.
 
 1. Select the **.NET CLI** tab to observe the command required to import the latest version of this library into a .NET project.
 
@@ -232,5 +232,3 @@ In this lab, you have completed:
 - Imported the Microsoft.Azure.Cosmos library into a .NET project.
 - Used the Microsoft.Azure.Cosmos library.
 - Tested the script.
-
-### You have successfully completed the lab
