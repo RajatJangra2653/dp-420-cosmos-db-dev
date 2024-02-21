@@ -9,7 +9,7 @@ In this lab, you’ll use the SDK, to perform two dual-item operations where you
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
-- Task 1: Use an Azure Cosmos DB NoSQL API account and configure the SDK project.
+- Task 1: Create an Azure Cosmos DB for NoSQL account and configure the SDK project
 - Task 2: Creating a transactional batch.
 - Task 3: Creating an errant transactional batch.
 
@@ -27,20 +27,7 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-### Task 1: Use an Azure Cosmos DB SQL API account and configure the SDK project
-
-
-1. Start **Visual Studio Code**.
-
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
-
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
-
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
-
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
-
-## Create an Azure Cosmos DB for NoSQL account and configure the SDK project
+## Task 1: Create an Azure Cosmos DB for NoSQL account and configure the SDK project
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
@@ -51,13 +38,11 @@ In this lab, you will complete the following tasks:
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Resource group** | *Select an existing Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Account Name** | *sql-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
-
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -303,15 +288,6 @@ Now, let’s create a transactional batch that will error purposefully. This bat
 1. Close the integrated terminal.
 
 1. Close **Visual Studio Code**.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.createtransactionalbatch]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.createtransactionalbatch
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch.createitem]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch.createitem
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatchresponse]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatchresponse
-[docs.microsoft.com/dotnet/core/tools/dotnet-build]: https://docs.microsoft.com/dotnet/core/tools/dotnet-build
-[docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
-[nuget.org/packages/microsoft.azure.cosmos/3.22.1]: https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.22.1
 
 ### Review
 
