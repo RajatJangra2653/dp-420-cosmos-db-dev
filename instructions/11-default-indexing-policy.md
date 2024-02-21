@@ -34,11 +34,12 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Resource group** | *Select an existing Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Account Name** | *sql-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
+    | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
 
 1. Click on **Review + Create** and after validation get Success click on **Create**.
 
@@ -60,14 +61,14 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
 
 1. Start **Visual Studio Code**.
 
-1. In **Visual Studio Code**, open the **Terminal** menu and then select **New Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, open the **View** menu and then select **Terminal** to open a new terminal instance.
 
     > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
 1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
 
     ```
-    dotnet tool install --global cosmicworks
+    dotnet tool install cosmicworks --global --version 1.*
     ```
   
     > &#128161; This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
@@ -103,9 +104,9 @@ When a container is created by code, portal, or a tool; the indexing policy is s
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **NoSQL API** navigation tree.
 
-1. Select the **products** container node within the **SQL API** navigation tree, and then select **New SQL Query**.
+1. Select the **products** container node within the **NoSQL API** navigation tree, and then select **New SQL Query**.
 
 1. Delete the contents of the editor area.
 
@@ -125,7 +126,7 @@ When a container is created by code, portal, or a tool; the indexing policy is s
 
     > &#128221; All paths are currently indexed, so this query should be relatively efficient.
 
-1. Within the **products** container node of the **SQL API** navigation tree, select **Scale & Settings**.
+1. Within the **products** container node of the **NoSQL API** navigation tree, select **Scale & Settings**.
 
 1. Observe the default indexing policy within the **Indexing Policy** section:
 
