@@ -25,7 +25,7 @@ In this lab, you will complete the following tasks:
 
 3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+4. Select the folder **dp-420-cosmos-db-dev/08-sdk-bulk** and click on **Select Folder**.
 
 ### Task 1: Create an Azure Cosmos DB for NoSQL account and configure the SDK project
 
@@ -38,13 +38,12 @@ In this lab, you will complete the following tasks:
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Resource group** | *Select an existing Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Account Name** | *sql-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
-
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+    | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -58,11 +57,17 @@ In this lab, you will complete the following tasks:
 
 1. Still **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. Select the **Scale & Settings** node. In the Scale & Settings tab, set **Throughput** to **Autoscale** Save your changes.
+1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values:
 
-1. Update the required Max RU/s **4000** and then Save your changes**. 
+    | **Setting** | **Value** |
+    | ---: | :--- |
+    | **Database id** | *Create new* &vert; *`cosmicworks`* |
+    | **Share throughput across containers** | *Do not select* |
+    | **Container id** | *`products`* |
+    | **Partition key** | *`/categoryId`* |
+    | **Container throughput** | *Autoscale* &vert; *`4000`* |
 
-1. Close your web browser window or tab.
+1. Return to **Visual Studio Code**.. 
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **08-sdk-bulk** folder.
 
@@ -269,14 +274,6 @@ Now that you have sent 25,000 items to Azure Cosmos DB let’s go and look at th
 1. Observe the count of the items in your container.
 
 1. Close your web browser window or tab.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient.getcontainer]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient.getcontainer
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions
-[docs.microsoft.com/dotnet/api/system.threading.tasks]: https://docs.microsoft.com/dotnet/api/system.threading.tasks
-[docs.microsoft.com/dotnet/core/tools/dotnet-build]: https://docs.microsoft.com/dotnet/core/tools/dotnet-build
-[docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
-[nuget.org/packages/bogus/33.1.1]: https://www.nuget.org/packages/bogus/33.1.1
 
 ### Review
 
