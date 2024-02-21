@@ -7,16 +7,15 @@ The Azure Cosmos DB trigger for Azure Functions is implemented using a change fe
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
-- Task 1: Create an Azure Cosmos DB NoSQL API account.
-- Task 2: Create an Azure Function app and Azure Cosmos DB-triggered function.
-- Task 3: Create an Log Analytics workspaces.
-- Task 4: Create an Application Insights.
-- Task 5: Implement function code in .NET.
-- Task 6: Seed your Azure Cosmos DB SQL API account with sample data.
+- Task 1: Create an Azure Cosmos DB for NoSQL account
+- Task 2: Create Application Insight
+- Task 3: Create an Azure Function app and Azure Cosmos DB-triggered function
+- Task 4: Implement function code in .NET
+- Task 5: Seed your Azure Cosmos DB for NoSQL account with sample data
 
-## Estimated Timing: 30 minutes
+## Estimated Timing: 60 minutes
 
-### Task 1: Create an Azure Cosmos DB SQL API account
+## Task 1: Create an Azure Cosmos DB for NoSQL account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -29,8 +28,8 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Resource group** | *Select an existing Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Account Name** | *sql-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Serverless* |
 
@@ -40,52 +39,101 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
 
-1. Go to the created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
-
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
-    1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
+    1. Notice the **URI** field. You will use this **endpoint** value later in this exercise.
 
-    1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
+    1. Notice the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
 
-1. Select **Data Explorer** from the menu.
+1. Select **Data Explorer** from the resource menu.
 
-   >**Note**: Delete the **productslease**, which is already created in previous lab( click on **...** and select delete container).
+1. In the **Data Explorer** pane, expand **New Container** and then select **New Database**.
+
+1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
+
+    | **Setting** | **Value** |
+    | --: | :-- |
+    | **Database id** | *``cosmicworks``* |
+
+1. Back in the **Data Explorer** pane, observe the **cosmicworks** database node within the hierarchy.
+
+1. In the **Data Explorer** pane, select **New Container**.
+
+1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
+
+    | **Setting** | **Value** |
+    | --: | :-- |
+    | **Database id** | *Use existing* &vert; *cosmicworks* |
+    | **Container id** | *``products``* |
+    | **Partition key** | *``/categoryId``* |
+
+1. Back in the **Data Explorer** pane, expand the **cosmicworks** database node and then observe the **products** container node within the hierarchy.
 
 1. In the **Data Explorer** pane, select **New Container** again.
 
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --- | --- |
+    | --: | :-- |
     | **Database id** | *Use existing* &vert; *cosmicworks* |
-    | **Container id** | *productslease* |
-    | **Partition key** | */id* |
+    | **Container id** | *``productslease``* |
+    | **Partition key** | *``/id``* |
 
 1. Back in the **Data Explorer** pane, expand the **cosmicworks** database node and then observe the **productslease** container node within the hierarchy.
 
 1. Return to the **Home** of the Azure portal.
 
-### Task 2: Create an Azure Function app and Azure Cosmos DB-triggered function
+## Task 2: Create Application Insight
+
+Before you create the *Azure Funtion Application*, you will need to enable an *Azure Application Insight* so you can monitor the application funtion. The Application Insight will first need a *Log Analytics workspace*.
+
+1. In the search box search for **Log Analytics workspaces**.
+
+1. Select to **+Create** a new *Log Analytics* workspace.
+
+1. In the **Log Analytics workspace** dialog, enter the following values for each setting, and then select **Review+Create** and then select **Create**:
+
+    | **Setting** | **Value** |
+    | ---: | :--- |
+    | **Subscription** | *Your existing Azure subscription* |
+    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Name** | *``lab14laworkspace``* |
+    | **Location** | *Choose any available region* |
+
+1. Once your *Log Analytics workspace* is created, in the search box search for **Application Insights**.
+
+1. Select to **+Create** a new *Application Insight*.
+
+1. In the **Application Insights** dialog, enter the following values for each setting, and then select **Review+Create** and then select **Create**:
+
+    | **Setting** | **Value** |
+    | ---: | :--- |
+    | **Subscription (both entries)** | *Your existing Azure subscription* |
+    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Name** | *``lab14appinsight``* |
+    | **Location** | *Choose any available region* |
+    | **Log Analytics Workspace** | *lab14laworkspace* |
+
+You should now be able to monitor your application function.
+
+## Task 3: Create an Azure Function app and Azure Cosmos DB-triggered function
 
 Before you can begin writing code, you will need to create the Azure Functions resource and its dependent resources (Application Insights, Storage) using the creation wizard.
 
 1. Select **+ Create a resource**, search for *Functions*, and then create a new **Function App** account resource with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | --- | --- |
+    | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
-    | **Name** | *Enter a globally unique name* |
+    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Name** | *functionapp-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Publish** | *Code* |
     | **Runtime stack** | *.NET* |
-    | **Version** | *6* |
+    | **Version** | *6 (LTS) In-process* |
     | **Region** | *Choose any available region* |
     | **Storage account** | *Create a new storage account* |
 
-    > &#128221; **To create new storage account** select **Hosting** tab click on **create new** and enter name as **storage[DID]**.
-
-1. Click on **Review + Create** and after validation get Success click on **Create**.
+    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -96,68 +144,19 @@ Before you can begin writing code, you will need to create the Azure Functions r
 1. In the **Create function** popup, create a new function with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | --- | --- |
+    | ---: | :--- |
     | **Development environment** | *Develop in portal* |
     | **Select a template** | *Azure Cosmos DB trigger* |
-    | **New Function** | *ItemsListener* |
+    | **New Function** | *``ItemsListener``* |
     | **Cosmos DB account connection** | *Select New* &vert; *Select Azure Cosmos DB Account* &vert; *Select the Azure Cosmos DB account you created earlier* |
-    | **Database name** | *cosmicworks* |
-    | **Collection name** | *products* |
-    | **Collection name for leases** | *productslease* |
+    | **Database name** | *``cosmicworks``* |
+    | **Collection name** | *``products``* |
+    | **Collection name for leases** | *``productslease``* |
     | **Create lease collection if it does not exist** | *No* |
 
-1. Click on **Create**.
-
-### Task 3: Create an Log Analytics workspaces
-Before you can begin writing code, you will need to create the Log Analytics workspaces using the creation wizard.
-
-1. Select **+ Create a resource**, search for *Log Analytics worksapces*, and then create a new **Log Analytics worksapces** account resource with the following settings, leaving all remaining settings to their default values:
-
-    | **Setting** | **Value** |
-    | --- | --- |
-    | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
-    | **Name** | *Enter a globally unique name* |
-    | **Region** | *Choose same region* |
-    
-1. Click on **Review + Create** and after validation get Success click on **Create**.
-
-1. Wait for the deployment task to complete before continuing with this task.
-    
-### Task 4: Create an Application Insights
-
-You will need to create the Application Insights using the creation wizard.
-
-1. Select **+ Create a resource**, search for *Application Insights*, and then create a new **Application Insights** account resource with the following settings, leaving all remaining settings to their default values:
-
-    | **Setting** | **Value** |
-    | --- | --- |
-    | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
-    | **Name** | *Enter a globally unique name* |
-    | **Region** | *Choose same region* |
-    | **Resource Mode** | *workspace-based* |
-    | **Log Analytics worksapces** | *Select an existing* |
-    
-1. Click on **Review + Create** and after validation get Success click on **Create**.
-
-1. Wait for the deployment task to complete before continuing with this task.
-
-### Task 5: Implement function code in .NET
+## Task 4: Implement function code in .NET
 
 The function you created earlier is a C# script that is edited in-portal. You will now use the portal to write a short function to output the unique identifier of any item inserted or updated in the container.
-
-1. Select **Function App** from resource group.
-
-1. In the **Functions** pane, select functions then click on **ItemsListener**.
-
-1. In the **ItemsListener** &vert; **Function** pane, navigate to the **Monitor** pane.
-
-1. In Configure Application Insights to capture invocation logs, click on **Configure** the select **turn on Application Insights**.
-
-1. Under the change your resource, **select existing resource** and select the application insight which you have created previously.
-
-1. Select **Apply** and click **Yes**.
 
 1. In the **ItemsListener** &vert; **Function** pane, navigate to the **Code + Test** pane.
 
@@ -241,9 +240,9 @@ The function you created earlier is a C# script that is edited in-portal. You wi
 
 1. **Maximize** the log section to expand the output window to fill the maximum available space.
 
-    > &#128221; You will use another tool to generate items in your Azure Cosmos DB SQL API container. Once you generate the items, you will return to this browser window to observe the output. Do not close the browser window prematurely.
+    > &#128221; You will use another tool to generate items in your Azure Cosmos DB for NoSQL container. Once you generate the items, you will return to this browser window to observe the output. Do not close the browser window prematurely.
 
-### Task 6: Seed your Azure Cosmos DB SQL API account with sample data
+## Task 5: Seed your Azure Cosmos DB for NoSQL account with sample data
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container. The tool will then create a set of items that you will observe using the change feed processor running in your terminal window.
 
@@ -256,7 +255,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
 
     ```
-    dotnet tool install --global cosmicworks
+    dotnet tool install cosmicworks --global --version 1.*
     ```
 
     > &#128161; This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
@@ -264,7 +263,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | --- | --- |
+    | ---: | :--- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -276,29 +275,20 @@ You will use a command-line utility that creates a **cosmicworks** database and 
     > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
-    >**Note**: If you are getting error, close the visual studio code and reopen it and try to run the command once again.
-
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
 
 1. Close the integrated terminal.
-
-1. Close **Visual Studio Code**.
-
-1. Return to the currently open browser window or tab with the Azure Functions and select **Monitor** then select **log** section expanded.
-
-1. Observe the log output from your function. The terminal outputs a **Detected Operation** message for each change that was sent to it using the change feed. The operations are batched into groups of ~100 operations.
 
 1. Close your web browser window or tab.
 
 ### Review
 
-In this lab, you have completed:
+In this lab, you have completed the following topics:
 
-- Created an Azure Cosmos DB NoSQL API account.
-- Created an Azure Function app and Azure Cosmos DB-triggered function.
-- Created an Log Analytics workspaces.
-- Created an Application Insights.
-- Implemented function code in .NET.
-- Seeded your Azure Cosmos DB NoSQL API account with sample data.
+- Create an Azure Cosmos DB for NoSQL account
+- Create Application Insight
+- Create an Azure Function app and Azure Cosmos DB-triggered function
+- Implement function code in .NET
+- Seed your Azure Cosmos DB for NoSQL account with sample data
 
 ### You have successfully completed the lab
