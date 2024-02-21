@@ -50,11 +50,12 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Resource group** | *Select an existing Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Account Name** | *sql-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
+    | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
 
 1. Click on **Review + Create** and after validation get Success click on **Create**.
 
@@ -74,7 +75,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB SQL API account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
 
-1. In **Visual Studio Code**, open the **Terminal** menu and then select **New Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, open the **View** menu and then select **Terminal** to open a new terminal instance.
 
 1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
 
@@ -198,15 +199,6 @@ You will now use an asynchronous stream to create a simple-to-understand foreach
 1. Close the integrated terminal.
 
 1. Close **Visual Studio Code**.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/dotnet/api/azure.cosmos.querydefinition]: https://docs.microsoft.com/dotnet/api/azure.cosmos.querydefinition
-[docs.microsoft.com/dotnet/api/azure.cosmos.cosmoscontainer]: https://docs.microsoft.com/dotnet/api/azure.cosmos.cosmoscontainer
-[docs.microsoft.com/dotnet/api/azure.cosmos.cosmoscontainer.getitemqueryiterator]: https://docs.microsoft.com/dotnet/api/azure.cosmos.cosmoscontainer.getitemqueryiterator
-[docs.microsoft.com/dotnet/csharp/whats-new/csharp-8#asynchronous-streams]: https://docs.microsoft.com/dotnet/csharp/whats-new/csharp-8#asynchronous-streams
-[docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
-[nuget.org/packages/azure.cosmos/4.0.0-preview3]: https://www.nuget.org/packages/azure.cosmos/4.0.0-preview3
-[nuget.org/packages/cosmicworks]: https://www.nuget.org/packages/cosmicworks/
 
 ### Review
 
