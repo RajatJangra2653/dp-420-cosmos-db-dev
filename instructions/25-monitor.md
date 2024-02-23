@@ -10,7 +10,7 @@ In this lab, you'll run a simulated workload against Azure Cosmos DB containers 
 
 In this lab, you will complete the following tasks:
 - Task 1: Prepare your development environment.
-- Task 2: Create an Azure Cosmos DB NoSQL API account.
+- Task 2: Create an Azure Cosmos DB for NoSQL account.
 - Task 3: Import the Microsoft.Azure.Cosmos and Newtonsoft.Json libraries into a .NET script.
 - Task 4: Run a script to create the containers and the workload.
 - Task 5: Use Azure Monitor to Analyze the Azure Cosmos DB account usage
@@ -25,39 +25,57 @@ In this lab, you will complete the following tasks:
 
 2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-    ![](media/C-hash-extension.png)
+    ![](media/chash.png)
 
 3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-### Task 2: Create an Azure Cosmos DB NoSQL API account
+    >**Note:** On **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust authors**.
 
-Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you'll select which of the APIs you want the account to support (for example, Mongo API or NoSQL API). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key. Use the endpoint and key to connect to the Azure Cosmos DB for NoSQL account programatically. Use the endpoint and key on the connection strings of the Azure SDK for .NET or any other SDK.
+### Task 2: Create an Azure Cosmos DB for NoSQL account
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
+Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+1. Inside the LabVM, double click on the **Azure Portal** shortcut.
 
-1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
+    ![](media/azureportal.png)
 
-    > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
+1. On the **Sign-in into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+     ![04](media/04.png)
+     
+1. Now enter the following password and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+     ![05](media/05.png)
+     
+        >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
 
-1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
+        ![06](media/06.png)
+  
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
+
+1. Select **create** under **Azure Cosmos DB for NoSQL**.
 
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
     | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select DP-420-DeploymentID* |
-    | **Account Name** | *cosmosdb-DeploymentID* |
+    | **Resource group** | **cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** |
+    | **Account Name** | **cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *`Do Not Apply`* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Uncheck* |
-
-    >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
 
 1. Click on **Review + Create** and after validation get Success click on **Create**.
 
@@ -80,9 +98,9 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **25-monitor** folder.
 
-1. Open the context menu for the **25-monitor** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
+1. Right-click on the **25-monitor** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > &#128221; This command will open the terminal with the starting directory already set to the **25-monitor** folder.
+    >**Note:** This command will open the terminal with the starting directory already set to the **25-monitor** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
@@ -141,7 +159,7 @@ In this part of the exercise, we'll go back to the browser and review some of th
 
 #### Subtask 1: Azure Monitor Metrics's reports
 
-1. Go back to the opened browser window we minimized earlier. If you closed it, open a new one and go to your Azure Cosmos DB account page under portal.azure.com.
+1. Go back to the opened browser window we minimized earlier. If you closed it, open a new one and go to your Azure Cosmos DB account page under [Azure Portal](portal.azure.com).
 
 1. In the Azure Comsos DB left-hand menu, under *Monitoring*, select **Metrics**. You'll notice that the **Scope** and **Metric Namespace** fields are prepopulated with the correct information. In the following steps, we'll take a look at a few **Metric** options and the *Add filter* and *Apply splitting* features.
 
@@ -177,7 +195,7 @@ We might need to spend some time fine-tuning our Azure Monitor Metrics diagnosti
 
 1. In the Azure Comsos DB left-hand menu, under *Monitoring*, select **Insights**. You'll notice that there are multiple tabs from Overview to Management Options. We'll look at a few of these **Insight** charts. The first tab, the Overview tab, provides a summary of the most common charts you might use. For example, charts like, total request, Data and Index usage, 429 exceptions and Normalized RU consumption.  We saw most of these charts in the previous section.
 
-1. Note on the top of the charts, we can home in on the **Time Range**, so select either *15* or *30* minutes to evaluate the workload in this exercise.
+1. Note on the top of the charts, on the **Time Range**, select either *15* or *30* minutes to evaluate the workload in this exercise.
 
 1. On the upper right-hand corner of *each* chart, you'll notice an option to ***Open Metric Explorer***. Let's go ahead and select the  **Open Metric Explorer** option for the **Total Requests** chart. You'll notice that when you select this option will take you to the Metric's reports we reviewed earlier. The advantage of opening the Metric Explorer, is that a good portion of the chart has already been built for us.
 
