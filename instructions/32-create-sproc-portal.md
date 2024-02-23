@@ -21,22 +21,40 @@ In this lab, you will complete the following tasks:
 
 Stored procedures are authored in language-integrated JavaScript and support execution of basic CRUD operations inside of the database engine. JavaScript running within the database engine is made possible using the server-side JavaScript SDK for Azure Cosmos DB and a series of helper methods.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
+1. Inside the LabVM, double click on the **Azure Portal** shortcut.
 
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+    ![](media/azureportal.png)
 
-1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
+1. On the **Sign-in into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+     ![04](media/04.png)
+     
+1. Now enter the following password and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+     ![05](media/05.png)
+     
+        >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
 
-    > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
+        ![06](media/06.png)
+  
+1. If you see the pop-up **Stay Signed in?**, click No
 
-1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
-1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
+
+1. Select **create** under **Azure Cosmos DB for NoSQL**.
+
+1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab:
 
     | **Setting** | **Value** |
     | --- | --- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | **Cosmosdb-** |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
@@ -46,9 +64,9 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 
 1. Wait for the deployment task to complete before continuing with this task.
 
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Data Explorer** pane.
+1. Go to the newly created **Azure Cosmos DB** account resource and from the left navigation menu, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values:
+1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values, and select **OK**:
 
     | **Setting** | **Value** |
     | --- | --- |
@@ -61,12 +79,9 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 
 1. Still within the **Data Explorer**, expand the **cosmicworks** database node, then select the new **products** container node within the **NOSQL API** navigation tree.
 
-1. Select the **"..." (1)** followed by **New Stored Procedure (2)** and finally select **New Stored Procedure (3)** again.
+1. Select **New Stored Procedure**.
 
-    ![](media/new-stored-procedure-01.png)
-
-
-1. In the **Stored Procedure Id** field, enter the value **createDoc**. Select **Save**.
+1. In the **Stored Procedure Id** field, enter the value **createDoc**.
 
 1. Delete the contents of the editor area.
 
@@ -93,7 +108,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 1. Create a new object named **doc** with two properties:
 
     | **Property** | **Value** |
-    | --- | --- |
+    | ---: | :--- |
     | **Name** | *first document* |
     | **Category ID** | *demo* |
 
@@ -130,12 +145,12 @@ Stored procedures are authored in language-integrated JavaScript and support exe
     }
     ```
 
-1. Select **Update** to persist the changes to the stored procedure.
+1. Select **Save** to persist the changes to the stored procedure.
 
 1. Select **Execute** and then execute the stored procedure using the following input parameters:
 
     | **Setting** | **Key** | **Value** |
-    | --- | --- | --- |
+    | ---: | :--- | :--- |
     | **Partition key value** | *String* | *demo* |
 
 1. Observe the empty result. While the stored procedure executed successfully, the JavaScript code never returned a human-readable response.
@@ -249,10 +264,6 @@ To wrap up things, you will use the Data Explorer to issue a SQL query that will
 1. Select **Execute Query**.
 
 1. Observe the two documents you created in this lab as the results of executing this query.
-
-1. Now back on the **Data Explorer**, select **"..."** next to **cosmicworks** database and select **Delete Database**. On the window that pops up, enter the **cosmicworks** and click on **OK**.
-
-    ![](media/delete-database-1.png)
 
 ### Review
 
