@@ -11,7 +11,7 @@ In this lab, you'll create a new UDF using the .NET SDK and then use the Data Ex
 In this lab, you will complete the following tasks:
 - Task 1: Prepare your development environment.
 - Task 2: Create an Azure Cosmos DB for NoSQL account.
-- Task 3: Seed the Azure Cosmos DB SQL API account with data.
+- Task 3: Send the Azure Cosmos DB for NoSQL account with data.
 - Task 4: Create a user-defined function (UDF) using the .NET SDK.
 - Task 5: Test the UDF using the Data Explorer.
 
@@ -23,45 +23,104 @@ In this lab, you will complete the following tasks:
 
 2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-    ![](media/C-hash-extension.png)
+    ![](media/chash.png)
 
 3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+
+    >**Note:** On **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust authors**.
 
 
 ### Task 2: Create an Azure Cosmos DB for NoSQL account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
+1. Inside the LabVM, double click on the **Azure Portal** shortcut.
 
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+    ![](media/azureportal.png)
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
+1. On the **Sign-in into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+     ![04](media/04.png)
+     
+1. Now enter the following password and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+     ![05](media/05.png)
+     
+        >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
+
+        ![06](media/06.png)
+  
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
+
+1. Select **create** under **Azure Cosmos DB for NoSQL**.
+
+1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab:
 
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | **Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
-1. Navigate to the **Keys** pane.
+1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
-1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
-    
-1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
+    - Notice the **URI** field. You will use this **endpoint** value later in this exercise.
 
-1. Close your web browser window or tab.
+    - Notice the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
+
+1. Without closing the browser window, open **Visual Studio Code**.
+
+### Task 3: Send the Azure Cosmos DB for NoSQL account with data
+
+The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB for NoSQL account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
+
+1. In **Visual Studio Code**, open the **Terminal** menu and then select **New Terminal** to open a new terminal instance.
+
+1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
+
+    ```
+    dotnet tool install cosmicworks --global --version 1.*
+    ```
+
+    > &#128161; This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
+
+1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
+
+    | **Option** | **Value** |
+    | ---: | :--- |
+    | **--endpoint** | *The endpoint value you copied earlier in this lab* |
+    | **--key** | *The key value you copied earlier in this lab* |
+    | **--datasets** | *product* |
+
+    ```
+    cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
+    ```
+
+    >**Note:** For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
+    > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+
+1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
+
+1. Close the integrated terminal.
 
 ### Task 3: Seed the Azure Cosmos DB SQL API account with data
 
@@ -75,7 +134,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     dotnet tool install --global cosmicworks
     ```
 
-    > &#128161; This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
+    >**Note:** This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
@@ -89,10 +148,11 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
     ```
 
-    > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
+    >**For example:** if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
+   
    >**Note**: If your getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Close the integrated terminal.
@@ -117,7 +177,7 @@ The [Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] 
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    > **For example:** if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Update the existing variable named **key** with its value set to the **key** of the Azure Cosmos DB account you created earlier.
 
@@ -125,7 +185,7 @@ The [Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] 
     string key = "<cosmos-key>";
     ```
 
-    > &#128221; For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    > **For example:** if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. Create a new variable of type [UserDefinedFunctionProperties][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.scripts.userdefinedfunctionproperties] named props using the default empty constructor:
 
@@ -185,7 +245,7 @@ The [Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] 
 
 1. **Save** the **script.cs** file.
 
-1. In **Visual Studio Code**, open the context menu for the **33-create-use-udf-sdk** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, right-click on the **33-create-use-udf-sdk** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
 1. Build and run the project using the [dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run] command:
 
@@ -207,17 +267,13 @@ The [Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] 
 
 Now that a new UDF has been created in the Azure Cosmos DB container, you will use the Data Explorer to validate that the UDF is working as expected.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
-
-1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Azure Cosmos DB account** resource.
+1. Return to your web browser.
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
 1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **NOSQL API** navigation tree.
 
-1. Select the **products** container node within the **NOSQL API** navigation tree, and then select **New SQL Query**.
+1. Select the **products** container node (**...**) within the **NOSQL API** navigation tree, and then select **New SQL Query**.
 
 1. In the query tab, select **Execute Query** to view a standard query that selects all items without any filters.
 
@@ -233,7 +289,7 @@ Now that a new UDF has been created in the Azure Cosmos DB container, you will u
 
 1. Observe the documents and compare their **price** and **priceWithTax** fields.
 
-    > &#128221; The **priceWithTax** field should have a value that is 25% larger than the **price** field.
+    >**Note:** The **priceWithTax** field should have a value that is 25% larger than the **price** field.
 
 1. Close your web browser window or tab.
 
