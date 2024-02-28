@@ -2,7 +2,6 @@
 
 ## Lab scenario
 
-
 The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB for NoSQL container. Together, these methods perform some of the most common “CRUD” operations across various items within NoSQL API containers.
 
 In this lab, you’ll use the SDK to perform everyday CRUD operations on an item within an Azure Cosmos DB for NoSQL container.
@@ -19,40 +18,64 @@ In this lab, you will complete the following tasks:
 
 ## Prepare your development environment
 
-1. Start Visual Studio Code (the program icon is pinned to the Desktop).
+1. Start Visual Studio Code from the desktop.
 
-2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
+     ![Visual Studio Code Icon](./media/vscode1.jpg)
 
-    ![](media/C-hash-extension.png)
+2. Select the **Extensions** blade from the left panel.
 
-3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
+3. Search with **C#** and select **Install** to install the extension.
 
-4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+    ![](./media/Csharp.png)
+
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles/dp-420-cosmos-db-dev**.
+
+4. Select the folder **06-sdk-crud** and click on **Select Folder**.
 
 ### Task 1: Create an Azure Cosmos DB NoSQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
+1. Inside the LabVM, double click on the **Azure Portal** shortcut.
 
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+    ![](media/azureportal.png)
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
+1. On the **Sign-in into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+     ![04](media/04.png)
+     
+1. Now enter the following password and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+     ![05](media/05.png)
+     
+        >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
+
+        ![06](media/06.png)
+  
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
+
+1. Select **create** under **Azure Cosmos DB for NoSQL**. Then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values, and select **Review + create**:
 
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Resource group** | *Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Account Name** | *sql-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
-
 1. Wait for the deployment task to complete before continuing with this task.
 
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
+1. Select **Go to resources**. On the newly created **Azure Cosmos DB** account under **Settings** navigate to the **Keys** pane.
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
@@ -61,6 +84,12 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     1. Notice the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
 
 1. Switch back to **Visual Studio Code**.
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
 ### Task 2: Connect to the Azure Cosmos DB NoSQL API account from the SDK
 
@@ -146,9 +175,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Close the integrated terminal.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+1. Navigate to the **Azure portal**.
 
 1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Azure Cosmos DB account** resource you created in this lab.
 
@@ -156,7 +183,11 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **NoSQL API** navigation tree.
 
-1. Close your web browser window or tab.
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
 ### Task 3: Perform create and read point operations on items with the SDK
 
@@ -341,9 +372,7 @@ You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.C
 
 While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK account or the emulator to update an item and  oscillate back-and-forth between the Data Explorer and your IDE of choice as you perform an operation and check to see if your change has been applied. Here, you will do just that as you update and delete an item using the SDK.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+1. Navigate to the **Azure portal**.
 
 1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Azure Cosmos DB account** resource you created in this lab.
 
@@ -359,8 +388,6 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
     | **Price** | *$45.99* |
 
     >**Note**: At this point in time, these values should not have been changed since you have created the item. You will change these values in this exercise.
-
-1. Close your web browser window or tab.
 
 1. Return to **Visual Studio Code**. Return to the editor tab for the **script.cs** code file.
 
@@ -428,9 +455,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 
 1. Close the integrated terminal.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+1. Navigate to the **Azure portal**
 
 1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Azure Cosmos DB account** resource you created in this lab.
 
@@ -480,9 +505,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 
 1. Close the integrated terminal.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+1. Switch back to the **Azure portal** and refresh the page.
 
 1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Azure Cosmos DB account** resource you created in this lab.
 
@@ -495,17 +518,6 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 1. Close your web browser window or tab.
 
 1. Close **Visual Studio Code**.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.createitemasync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.createitemasync
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.deleteitemasync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.deleteitemasync
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.readitemasync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.readitemasync
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.upsertitemasync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.upsertitemasync
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.partitionkey]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.partitionkey
-[docs.microsoft.com/dotnet/core/tools/dotnet-build]: https://docs.microsoft.com/dotnet/core/tools/dotnet-build
-[docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
-[nuget.org/packages/microsoft.azure.cosmos/3.22.1]: https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.22.1
 
 ### Review
 
