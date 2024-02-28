@@ -19,11 +19,33 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 
 To accompany the products container, you will create a **flatproducts** container manually that will be the target of the ETL transformation and load operation at the end of this lab.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
+1. Inside the LabVM, double click on the **Azure Portal** shortcut.
 
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+    ![](media/azureportal.png)
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
+1. On the **Sign-in into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+     ![04](media/04.png)
+     
+1. Now enter the following password and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+     ![05](media/05.png)
+     
+        >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
+
+        ![06](media/06.png)
+  
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
+
+1. Select **create** under **Azure Cosmos DB for NoSQL**. Then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values, and select **Review + create**:
 
     | **Setting** | **Value** |
     | ---: | :--- |
@@ -37,7 +59,7 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Wait for the deployment task to complete before continuing with this task.
 
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** under the settings pane.
+1. Select **Go to resources**. On the newly created **Azure Cosmos DB** account under **Settings** navigate to the **Keys** pane.
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
@@ -47,11 +69,13 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Keep the browser tab open, as we will return to it later.
 
-1. Start **Visual Studio Code**.
+1. On the LabVM select the **Visual Studio Code** shortcut.
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+    ![06](media/visualstudio.png)
 
-1. In **Visual Studio Code**, open the **View** menu and then select **Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, open the **Terminal** menu by selecting **... (ellipses) (1)** > **Terminal (2)** > **New Terminal (3)** to open a new terminal with your existing instance.
+
+    ![06](media/terminal.png)
 
 1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
 
@@ -60,6 +84,8 @@ To accompany the products container, you will create a **flatproducts** containe
     ```
 
     > **Note:** This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
+
+1. Once the Installation is completed, make sure to close the **Visual Studio Code** and re-open to perform the below command.
 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
@@ -83,9 +109,7 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Close **Visual Studio Code**.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+1. Navigate to the **Azure portal**.
 
 1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** Azure Cosmos DB account resource you created in this lab.
 
@@ -97,7 +121,11 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Select the **Scale & Settings** node. In the **Scale & Settings** tab, select **Manual**, update the **required throughput** setting from **4000 RU/s** to **400 RU/s** and then **Save** your changes**.
 
+   ![06](media/scale1.png)
+
 1. In the **Data Explorer** pane, select **New Container**.
+
+   ![06](media/scale2.png)
 
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
@@ -112,6 +140,12 @@ To accompany the products container, you will create a **flatproducts** containe
 1. Back in the **Data Explorer** pane, expand the **cosmicworks** database node and then observe the **flatproducts** container node within the hierarchy.
 
 1. Return to the **Home** of the Azure portal.
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
 ### Task 2: Create Azure Data Factory resource
 
@@ -133,7 +167,9 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
 1. Go to the newly created **Azure Data Factory** resource and select **Open Azure Data Factory Studio**.
 
-    > &#128161; Alternatively, you can navigate to (``adf.azure.com/home``), select your newly created Data Factory resource, and then select the home icon.
+   ![06](media/scale3.png)
+
+   > &#128161; Alternatively, you can navigate to (``adf.azure.com/home``), select your newly created Data Factory resource, and then select the home icon.
 
 1. From the **Home** screen. Select the **Ingest** option to begin the quick wizard to perform a one-time copy data at scale operation and move to the **Properties** step of the wizard.
 
@@ -157,7 +193,7 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
     | **Azure Cosmos DB account name** | *Your existing Azure Cosmos DB account name you chose earlier in this lab* |
     | **Database name** | *cosmicworks* |
 
-1. Back in the **Source data store** section, within the **Source tables** section, select **Use query**.
+1. Back in the **Source data store** section, within the **Source tables** section, select **Query**.
 
 1. In the **Table name** list, select **products**.
 
@@ -178,7 +214,7 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
 1. In the **Connection** list, select **CosmosSqlConn**.
 
-1. In the **Target** list, select **flatproducts** and then select **Next** to move to the **Settings** step of the wizard.
+1. In the **Destination** list, select **flatproducts** and then select **Next** to move to the **Settings** step of the wizard.
 
 1. In the **Settings** step of the wizard, in the **Task name** field, enter **`FlattenAndMoveData`**.
 
@@ -190,9 +226,7 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
 1. Close your web browser window or tab.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+1. Navigate to the **Azure portal**.
 
 1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** Azure Cosmos DB account resource you created in this lab.
 
@@ -221,6 +255,12 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
 
 1. Close your web browser window or tab.
 
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+
 ### Review
 
 In this lab, you have completed:
@@ -228,4 +268,4 @@ In this lab, you have completed:
 - Created and seeded your Azure Cosmos DB NoSQL API account.
 - Created Azure Data Factory resource.
 
-### You have successfully completed the lab
+### You have successfully completed the lab.
