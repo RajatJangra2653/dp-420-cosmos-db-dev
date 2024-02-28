@@ -21,11 +21,9 @@ In this lab, you will complete the following tasks:
 
 Your environment should already have the emulator pre-installed. If not, refer to the [installation instructions][docs.microsoft.com/azure/cosmos-db/local-emulator] to install the Azure Cosmos DB Emulator. Once the emulator has started, you can retrieve the connection string and use it to connect to the emulator using the Azure SDK for .NET or any other SDK of your choice.
 
-1. Start the **Azure Cosmos DB Emulator** from Start Menu of window. then click on the ^ key on right side of window and then select icon of Azure Cosmos DB Emulator and click on the Open Data explorer.
+1. Search and Start the **Azure Cosmos DB Emulator** from Start Menu of window.
 
-    ![Screenshot of Cosmo DB Emulator.](media/emulator.png)
-
-1. Wait for the emulator to automatically open your default browser and navigate to the **localhost:8081/_explorer/index.html** landing page.
+1. Wait for 3 to 4 minutes to get started the emulator to automatically open your default browser and navigate to the **localhost:8081/_explorer/index.html** landing page.
 
 1. In the **Azure Cosmos DB Emulator** landing page, navigate to the **Quickstart** pane.
 
@@ -43,7 +41,8 @@ Your environment should already have the emulator pre-installed. If not, refer t
 
 The **Microsoft.Azure.Cosmos** library has already been pre-installed in the .NET script you will use in this exercise. Further, some of the boilerplate code has already been written to save you time. You will need to update the boilerplate connection string value and write a couple of lines of code to complete the script.
 
-1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **05-sdk-offline** folder.
+1. In **Visual Studio Code**, Select the file option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles/dp-420-cosmos-db-dev**
+1. Select the folder **05-sdk-offline** and click on Select Folder.
 
 1. Open the **script.cs** code file within the **05-sdk-offline** folder.
 
@@ -172,6 +171,8 @@ Creating a new container is similar to the pattern used to create a new database
 
 1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **SQL API** navigation tree.
 
+   ![06](media/product.png)
+   
 1. Close your web browser window or tab.
 
 ### Review
