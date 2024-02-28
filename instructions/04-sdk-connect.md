@@ -21,7 +21,7 @@ In this lab, you will complete the following tasks:
 
 1. Start Visual Studio Code from the desktop.
 
-     ![Visual Studio Code Icon](./media/vscode.jpg)
+     ![Visual Studio Code Icon](./media/vscode1.jpg)
 
 2. Select the **Extensions** blade from the left panel.
 
