@@ -115,7 +115,7 @@ In this lab, you will complete the following tasks:
 
     >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
-1. **Ctrl + S** to **Save** the script.cs code file.
+1. Press **Ctrl+S** to **Save** the script.cs code file.
 
 1. Open the context menu for the **08-sdk-bulk** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
@@ -253,7 +253,7 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
     Console.WriteLine("Bulk tasks complete");
     ```
 
-1. **Ctrl + S** to **Save** the script.cs code file.
+1. Press **Ctrl+S** to **Save** the script.cs code file.
 
 1. In **Visual Studio Code**, open the context menu for the **08-sdk-bulk** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
