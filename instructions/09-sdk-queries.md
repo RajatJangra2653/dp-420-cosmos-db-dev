@@ -23,23 +23,45 @@ In this lab, you will complete the following tasks:
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
+   ![Visual Studio Code Icon](./media/vscode1.jpg)
 
-    ![](media/C-hash-extension.png)
+3. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **Extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
+    ![](media/visualstudioo.png)
 
-4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+4. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
+
+5. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
 ### Task 2: Create an Azure Cosmos DB NoSQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
+1. Inside the LabVM, double-click on the **Azure Portal** shortcut.
 
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+    ![](media/azureportal.png)
 
-1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
+1. On the **Sign-in into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+     ![04](media/04.png)
+     
+1. Now enter the following password and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+     ![05](media/05.png)
+     
+        >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
+
+        ![06](media/06.png)
+  
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
 
     > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
 
@@ -75,7 +97,9 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB SQL API account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
 
-1. In **Visual Studio Code**, open the **View** menu and then select **Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, open the **Terminal** menu by selecting **... (ellipses) (1)** > **Terminal (2)** > **New Terminal (3)** to open a new terminal with your existing instance.
+
+    ![06](media/terminal.png)
 
 1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
 
@@ -83,7 +107,9 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     dotnet tool install cosmicworks --global --version 1.*
     ```
 
-    >**Note**: This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
+    >**Note**: This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed) if you have already installed the latest version of this tool in the past.
+
+1. Once the Installation is completed, make sure to close the **Visual Studio Code** and re-open it to perform the below command.
 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
@@ -101,13 +127,14 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
-   >**Note**: If your getting error, close the visual studio code and reopen it and try to run the command once again.
+   
+   >**Note**: If you're getting an error, close the visual studio code reopen it and try to run the command once again.
 
 1. Close the integrated terminal.
 
 ### Task 4: Iterate over the results of a NoSQL query using the SDK
 
-You will now use an asynchronous stream to create a simple-to-understand foreach loop over paginated results from Azure Cosmos DB. Behind the scenes, the SDK will manage the feed iterator and making sure subsequent requests are invoked correctly.
+You will now use an asynchronous stream to create a simple-to-understand for-each loop over paginated results from Azure Cosmos DB. Behind the scenes, the SDK will manage the feed iterator and make sure subsequent requests are invoked correctly.
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **09-execute-query-sdk** folder.
 
@@ -184,7 +211,7 @@ You will now use an asynchronous stream to create a simple-to-understand foreach
     }
     ```
 
-1. **Save** the **script.cs** file.
+1. Press **Ctrl+S** to **Save** the script.cs file.
 
 1. In **Visual Studio Code**, open the context menu for the **09-execute-query-sdk** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
