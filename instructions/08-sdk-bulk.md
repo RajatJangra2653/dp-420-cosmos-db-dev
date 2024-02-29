@@ -19,7 +19,7 @@ In this lab, you will complete the following tasks:
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **Extension (3)** that shows up and finally **Install (4)** on the extension. 
 
     ![](media/C-hash-extension.png)
 
@@ -45,6 +45,8 @@ In this lab, you will complete the following tasks:
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
 
+1. Click on **Review + Create**, review the summary, and select **Create**.
+   
 1. Wait for the deployment task to complete before continuing with this task.
 
 1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
@@ -55,14 +57,14 @@ In this lab, you will complete the following tasks:
 
     1. Notice the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
 
-1. Still **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
+1. On the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values:
+1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values and click **OK**.
 
     | **Setting** | **Value** |
     | :--- | :--- |
     | **Database id** | *Create new* &vert; *`cosmicworks`* |
-    | **Share throughput across containers** | *Do not select* |
+    | **Share throughput across containers** | *Unchecked* |
     | **Container id** | *`products`* |
     | **Partition key** | *`/categoryId`* |
     | **Container throughput** | *Autoscale* &vert; *`4000`* |
@@ -229,7 +231,7 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
     Console.WriteLine("Bulk tasks complete");
     ```
 
-1. **Save** the **script.cs** code file.
+1. **Ctrl + S** to Save the script.cs code file.
 
 1. In **Visual Studio Code**, open the context menu for the **08-sdk-bulk** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
