@@ -10,7 +10,7 @@ In this lab, you'll use the [Bogus][nuget.org/packages/bogus/33.1.1] library fro
 
 In this lab, you will complete the following tasks:
 - Task 1: Create an Azure Cosmos DB for NoSQL account and configure the SDK project.
-- Task 2: Bulk inserting a twenty-five thousand documents.
+- Task 2: Bulk inserting twenty-five thousand documents.
 - Task 3: Observe the results.
 
 ## Estimated Timing: 30 minutes
@@ -36,7 +36,7 @@ In this lab, you will complete the following tasks:
 1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | :--- | :--- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>* |
     | **Account Name** | *sql-<inject key="DeploymentID" enableCopy="false"/>* |
@@ -60,7 +60,7 @@ In this lab, you will complete the following tasks:
 1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | :--- | :--- |
     | **Database id** | *Create new* &vert; *`cosmicworks`* |
     | **Share throughput across containers** | *Do not select* |
     | **Container id** | *`products`* |
@@ -75,7 +75,7 @@ In this lab, you will complete the following tasks:
 
     >**Note**: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
-1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB accountyou created in previous lab.
+1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created in the previous lab.
   
     ```
     string endpoint = "<cosmos-endpoint>";
@@ -83,7 +83,7 @@ In this lab, you will complete the following tasks:
 
     >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
-1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created in previous lab.
+1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created in the previous lab.
 
     ```
     string key = "<cosmos-key>";
@@ -111,7 +111,7 @@ In this lab, you will complete the following tasks:
 
 1. Close the integrated terminal.
 
-### Task 2: Bulk inserting a twenty-five thousand documents
+### Task 2: Bulk inserting twenty-five thousand documents
 
 Let's "go for the gusto" and try to insert a lot of documents to see how this works. In our internal testing, this can take approximately 1-2 minutes if the lab virtual machine and Azure Cosmos DB NoSQL API account are relatively close to each other geographically speaking.
 
@@ -158,7 +158,7 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
     List<Task> concurrentTasks = new List<Task>();
     ```
 
-1. Create a foreach loop that will iterate over the list of products that was generated earlier in this application:
+1. Create a for-each loop that will iterate over the list of products that was generated earlier in this application:
 
     ```
     foreach(Product product in productsToInsert)
@@ -166,7 +166,7 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
     }
     ```
 
-1. Within the foreach loop, create a **Task** to asynchornously insert a product into Azure Cosmos DB NoSQL API being sure to explicitly specify the partition key and to add the task to list of tasks named **concurrentTasks**:
+1. Within the for-each loop, create a **Task** to asynchronously insert a product into Azure Cosmos DB NoSQL API being sure to explicitly specify the partition key and to add the task to a list of tasks named **concurrentTasks**:
 
     ```
     concurrentTasks.Add(
@@ -280,7 +280,7 @@ Now that you have sent 25,000 items to Azure Cosmos DB let’s go and look at th
 In this lab, you have completed:
 
 - Create an Azure Cosmos DB for NoSQL account and configure the SDK project
-- Bulk inserted a twenty-five thousand documents.
+- Bulk inserted twenty-five thousand documents.
 - Observed the results.
 
 ### You have successfully completed the lab
