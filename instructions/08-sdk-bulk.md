@@ -19,21 +19,45 @@ In this lab, you will complete the following tasks:
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **Extension (3)** that shows up and finally **Install (4)** on the extension. 
+   ![Visual Studio Code Icon](./media/vscode1.jpg)
+
+3. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **Extension (3)** that shows up and finally **Install (4)** on the extension. 
 
     ![](media/visualstudioo.png)
 
-3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
+4. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-4. Select the folder **dp-420-cosmos-db-dev/08-sdk-bulk** and click on **Select Folder**.
+5. Select the folder **dp-420-cosmos-db-dev/08-sdk-bulk** and click on **Select Folder**.
 
 ### Task 1: Create an Azure Cosmos DB for NoSQL account and configure the SDK project
 
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
+1. Inside the LabVM, double-click on the **Azure Portal** shortcut.
 
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+    ![](media/azureportal.png)
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
+1. On the **Sign-in into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+     ![04](media/04.png)
+     
+1. Now enter the following password and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+     ![05](media/05.png)
+     
+        >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
+
+        ![06](media/06.png)
+  
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
+
+1. Select **Create** under **Azure Cosmos DB for NoSQL**. Then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values, and select **Review + create**:
 
     | **Setting** | **Value** |
     | :--- | :--- |
@@ -44,8 +68,6 @@ In this lab, you will complete the following tasks:
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
-
-1. Click on **Review + Create**, review the summary, and select **Create**.
    
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -93,7 +115,7 @@ In this lab, you will complete the following tasks:
 
     >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
-1. **Save** the **script.cs** code file.
+1. **Ctrl + S** to **Save** the script.cs code file.
 
 1. Open the context menu for the **08-sdk-bulk** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
@@ -231,7 +253,7 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
     Console.WriteLine("Bulk tasks complete");
     ```
 
-1. **Ctrl + S** to Save the script.cs code file.
+1. **Ctrl + S** to **Save** the script.cs code file.
 
 1. In **Visual Studio Code**, open the context menu for the **08-sdk-bulk** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
