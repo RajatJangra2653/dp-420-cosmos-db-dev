@@ -29,6 +29,8 @@ In this lab, you will complete the following tasks:
 
 5. Select the folder **dp-420-cosmos-db-dev/08-sdk-bulk** and click on **Select Folder**.
 
+   >**Note:** On **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust authors**.
+
 ### Task 1: Create an Azure Cosmos DB for NoSQL account and configure the SDK project
 
 1. Inside the LabVM, double-click on the **Azure Portal** shortcut.
