@@ -32,11 +32,13 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **06-sdk-crud** and click on **Select Folder**.
 
+   >**Note:** On **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust authors**.
+
 ### Task 1: Create an Azure Cosmos DB NoSQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
-1. Inside the LabVM, double click on the **Azure Portal** shortcut.
+1. Inside the LabVM, double-click on the **Azure Portal** shortcut.
 
     ![](media/azureportal.png)
 
@@ -135,7 +137,7 @@ Using the credentials from the newly created account, you will connect with the 
 
     >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
-1. Asynchronously invoke the CreateDatabaseIfNotExistsAsync method of the **client** variable passing in the name of the new database (**cosmicworks**) you would like to create, and storing the result in a variable of type **Database**:
+1. Asynchronously invoke the CreateDatabaseIfNotExistsAsync method of the **client** variable passing in the name of the new database (**cosmicworks**) you would like to create, and store the result in a variable of type **Database**:
 
     ```
     Database database = await client.CreateDatabaseIfNotExistsAsync("cosmicworks");
@@ -364,13 +366,13 @@ You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.C
     dotnet run
     ```
 
-1. Observe the output from the terminal. Specifically, observe the formatted output text with the id, name, and price from the item.
+1. Observe the output from the terminal. Specifically, observe the formatted output text with the ID, name, and price of the item.
 
 1. Close the integrated terminal.
 
 ### Task 4: Perform update and delete point operations with the SDK
 
-While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK account or the emulator to update an item and  oscillate back-and-forth between the Data Explorer and your IDE of choice as you perform an operation and check to see if your change has been applied. Here, you will do just that as you update and delete an item using the SDK.
+While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK account or the emulator to update an item and  oscillate back and forth between the Data Explorer and your IDE of choice as you perform an operation and check to see if your change has been applied. Here, you will do just that as you update and delete an item using the SDK.
 
 1. Navigate to the **Azure portal**.
 
@@ -383,11 +385,11 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
 1. Select the **Items** node. Select the only item within the container and then observe the values of the **name** and **price** properties of the item.
 
     | **Property** | **Value** |
-    | --- | --- |
+    | :--- | :--- |
     | **Name** | *Road Saddle* |
     | **Price** | *$45.99* |
 
-    >**Note**: At this point in time, these values should not have been changed since you have created the item. You will change these values in this exercise.
+    >**Note**: At this point, these values should not have been changed since you created the item. You will change these values in this exercise.
 
 1. Return to **Visual Studio Code**. Return to the editor tab for the **script.cs** code file.
 
@@ -470,7 +472,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
     | **Name** | *Road LL Saddle* |
     | **Price** | *$32.55* |
 
-    >**Note**: At this point in time, these values should  have been changed since you have observed the item.
+    >**Note**: At this point, these values should  have been changed since you have observed the item.
 
 1. Close your web browser window or tab.
 
