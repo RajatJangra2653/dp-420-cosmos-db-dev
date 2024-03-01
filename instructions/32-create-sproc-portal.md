@@ -4,7 +4,7 @@
 
 Stored procedures are one of the ways you can execute business logic server-side in Azure Cosmos DB. With a stored procedure, you can perform basic CRUD (Create, Read, Update, Delete) operations with a container on multiple documents within a single transactional scope.
 
-In this lab, you'll author a stored procedure that creates a document within your container. You will then use a SQL query to validate the results of the stored procedure.
+In this lab, you'll author a stored procedure that creates a document within your container. You will then use an SQL query to validate the results of the stored procedure.
 
 ## Lab objectives
 
@@ -19,9 +19,9 @@ In this lab, you will complete the following tasks:
 
 ### Task 1: Author a stored procedure
 
-Stored procedures are authored in language-integrated JavaScript and support execution of basic CRUD operations inside of the database engine. JavaScript running within the database engine is made possible using the server-side JavaScript SDK for Azure Cosmos DB and a series of helper methods.
+Stored procedures are authored in language-integrated JavaScript and support the execution of basic CRUD operations inside of the database engine. JavaScript running within the database engine is made possible using the server-side JavaScript SDK for Azure Cosmos DB and a series of helper methods.
 
-1. Inside the LabVM, double click on the **Azure Portal** shortcut.
+1. Inside the LabVM, double-click on the **Azure Portal** shortcut.
 
     ![](media/azureportal.png)
 
@@ -47,20 +47,20 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 
 1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
 
-1. Select **create** under **Azure Cosmos DB for NoSQL**.
+1. Select **Create** under **Azure Cosmos DB for NoSQL**.
 
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab:
 
     | **Setting** | **Value** |
-    | --- | --- |
+    | :--- | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | **Cosmosdb-** |
+    | **Resource group** | **Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
-1. Click on **Review + Create** and after validation get Success click on **Create**.
+1. Click on **Review + create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -69,7 +69,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values, and select **OK**:
 
     | **Setting** | **Value** |
-    | --- | --- |
+    | :--- | :--- |
     | **Database id** | *Create new* &vert; *cosmicworks* |
     | **Share throughput across containers** | *Select this option* |
     | **Database throughput** | *Manual* &vert; *400* |
@@ -108,7 +108,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 1. Create a new object named **doc** with two properties:
 
     | **Property** | **Value** |
-    | ---: | :--- |
+    | :--- | :--- |
     | **Name** | *first document* |
     | **Category ID** | *demo* |
 
@@ -150,10 +150,10 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 1. Select **Execute** and then execute the stored procedure using the following input parameters:
 
     | **Setting** | **Key** | **Value** |
-    | ---: | :--- | :--- |
+    | :--- | :--- | :--- |
     | **Partition key value** | *String* | *demo* |
 
-1. Observe the empty result. While the stored procedure executed successfully, the JavaScript code never returned a human-readable response.
+1. Observe the empty result. While the stored procedure was executed successfully, the JavaScript code never returned a human-readable response.
 
 ### Task 2: Implement best practices for a stored procedure
 
@@ -203,7 +203,7 @@ While the stored procedure authored earlier in this lab has basic functionality,
     if (!accepted) return;
     ```
 
-1. Finally, add a third parameter to the **createDocument** method invocation that is a function that takes in two parameters named **error** and **newDoc**, checks to see if the error is null, and then sets the newDoc to the response body of the stored procedure:
+1. Finally, add a third parameter to the **createDocument** method invocation which is a function that takes in two parameters named **error** and **newDoc**, checks to see if the error is null, and then sets the new doc to the response body of the stored procedure:
 
     ```
     (error, newDoc) => {
@@ -239,11 +239,11 @@ While the stored procedure authored earlier in this lab has basic functionality,
 1. Select **Execute** and then execute the stored procedure using the following input parameters:
 
     | **Setting** | **Key** | **Value** |
-    | ---: | :--- | :--- |
+    | :--- | :--- | :--- |
     | **Partition key value** | *String* | *demo* |
     | **Input parameters** | *String* | *second document* |
 
-1. Observe the JSON result. After the stored procedure executed successfully, the newly created document was returned as a response for the original HTTP request.
+1. Observe the JSON result. After the stored procedure was executed successfully, the newly created document was returned as a response to the original HTTP request.
 
 ### Task 3: Query documents
 
