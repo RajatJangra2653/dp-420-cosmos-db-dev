@@ -4,7 +4,7 @@
 
 For write-heavy workloads or workloads with large JSON objects, it can be advantageous to optimize the indexing policy to only index properties that you know you will want to use in your queries.
 
-In this lab, we will use a test .NET application to insert a large JSON item into an Azure Cosmos DB SQL API container using the default indexing policy, and then using an indexing policy that has been tuned slightly.
+In this lab, we will use a test .NET application to insert a large JSON item into an Azure Cosmos DB SQL API container using the default indexing policy and then using an indexing policy that has been tuned slightly.
 
 ## Lab objectives
 
@@ -36,7 +36,7 @@ In this lab, you will complete the following tasks:
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
-1. Inside the LabVM, double click on the **Azure Portal** shortcut.
+1. Inside the LabVM, double-click on the **Azure Portal** shortcut.
 
     ![](media/azureportal.png)
 
@@ -62,16 +62,19 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
 
-1. Select **create** under **Azure Cosmos DB for NoSQL**. Then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values, and select **Review + create**:
+1. Select **Create** under **Azure Cosmos DB for NoSQL**. Then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | :--- | :--- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | **DP-420-<inject key="DeploymentID" enableCopy="false"/>** |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Serverless* |
 
+
+1. Click on **Review + Create** and after validation get Success click on **Create**.
+   
 1. Wait for the deployment task to complete before continuing with this task.
 
 1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Data Explorer** pane.
@@ -81,7 +84,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | :-- | :-- |
     | **Database id** | *Create new* &vert; *``cosmicworks``* |
     | **Container id** | *``products``* |
     | **Partition key** | *``/categoryId``* |
@@ -116,7 +119,7 @@ This lab has a pre-built test .NET application that will take a large JSON objec
     dotnet build
     ```
 
-    >**Note:** You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variable in this task.
+    >**Note:** You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variables in this task.
 
 1. Close the integrated terminal.
 
@@ -219,7 +222,7 @@ This lab scenario will assume that our future queries focus primarily on the nam
 
 1. Return to **Visual Studio Code**. Return to the open terminal.
 
-1. Build and run the project at least two more times using the **[dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run]** command. Observe the new RU charge in the console output, which should be significantly less than the original charge. Since you are not indexing all the item properties, your writes' cost is significantly lower when updating the index. This however, can cost you greatly if your reads will need to query on properties that are not indexed.  
+1. Build and run the project at least two more times using the **[dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run]** command. Observe the new RU charge in the console output, which should be significantly less than the original charge. Since you are not indexing all the item properties, your writes' cost is significantly lower when updating the index. This, however, can cost you greatly if your reads will need to query on properties that are not indexed.  
 
     ```
     dotnet run
@@ -243,7 +246,7 @@ This lab scenario will assume that our future queries focus primarily on the nam
 
 1. Return to **Visual Studio Code**. Return to the open terminal.
 
-1. Build and run the project at least two more times using the **[dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run]** command. Observe the new RU charge in the console output, which should much less than the original charge.  How can this be? Since this script is measuring the RUs when you write the item, by choosing to have no index, there is no overhead mantaining that index. The flipside to this is that while your writes will generate less RUs, your reads will be very costly.
+1. Build and run the project at least two more times using the **[dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run]** command. Observe the new RU charge in the console output, which should be much less than the original charge.  How can this be? Since this script measures the RUs when you write the item, by choosing to have no index, there is no overhead in maintaining that index. The flip side to this is that while your writes will generate fewer RUs, your reads will be very costly.
 
     ```
     dotnet run
