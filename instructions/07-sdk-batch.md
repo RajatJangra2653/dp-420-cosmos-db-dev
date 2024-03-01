@@ -31,9 +31,11 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **07-sdk-batch** and click on **Select Folder**.
 
+   >**Note:** On **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust authors**.
+
 ## Task 1: Create an Azure Cosmos DB for NoSQL account and configure the SDK project
 
-1. Inside the LabVM, double click on the **Azure Portal** shortcut.
+1. Inside the LabVM, double-click on the **Azure Portal** shortcut.
 
     ![](media/azureportal.png)
 
@@ -88,7 +90,7 @@ In this lab, you will complete the following tasks:
 
     >**Note**: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
-1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created in previous lab.
+1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created in the previous lab.
   
     ```
     string endpoint = "<cosmos-endpoint>";
@@ -96,7 +98,7 @@ In this lab, you will complete the following tasks:
 
     >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
-1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created in previous lab..
+1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created in the previous lab.
 
     ```
     string key = "<cosmos-key>";
@@ -321,7 +323,7 @@ Now, let’s create a transactional batch that will error purposefully. This bat
     dotnet run
     ```
 
-1. Observe the output from the terminal. The status code should either be an HTTP 400 **Bad Request** or 409 **Conflict**. This occured because all items within the transaction did not share the same partition key value as the transactional batch.
+1. Observe the output from the terminal. The status code should either be an HTTP 400 **Bad Request** or 409 **Conflict**. This occurred because all items within the transaction did not share the same partition key value as the transactional batch.
 
 1. Close the integrated terminal.
 
