@@ -20,6 +20,8 @@ In this lab, you will complete the following tasks:
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
+   ![Visual Studio Code Icon](./media/vscode1.jpg)
+
 2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
     ![](media/chash.png)
