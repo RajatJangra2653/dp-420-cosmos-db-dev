@@ -13,7 +13,7 @@ In this lab, you will complete the following tasks:
 - Task 2: Send your Azure Cosmos DB for NoSQL account with sample data.
 - Task 3: Create an Azure AI Search resource.
 - Task 4: Build indexer and index for Azure Cosmos DB for NoSQL data.
-- Task 5: Validate index with example search queries.
+- Task 5: Validate the index with example search queries.
 
 ## Estimated Timing: 30 minutes
 
@@ -21,7 +21,7 @@ In this lab, you will complete the following tasks:
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
-1. Inside the LabVM, double click on the **Azure Portal** shortcut.
+1. Inside the LabVM, double-click on the **Azure Portal** shortcut.
 
     ![](media/azureportal.png)
 
@@ -47,10 +47,10 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
 
-1. Select **create** under **Azure Cosmos DB for NoSQL**. Then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values, and select **Review + create**:
+1. Select **Create** under **Azure Cosmos DB for NoSQL**. Then create a new **Azure Cosmos DB for NoSQL** account resource with the following settings, leaving all remaining settings to their default values, and select **Review + create**:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | :--- | :--- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | **Cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** |
     | **Account Name** | *Enter a globally unique name* |
@@ -69,16 +69,14 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
     1. Note the **PRIMARY KEY** field, in the notepad. You will use this **key** value later in this exercise.
 
-    1. Note the **PRIMARY CONNECTION STRING** field, in the notepad. You will use this **connection string** value later in this exercise.
-
-1. From the left-navigation menu, select **Data Explorer** from the resource menu.
+1. From the left navigation menu, select **Data Explorer** from the resource menu.
 
 1. In the **Data Explorer** pane, select **New Container**.
 
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
-    | --: | :-- |
+    | :-- | :-- |
     | **Database id** | *Create new* &vert; *``cosmicworks``* |
     | **Container id** | *``products``* |
     | **Partition key** | *``/categoryId``* |
@@ -107,10 +105,12 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 
     >**Note:** This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
 
+1. Once the Installation is completed, make sure to close the **Visual Studio Code** and re-open it to perform the below command.
+
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
     | **Option** | **Value** |
-    | --- | --- |
+    | :--- | :--- |
     | **--endpoint** | *The endpoint value you copied earlier in this lab* |
     | **--key** | *The key value you coped earlier in this lab* |
     | **--datasets** | *product* |
@@ -122,7 +122,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
     > **For example:** if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
-    >**Note**: If your getting error, close the visual studio code and reopen it and try to run the command once again.
+    >**Note**: If you're getting an error, close the visual studio code reopen it and try to run the command once again.
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
 
@@ -141,7 +141,7 @@ Before continuing with this exercise, you must first create a new Azure Cognitiv
 1. Select **+ Create a resource**, search for *AI Search*, and then create a new **Azure AI Search** account resource with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | :--- | :--- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | **cosmosdb-<inject key="DeploymentID" enableCopy="false"/>** |
     | **Name** | *Enter a globally unique name* |
@@ -169,7 +169,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 1. Configure the data source with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | :--- | :--- |
     | **Data source name** | **products-cosmossql-source (2)** |
     | **Connection string** | **Choose an existing connection of the Azure Cosmos DB for NoSQL account created earlier (3)** |
     | **Database** | **cosmicworks (4)** |
@@ -179,7 +179,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 
 1. In the **query** field, enter the following SQL query to create a materialized view of a subset of your data in the container:
 
-    ```sql
+    ```SQL
     SELECT 
         p.id, 
         p.categoryId, 
@@ -205,7 +205,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 1. In the **Customize target index** step of the wizard, configure the index with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | :--- | :--- |
     | **Index name** | *``products-index``* |
     | **Key** | *id* |
 
@@ -218,7 +218,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 1. In the **Create an indexer** step of the wizard, configure the indexer with the following settings, leaving all remaining settings to their default values:
 
     | **Setting** | **Value** |
-    | ---: | :--- |
+    | :--- | :--- |
     | **Name** | *``products-cosmosdb-indexer``* |
     | **Schedule** | *Hourly* |
 
@@ -226,7 +226,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 
     >**Note:** You may be required to dismiss a survey popup after creating your first indexer.
 
-1. From the **AI Search** resource blade, from the left navigation menu, select **Indexers (1)** tab to observe the result of your first indexing operation.
+1. From the **AI Search** resource blade, from the left navigation menu, select the **Indexers (1)** tab to observe the result of your first indexing operation.
 
 1. Wait for the **products-cosmosdb-indexer** indexer to have a status of **Success (2)** before continuing with this task.
 
@@ -244,7 +244,7 @@ Now that your materialized view of the Azure Cosmos DB for NoSQL data is in the 
 
 1. In the **Search explorer** tab, select the **View** pulldown and then select the **JSON view**.
 
-1. Notice the in the **JSON query editor** the syntax of the default JSON search query that returns all possible results using a **\*** (wildcard) operator.
+1. Notice in the **JSON query editor** the syntax of the default JSON search query that returns all possible results using a **\*** (wildcard) operator.
 
    ```json
    {
@@ -336,7 +336,7 @@ Now that your materialized view of the Azure Cosmos DB for NoSQL data is in the 
 In this lab, you have completed:
 
 - Created an Azure Cosmos DB for NoSQL account.
-- Sended your Azure Cosmos DB for NoSQL account with sample data.
+- Send your Azure Cosmos DB for NoSQL account with sample data.
 - Created an Azure AI Search resource.
 - Built indexer and index for Azure Cosmos DB for NoSQL data.
 - Validated index with example search queries.
