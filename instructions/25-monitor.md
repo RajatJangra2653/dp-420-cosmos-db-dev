@@ -25,7 +25,7 @@ In this lab, you will complete the following tasks:
 
    ![Visual Studio Code Icon](./media/vscode1.jpg)
 
-2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally select **Install (4)** on the extension. 
 
     ![](media/chash.png)
 
@@ -33,7 +33,11 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-    >**Note:** On **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust authors**.
+    ![](media/lab12-1.png)
+
+    >**Note:** On **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust the authors**.
+
+      ![06](media/lab12-2.png)
 
 ### Task 2: Create an Azure Cosmos DB for NoSQL account
 
@@ -61,11 +65,19 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
+1. Search for *Azure Cosmos DB(1)*, select **Azure Cosmos DB(2)**.
 
-1. Select **create** under **Azure Cosmos DB for NoSQL**.
+     ![05](media/lab12-3.png)
+
+1. Select **+ Create** in **Azure Cosmos DB** page.
+
+     ![05](media/lab12-4.png)
+
+1. In Create an Azure Cosmos DB account page, select **Create** under **Azure Cosmos DB for NoSQL** tab.
+
+     ![05](media/lab12-5.png)
 
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab:
 
@@ -79,17 +91,19 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Apply Free Tier Discount** | *`Do Not Apply`* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Uncheck* |
 
+     ![05](media/lab12-6.png)
+
 1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
+1. Click on **Go to resource** to go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane under settings from left menu.
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
     1. Record the value of the **URI** field. You'll use this **endpoint** value later in this exercise.
 
-    1. Record the value of the **PRIMARY KEY** field. You'll use this **key** value later in this exercise.
+    1. Record the value of the **PRIMARY KEY** field by selecting show primary key icon. You'll use this **key** value later in this exercise.
 
 1. Minimize, but don't close your browser window. We'll come back to the Azure portal a few minutes after we start a background workload in the next steps.
 
@@ -104,13 +118,13 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
 
     >**Note:** This command will open the terminal with the starting directory already set to the **25-monitor** folder.
 
-1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
+1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet by running the following command:
 
     ```
     dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
     ```
 
-1. Add the [Newtonsoft.Json][nuget.org/packages/Newtonsoft.Json/13.0.1] package from NuGet using the following command:
+1. Add the [Newtonsoft.Json][nuget.org/packages/Newtonsoft.Json/13.0.1] package from NuGet by running the following command:
 
     ```
     dotnet add package Newtonsoft.Json --version 13.0.1
