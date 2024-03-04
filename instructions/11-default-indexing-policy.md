@@ -81,9 +81,9 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
 
    ![Visual Studio Code Icon](./media/vscode1.jpg)
 
-1. In **Visual Studio Code**, open the **View** menu and then select **Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, open the **Terminal** menu by selecting **... (ellipses) (1)** > **Terminal (2)** > **New Terminal (3)** to open a new terminal with your existing instance.
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+    ![06](media/terminal.png)
 
 1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
 
