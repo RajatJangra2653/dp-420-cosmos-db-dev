@@ -27,7 +27,7 @@ In this lab, you will complete the following tasks:
 
 2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar select the **extension (3)** that shows up and finally select **Install (4)** on the extension. 
 
-    ![](media/C-hash-extension.png)
+    ![](media/visualstudioo.png)
 
 3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
