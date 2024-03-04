@@ -21,6 +21,8 @@ In this lab, you will complete the following tasks:
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
+   ![Visual Studio Code Icon](./media/vscode1.jpg)
+
 2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
     ![](media/chash.png)
@@ -29,14 +31,18 @@ In this lab, you will complete the following tasks:
 
 4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
+   ![](media/lab12-1.png)
+
     >**Note:** On **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust authors**.
+
+    ![06](media/lab12-2.png)
 
 
 ### Task 2: Create an Azure Cosmos DB for NoSQL account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.
 
-1. Inside the LabVM, double click on the **Azure Portal** shortcut.
+1. Inside the LabVM, double-click on the **Azure Portal** shortcut.
 
     ![](media/azureportal.png)
 
@@ -62,7 +68,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Select **+ Create a resource**, search for *Cosmos DB*, select **Azure Cosmos DB**.
 
-1. Select **create** under **Azure Cosmos DB for NoSQL**.
+1. Select **Create** under **Azure Cosmos DB for NoSQL**.
 
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab:
 
