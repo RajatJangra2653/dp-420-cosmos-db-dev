@@ -29,7 +29,7 @@ In this lab, you will complete the following tasks:
 
 3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+4. Select the folder **dp-420-cosmos-db-dev-main** and click on **Select Folder**.
 
    ![](media/lab12-1.png)
 
@@ -95,44 +95,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Without closing the browser window, open **Visual Studio Code**.
 
-### Task 3: Send the Azure Cosmos DB for NoSQL account with data
-
-The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB for NoSQL account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
-
-1. In **Visual Studio Code**, open the **Terminal** menu and then select **New Terminal** to open a new terminal instance.
-
-1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
-
-    ```
-    dotnet tool install cosmicworks --global --version 1.*
-    ```
-
-    > &#128161; This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
-
-1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
-
-    | **Option** | **Value** |
-    | ---: | :--- |
-    | **--endpoint** | *The endpoint value you copied earlier in this lab* |
-    | **--key** | *The key value you copied earlier in this lab* |
-    | **--datasets** | *product* |
-
-    ```
-    cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
-    ```
-
-    >**Note:** For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
-    > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
-
-1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
-
-1. Close the integrated terminal.
-
 ### Task 3: Seed the Azure Cosmos DB SQL API account with data
 
 The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB SQL API account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
 
-1. In **Visual Studio Code**, open the **Terminal** menu and then select **New Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, open the **Terminal** menu by selecting **... (ellipses) (1)** > **Terminal (2)** > **New Terminal (3)** to open a new terminal with your existing instance.
+
+    ![06](media/terminal.png)
 
 1. Install the [cosmicworks][nuget.org/packages/cosmicworks] command-line tool for global use on your machine.
 
@@ -141,6 +110,8 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     ```
 
     >**Note:** This command may take a couple of minutes to complete. This command will output the warning message (*Tool 'cosmicworks' is already installed') if you have already installed the latest version of this tool in the past.
+
+1. Once the Installation is completed, make sure to close the **Visual Studio Code** and re-open it to perform the below command.
 
 1. Run cosmicworks to seed your Azure Cosmos DB account with the following command-line options:
 
@@ -159,7 +130,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
    
-   >**Note**: If your getting error, close the visual studio code and reopen it and try to run the command once again.
+   >**Note**: If you're getting an error, close the visual studio code reopen it and try to run the command once again.
 
 1. Close the integrated terminal.
 
