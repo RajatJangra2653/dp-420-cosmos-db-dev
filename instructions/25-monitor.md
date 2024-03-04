@@ -67,7 +67,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
-1. Search for *Azure Cosmos DB (1)*, select **Azure Cosmos DB(2)**.
+1. Search for *Azure Cosmos DB (1)*, select **Azure Cosmos DB (2)**.
 
      ![05](media/lab12-3.png)
 
