@@ -28,9 +28,13 @@ In this lab, you will complete the following tasks:
 
 3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+4. Select the folder **dp-420-cosmos-db-dev-main** and click on **Select Folder**.
+
+   ![](media/lab12-1.png)
 
     >**Note:** On **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust authors**.
+
+    ![06](media/lab12-2.png)
 
 ### Task 2: Create an Azure Cosmos DB for NoSQL account
 
