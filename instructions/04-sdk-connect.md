@@ -109,7 +109,7 @@ The NuGet website contains a searchable index of packages that are available to 
 
 1. Select the **.NET CLI** tab to observe the command required to import the latest version of this library into a .NET project.
 
-    >**Note**: No need to record this command. You will use a specific version of the library later in this exercise.
+     >**Note**: No need to record this command. You will use a specific version of the library later in this exercise.
 
 1. Close your web browser window or tab.
 
