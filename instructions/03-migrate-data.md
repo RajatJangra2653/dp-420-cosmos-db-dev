@@ -147,6 +147,8 @@ To accompany the products container, you will create a **flatproducts** containe
     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
+    <validation step="4f0ebcc4-a71c-450a-b7e0-5099feed58d5" />
+
 ### Task 2: Create Azure Data Factory resource
 
 Now that the Azure Cosmos DB for NoSQL resources are in place, you will create an Azure Data Factory resource and configure all of the necessary components and connections to perform a one-time data movement from one NoSQL API container to another to extract data, transform it, and load it to another NoSQL API container
@@ -261,6 +263,8 @@ Now that the Azure Cosmos DB for NoSQL resources are in place, you will create a
     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
+   <validation step="e513aa34-ca14-4de5-a2f3-139f051e5c35" />
+   
 ### Review
 
 In this lab, you have completed:
