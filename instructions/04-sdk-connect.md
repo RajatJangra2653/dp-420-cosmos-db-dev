@@ -121,7 +121,7 @@ The NuGet website contains a searchable index of packages that are available to 
 
 1. Open the context menu for the **04-sdk-connect** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-      >**Note**: This command will open the terminal with the starting directory already set to the **04-sdk-connect** folder.
+   >**Note**: This command will open the terminal with the starting directory already set to the **04-sdk-connect** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
