@@ -136,6 +136,7 @@ To accompany the products container, you will create a **flatproducts** containe
     | **Partition key** | *`/category`* |
     | **Container throughput (autoscale)** | *Manual* |
     | **RU/s** | *`400`* |
+    | **Git configuration** | *Configure Git later* |
 
 1. Back in the **Data Explorer** pane, expand the **cosmicworks** database node and then observe the **flatproducts** container node within the hierarchy.
 
