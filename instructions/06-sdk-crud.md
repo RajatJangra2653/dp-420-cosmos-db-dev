@@ -93,6 +93,8 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
+    <validation step="185fcc24-d57e-4db3-a26d-1b9d4b61dbf2" />
+
 ### Task 2: Connect to the Azure Cosmos DB NoSQL API account from the SDK
 
 Using the credentials from the newly created account, you will connect with the SDK classes and create a new database and container instance. Then, you will use the Data Explorer to validate that the instances exist in the Azure portal.
@@ -190,6 +192,8 @@ Using the credentials from the newly created account, you will connect with the 
     > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+
+    <validation step="efd4c72c-608a-423e-97eb-a3700baca703" />
 
 ### Task 3: Perform create and read point operations on items with the SDK
 
