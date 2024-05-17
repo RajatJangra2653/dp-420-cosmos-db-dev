@@ -51,9 +51,9 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
    
      ![05](media/05.png)
      
-        >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
+      >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
 
-        ![06](media/06.png)
+      ![06](media/06.png)
   
 1. If you see the pop-up **Stay Signed in?**, click No
 
@@ -119,15 +119,17 @@ The NuGet website contains a searchable index of packages that are available to 
      
 1. Open the **Visual Studio Code**.
 
-1. Open the context menu for the **04-sdk-connect** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, right-click on the **04-sdk-connect** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
+
+   ![06](media/2.png)
 
    >**Note**: This command will open the terminal with the starting directory already set to the **04-sdk-connect** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
-    ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.*
-    ```     
+   ```
+   dotnet add package Microsoft.Azure.Cosmos --version 3.*
+   ```     
 1. Close the integrated terminal.
 
 ### Task 5: Use the Microsoft.Azure.Cosmos library
@@ -140,67 +142,67 @@ Once the Azure Cosmos DB library from the Azure SDK for .NET has been imported, 
 
 1. Add using blocks for the built-in **System** and **System.Linq** namespaces:
    
-    ```
-    using System;
-    using System.Linq;
-    ```
+   ```
+   using System;
+   using System.Linq;
+   ```
 1. Add a using block for the [Microsoft.Azure.Cosmos][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos] namespace:
    
-    ```
-    using Microsoft.Azure.Cosmos;
-    ```
+   ```
+   using Microsoft.Azure.Cosmos;
+   ```
 1. Add a **string** variable named **endpoint** with its value set to the **endpoint** of the Azure Cosmos DB account you created earlier.
    
-    ```
-    string endpoint = "<cosmos-endpoint>";
-    ```
-    >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+   ```
+   string endpoint = "<cosmos-endpoint>";
+   ```
+   >**Note**: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Add a **string** variable named **key** with its value set to the **key** of the Azure Cosmos DB account you created earlier.
    
-    ```
-    string key = "<cosmos-key>";
-    ```
-    >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+   ```
+   string key = "<cosmos-key>";
+   ```
+   >**Note**: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. Add a new variable named **client** of type [CosmosClient][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient] using the **endpoint** and **key** variables in the constructor:
    
-    ```
-    CosmosClient client = new (endpoint, key);
-    ```
+   ```
+   CosmosClient client = new (endpoint, key);
+   ```
 1. Add a new variable named **account** of type [AccountProperties][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.accountproperties] using the asynchronous result of invoking the [ReadAccountAsync][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient.readaccountasync] method of the **client** variable:
    
-    ```
-    AccountProperties account = await client.ReadAccountAsync();
-    ```
+   ```
+   AccountProperties account = await client.ReadAccountAsync();
+   ```
 1. Use the built-in **Console.WriteLine** static method to print the [Id][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.accountproperties.id] property of the AccountProperties class with a header titled **Account Name**:
- 
-    ```
-    Console.WriteLine($"Account Name:\t{account.Id}");
-    ```
+
+   ```
+   Console.WriteLine($"Account Name:\t{account.Id}");
+   ```
    
 1. Use the built-in **Console.WriteLine** static method to query the [WritableRegions][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.accountproperties.writableregions] property of the AccountProperties class and then print the [Name][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.accountregion.name] property of the first result with a header titled **Primary Region**:
     
-    ```
-    Console.WriteLine($"Primary Region:\t{account.WritableRegions.FirstOrDefault()?.Name}");
-    ```
+   ```
+   Console.WriteLine($"Primary Region:\t{account.WritableRegions.FirstOrDefault()?.Name}");
+   ```
 1. Once you are done, your code file should now include:
    
-    ```
-    using System;
-    using System.Linq;
+   ```
+   using System;
+   using System.Linq;
     
-    using Microsoft.Azure.Cosmos;
+   using Microsoft.Azure.Cosmos;
 
-    string endpoint = "<cosmos-endpoint>";
-    string key = "<cosmos-key>";
+   string endpoint = "<cosmos-endpoint>";
+   string key = "<cosmos-key>";
 
-    CosmosClient client = new (endpoint, key);
+   CosmosClient client = new (endpoint, key);
 
-    AccountProperties account = await client.ReadAccountAsync();
+   AccountProperties account = await client.ReadAccountAsync();
 
-    Console.WriteLine($"Account Name:\t{account.Id}");
-    Console.WriteLine($"Primary Region:\t{account.WritableRegions.FirstOrDefault()?.Name}");
+   Console.WriteLine($"Account Name:\t{account.Id}");
+   Console.WriteLine($"Primary Region:\t{account.WritableRegions.FirstOrDefault()?.Name}");
    ```
 1. **Save** the **script.cs** code file.
 
@@ -208,13 +210,13 @@ Once the Azure Cosmos DB library from the Azure SDK for .NET has been imported, 
 
 Now that the .NET code to connect to the Azure Cosmos DB SQL API account is complete, you can test the script. This script will print the name of the account, and the name of the first writable region. When you created the account, you specified a location and you should expect to see that same location value printed as the result of this script.
 
-1. In **Visual Studio Code**, open the context menu for the **04-sdk-connect** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
+1. In **Visual Studio Code**, right-click on the **04-sdk-connect** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
 1. Build and run the project using the [dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run] command:
 
-    ```
-    dotnet run
-    ```
+   ```
+   dotnet run
+   ```
 1. The script will now output the name of the account, and the first writable region. For example, if you named the account **sql-<inject key="DeploymentID" enableCopy="false"/>**, and the first writable region was **West US 3**.
 
 1. Close the integrated terminal.

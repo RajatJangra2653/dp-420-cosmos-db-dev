@@ -84,8 +84,10 @@ The **Microsoft.Azure.Cosmos** library has already been pre-installed in the .NE
 
 1. **Save** the **script.cs** code file.
 
-1. In **Visual Studio Code**, open the context menu for the **05-sdk-offline** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
-
+1. In **Visual Studio Code**, right-click on **05-sdk-offline** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
+    
+    ![06](media/1.png)
+    
     >**Note**: This command will open the terminal with the starting directory already set to the **05-sdk-offline** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
