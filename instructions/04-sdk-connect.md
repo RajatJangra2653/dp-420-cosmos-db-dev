@@ -108,9 +108,9 @@ The NuGet website contains a searchable index of packages that are available to 
 1. Click on the link **.Net Standard 2.0**.
 
 1. Select the **.NET CLI** tab to observe the command required to import the latest version of this library into a .NET project.
-
+   
      >**Note**: No need to record this command. You will use a specific version of the library later in this exercise.
-
+     
 1. Close your web browser window or tab.
 
 ### Task 4: Import the Microsoft.Azure.Cosmos library into a .NET project
@@ -121,14 +121,13 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
 
 1. Open the context menu for the **04-sdk-connect** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    >**Note**: This command will open the terminal with the starting directory already set to the **04-sdk-connect** folder.
+     >**Note**: This command will open the terminal with the starting directory already set to the **04-sdk-connect** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
     ```
     dotnet add package Microsoft.Azure.Cosmos --version 3.*
-    ```
-
+    ```     
 1. Close the integrated terminal.
 
 ### Task 5: Use the Microsoft.Azure.Cosmos library
