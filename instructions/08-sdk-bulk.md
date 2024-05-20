@@ -137,6 +137,14 @@ In this lab, you will complete the following tasks:
 
 1. Close the integrated terminal.
 
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+
+    <validation step="8b577a01-0d31-4606-8273-71efbf77241f" />
+
 ### Task 2: Bulk inserting twenty-five thousand documents
 
 Let's "go for the gusto" and try to insert a lot of documents to see how this works. In our internal testing, this can take approximately 1-2 minutes if the lab virtual machine and Azure Cosmos DB NoSQL API account are relatively close to each other geographically speaking.
@@ -270,6 +278,14 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
 1. Close the integrated terminal.
 
 1. Close **Visual Studio Code**.
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+
+    <validation step="5bf085fc-efec-4bde-9f59-38074db269a2" />
 
 ### Task 3: Observe the results
 
