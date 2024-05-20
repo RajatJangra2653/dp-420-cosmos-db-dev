@@ -132,6 +132,8 @@ In this lab, you will complete the following tasks:
     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
+    <validation step="9388db32-62bd-416d-a11e-beba00d5bd19" />
+
 ### Task 2: Creating a transactional batch
 
 First, let’s create a simple transactional batch that makes two fictional products. This batch will insert a worn saddle and a rusty handlebar into the container with the same “used accessories” category identifier. Both items have the same logical partition key, ensuring that we will have a successful batch operation.
@@ -224,6 +226,8 @@ First, let’s create a simple transactional batch that makes two fictional prod
     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
+    <validation step="c1661fb4-6a05-4936-b3ef-79573f26117e" />
+    
 ### Task 3: Creating an errant transactional batch
 
 Now, let’s create a transactional batch that will error purposefully. This batch will attempt to insert two items that have different logical partition keys. We will create a flickering strobe light in the “used accessories” category and a new helmet in the “pristine accessories” category. By definition, this should be a bad request and return an error when performing this transaction.
@@ -335,6 +339,8 @@ Now, let’s create a transactional batch that will error purposefully. This bat
     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
+    <validation step="8a4cd53d-7379-400c-9b3a-905f14442e94" />
+    
 ### Review
 
 In this lab, you have completed:
