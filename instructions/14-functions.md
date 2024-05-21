@@ -147,8 +147,8 @@ Before you create the *Azure Function Application*, you will need to enable an *
     | **Name** | *``lab14appinsight``* |
     | **Location** | *Choose any available region* |
     | **Log Analytics Workspace** | *lab14laworkspace* |
-
-You should now be able to monitor your application function.
+   
+1. You should now be able to monitor your application function.
 
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
