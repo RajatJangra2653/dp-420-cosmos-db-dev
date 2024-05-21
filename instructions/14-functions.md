@@ -169,6 +169,7 @@ Before you can begin writing code, you will need to create the Azure Functions r
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource group** | *Select an existing or create a new resource group* |
     | **Name** | *functionapp-<inject key="DeploymentID" enableCopy="false"/>* |
+    | **Publish** | *Code* |
     | **Runtime stack** | *.NET* |
     | **Version** | *6 (LTS) in-process model* |
     | **Region** | *Choose any available region* |
