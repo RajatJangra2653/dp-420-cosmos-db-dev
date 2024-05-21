@@ -107,6 +107,14 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Return to **Visual Studio Code**.
 
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+
+    <validation step="0e380f12-d3fe-4670-a788-3fa3a3687768" />
+    
 ### Task 3: Run the test .NET application using the default indexing policy
 
 This lab has a pre-built test .NET application that will take a large JSON object and create a new item in the Azure Cosmos DB for NoSQL container. Once the single write operation is complete, the application will output the item’s unique identifier and RU charge to the console window.
@@ -166,8 +174,14 @@ This lab has a pre-built test .NET application that will take a large JSON objec
 1. Leave the integrated terminal open.
 
     >**Note:** You will re-use this terminal later in this exercise. It's important to leave the terminal open so you can compare the original and updated RU charges.
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
-
+    <validation step="e487cd8b-7edb-4b80-a103-3036d37a92b4" />
+    
 ### Task 4: Update the indexing policy and rerun the .NET application
 
 This lab scenario will assume that our future queries focus primarily on the name and categoryName properties. To optimize for our large JSON item, you will exclude all other fields from the index by creating an indexing policy that starts by excluding all paths. Then the policy will selectively include specific paths.
