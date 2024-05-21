@@ -85,6 +85,14 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
     ![06](media/cosmosdbproducts.png)
 
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+    <validation step="527d4167-c9f9-49aa-9489-c384ed66b37f" />
+
 ### Task 2: Send your Azure Cosmos DB for NoSQL account with sample data
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container. The tool will then create a set of items that you will observe using the change feed processor running in your terminal window.
@@ -130,6 +138,14 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 
 1. Close **Visual Studio Code**.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+<validation step="6dc66a44-b1ce-4dc5-91f8-35180452aaaa" />
+
 ### Task 3: Create an Azure AI Search resource
 
 Before continuing with this exercise, you must first create a new Azure Cognitive Search instance.
@@ -155,6 +171,14 @@ Before continuing with this exercise, you must first create a new Azure Cognitiv
 1. Wait for the deployment task to complete before continuing with this task.
 
 1. Go to the newly created **Azure AI Search** account resource.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+<validation step="0e28166a-b18c-4b9b-8f4b-0b4d113890bc" />
 
 ### Task 4: Build indexer and index for Azure Cosmos DB for NoSQL data
 
