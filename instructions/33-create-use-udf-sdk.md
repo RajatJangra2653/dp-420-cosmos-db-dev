@@ -95,7 +95,6 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Without closing the browser window, open **Visual Studio Code**.
 
-
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
     > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
