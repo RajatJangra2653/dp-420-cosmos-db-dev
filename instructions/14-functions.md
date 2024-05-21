@@ -109,6 +109,14 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Return to the **Home** of the Azure portal.
 
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+    <validation step="8ec90c15-4d62-42be-8eff-76a215f8689b" />
+
 ## Task 2: Create Application Insight
 
 Before you create the *Azure Function Application*, you will need to enable an *Azure Application Insight* so you can monitor the application function. The Application Insight will first need a *Log Analytics workspace*.
@@ -141,6 +149,14 @@ Before you create the *Azure Function Application*, you will need to enable an *
     | **Log Analytics Workspace** | *lab14laworkspace* |
 
 You should now be able to monitor your application function.
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+    <validation step="d6eb6de3-1d82-40ff-a083-c08a5887fd64" />
 
 ## Task 3: Create an Azure Function app and Azure Cosmos DB-triggered function
 
@@ -179,6 +195,14 @@ Before you can begin writing code, you will need to create the Azure Functions r
     | **Collection name** | *``products``* |
     | **Collection name for leases** | *``productslease``* |
     | **Create lease collection if it does not exist** | *No* |
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+    <validation step="3d866562-569f-41c5-8f1c-286e16e92767" />
 
 ## Task 4: Implement function code in .NET
 
