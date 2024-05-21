@@ -107,6 +107,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Minimize, but don't close your browser window. We'll come back to the Azure portal a few minutes after we start a background workload in the next steps.
 
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+    <validation step="f7d09acb-1ee3-4b09-97b4-04f9af7a3aa9" />
 
 ### Task 3: Import the Microsoft.Azure.Cosmos and Newtonsoft.Json libraries into a .NET script
 
@@ -168,6 +175,14 @@ We're now ready to run a workload to monitor its usage of the Azure Cosmos DB Ac
     > &#128221; You will notice a couple of warnings in yellow since the compiler detects that the script runs many operations synchronously and does not wait for a reply of the operations. You can ignore these warnings since that is the expected behaviour to run multiple SQL scripts simultaneously.
 
     >**Note**: Visual Studio Code might crash after running the above command, you can rerun the command and continue to the next task.
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+    <validation step="ff1fcfa9-5e37-4665-85cc-9628e4ffb657" />
+
 
 ### Task 5: Use Azure Monitor to Analyze the Azure Cosmos DB account usage
 
