@@ -95,6 +95,15 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Without closing the browser window, open **Visual Studio Code**.
 
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+    <validation step="74eda0bf-4b7b-47d2-9d83-0bb7e6bc8ffa" />
+
 ### Task 3: Seed the Azure Cosmos DB SQL API account with data
 
 The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB SQL API account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
@@ -133,6 +142,14 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
    >**Note**: If you're getting an error, close the visual studio code reopen it and try to run the command once again.
 
 1. Close the integrated terminal.
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+    <validation step="dd92f2ca-c14f-4181-8374-d60868d94589" />
 
 ### Task 4: Create a user-defined function (UDF) using the .NET SDK
 
@@ -239,6 +256,14 @@ The [Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] 
 1. Close the integrated terminal.
 
 1. Close **Visual Studio Code**.
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
+    
+    <validation step="01aa9434-9775-4fd0-baa1-1dcfc60bdba6" />
 
 ### Task 5: Test the UDF using the Data Explorer
 
