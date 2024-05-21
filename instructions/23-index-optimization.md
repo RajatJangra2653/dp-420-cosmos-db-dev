@@ -126,9 +126,9 @@ This lab has a pre-built test .NET application that will take a large JSON objec
 
 1. Build the project using the [dotnet build][docs.microsoft.com/dotnet/core/tools/dotnet-build] command:
 
-    ```
-    dotnet build
-    ```
+   ```
+   dotnet build
+   ```
     > **Note:** You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variables in this task.
 
 1. Close the integrated terminal.
@@ -137,16 +137,16 @@ This lab has a pre-built test .NET application that will take a large JSON objec
 
 1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created earlier.
   
-    ```
-    string endpoint = "<cosmos-endpoint>";
-    ```
+   ```
+   string endpoint = "<cosmos-endpoint>";
+   ```
     > **For example:** if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created earlier.
 
-    ```
-    string key = "<cosmos-key>";
-    ```
+   ```
+   string key = "<cosmos-key>";
+   ```
     > **For example:** if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. **Save** the **script.cs** code file.
@@ -155,17 +155,17 @@ This lab has a pre-built test .NET application that will take a large JSON objec
 
 1. Build and run the project using the **[dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run]** command:
 
-    ```
-    dotnet run
-    ```
+   ```
+   dotnet run
+   ```
 
 1. Observe the output from the terminal. The item's unique identifier and the operation's request charge (in RUs) should be printed to the console.
 
 1. Build and run the project at least two more times using the **[dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run]** command. Observe the RU charge in the console output:
 
-    ```
-    dotnet run
-    ```
+   ```
+   dotnet run
+   ```
 
 1. Leave the integrated terminal open.
 
@@ -192,8 +192,8 @@ This lab scenario will assume that our future queries focus primarily on the nam
 
 1. Observe the default indexing policy:
 
-    ```
-    {
+   ```
+   {
       "indexingMode": "consistent",
       "automatic": true,
       "includedPaths": [
@@ -206,13 +206,13 @@ This lab scenario will assume that our future queries focus primarily on the nam
           "path": "/\"_etag\"/?"
         }
       ]
-    }    
-    ```
+   }    
+   ```
 
 1. Replace the indexing policy with this modified JSON object and then **Save** the changes:
 
-    ```
-    {
+   ```
+   {
       "indexingMode": "consistent",
       "automatic": true,
       "includedPaths": [
@@ -231,16 +231,16 @@ This lab scenario will assume that our future queries focus primarily on the nam
           "path": "/\"_etag\"/?"
         }
       ]
-    }
-    ```
+   }
+   ```
 
 1. Return to **Visual Studio Code**. Return to the open terminal.
 
 1. Build and run the project at least two more times using the **[dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run]** command. Observe the new RU charge in the console output, which should be significantly less than the original charge. Since you are not indexing all the item properties, your writes' cost is significantly lower when updating the index. This, however, can cost you greatly if your reads will need to query on properties that are not indexed.  
 
-    ```
-    dotnet run
-    ```
+   ```
+   dotnet run
+   ```
 
     > **Note:** If you are not seeing an updated RU charge, you may need to wait a couple of minutes.
 
@@ -250,11 +250,11 @@ This lab scenario will assume that our future queries focus primarily on the nam
 
 1. Replace the indexing policy with this modified JSON object and then **Save** the changes:
 
-    ```
-    {
-      "indexingMode": "none"
-    }
-    ```
+   ```
+   {
+     "indexingMode": "none"
+   }
+   ```
 
 1. Close your web browser window or tab.
 
@@ -262,9 +262,9 @@ This lab scenario will assume that our future queries focus primarily on the nam
 
 1. Build and run the project at least two more times using the **[dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run]** command. Observe the new RU charge in the console output, which should be much less than the original charge.  How can this be? Since this script measures the RUs when you write the item, by choosing to have no index, there is no overhead in maintaining that index. The flip side to this is that while your writes will generate fewer RUs, your reads will be very costly.
 
-    ```
-    dotnet run
-    ```
+   ```
+   dotnet run
+   ```
 
     > **Note:** If you are not seeing an updated RU charge, you may need to wait a couple of minutes.
 
