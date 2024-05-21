@@ -54,7 +54,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
    
      ![05](media/05.png)
      
-        >**Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
+        > **Note:** If you see the **Help us protect your account** dialog box, then select the **Skip for now** option.
 
         ![06](media/06.png)
   
@@ -75,7 +75,6 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Serverless* |
-
 
 1. Click on **Review + Create** and after validation get Success click on **Create**.
    
@@ -123,15 +122,14 @@ This lab has a pre-built test .NET application that will take a large JSON objec
 
 1. Right-click on the **23-index-optimization** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    >**Note:** This command will open the terminal with the starting directory already set to the **23-index-optimization** folder.
+    > **Note:** This command will open the terminal with the starting directory already set to the **23-index-optimization** folder.
 
 1. Build the project using the [dotnet build][docs.microsoft.com/dotnet/core/tools/dotnet-build] command:
 
     ```
     dotnet build
     ```
-
-    >**Note:** You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variables in this task.
+    > **Note:** You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variables in this task.
 
 1. Close the integrated terminal.
 
@@ -142,16 +140,14 @@ This lab has a pre-built test .NET application that will take a large JSON objec
     ```
     string endpoint = "<cosmos-endpoint>";
     ```
-
-    >**For example:** if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    > **For example:** if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created earlier.
 
     ```
     string key = "<cosmos-key>";
     ```
-
-    >**For example:** if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    > **For example:** if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. **Save** the **script.cs** code file.
 
@@ -173,7 +169,7 @@ This lab has a pre-built test .NET application that will take a large JSON objec
 
 1. Leave the integrated terminal open.
 
-    >**Note:** You will re-use this terminal later in this exercise. It's important to leave the terminal open so you can compare the original and updated RU charges.
+    > **Note:** You will re-use this terminal later in this exercise. It's important to leave the terminal open so you can compare the original and updated RU charges.
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
     > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -270,7 +266,7 @@ This lab scenario will assume that our future queries focus primarily on the nam
     dotnet run
     ```
 
-    >**Note:** If you are not seeing an updated RU charge, you may need to wait a couple of minutes.
+    > **Note:** If you are not seeing an updated RU charge, you may need to wait a couple of minutes.
 
 1. Close **Visual Studio Code**.
 
