@@ -162,7 +162,7 @@ Before you create the *Azure Function Application*, you will need to enable an *
 
 Before you can begin writing code, you will need to create the Azure Functions resource and its dependent resources (Application Insights, Storage) using the creation wizard.
 
-1. Select **+ Create a resource**, search for *Functions*, and then create a new **Function App** account resource with the following settings, leaving all remaining settings to their default values and then select **Review + Create** and then select **Create**:
+1. Select **+ Create a resource**, search for *Functions*, and on create a new **Create function App** page, select **App Service** then create a function app account resource with the following settings, leaving all remaining settings to their default values and then select **Review + Create** and then select **Create**:
 
     | **Setting** | **Value** |
     | :--- | :--- |
