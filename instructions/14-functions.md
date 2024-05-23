@@ -183,6 +183,8 @@ Before you can begin writing code, you will need to create the Azure Functions r
 
 1. In the **Functions** pane, select **Create function**.
 
+    ![04](media/3.png)
+
 1. In the **Create function** popup, create a new function with the following settings, leaving all remaining settings to their default values and select **Create**:
 
     | **Setting** | **Value** |

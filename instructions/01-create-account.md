@@ -16,6 +16,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab1.png)
+
 ## Exercise 1: Create an Azure Cosmos DB SQL API account
 
 ### Task 1: Create a new Azure Cosmos DB account
