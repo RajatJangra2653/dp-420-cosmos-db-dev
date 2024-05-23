@@ -13,6 +13,10 @@ In this lab, you will complete the following tasks:
 
 ### Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab3.png)
+
 ### Task 1: Create and seed your Azure Cosmos DB for NoSQL account
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container at **4,000** request units per second (RU/s). Once created, you will adjust the throughput down to 400 RU/s.

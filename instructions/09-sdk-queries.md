@@ -8,7 +8,6 @@ This library has special functionality to make it easier to query Azure Cosmos D
 
 In this lab, you'll use an asynchronous stream to iterate over a large result set returned from Azure Cosmos DB for NoSQL. You will use the .NET SDK to query and iterate over results.
 
-
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
@@ -18,6 +17,10 @@ In this lab, you will complete the following tasks:
 - Task 4: Iterate over the results of a SQL query using the SDK.
 
 ## Estimated Timing: 30 minutes
+
+## Architecture Diagram
+
+![image](architecturedia/lab9.png)
 
 ### Task 1: Prepare your development environment
 

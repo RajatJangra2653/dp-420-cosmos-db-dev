@@ -15,6 +15,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 60 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab14.png)
+
 ## Task 1: Create an Azure Cosmos DB for NoSQL account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **NoSQL API**). Once the Azure Cosmos DB for NoSQL account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB for NoSQL account using the Azure SDK for .NET or any other SDK of your choice.

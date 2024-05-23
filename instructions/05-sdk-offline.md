@@ -13,9 +13,12 @@ In this lab, you will complete the following tasks:
 - Task 2: Connect to the emulator from the SDK.
 - Task 3: View the changes in the emulator.
 - Task 4: Create and view a new container.
-- Task 5: Stop the Azure Cosmos DB Emulator.
 
 ## Estimated Timing: 30 minutes
+
+## Architecture Diagram
+
+![image](architecturedia/lab5.png)
 
 ### Task 1: Start the Azure Cosmos DB Emulator
 

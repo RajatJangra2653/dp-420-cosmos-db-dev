@@ -14,6 +14,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 60 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab20.png)
+
 ## Exercise 1: Connect to different regions with the Azure Cosmos DB SQL API SDK
 
 When you enable geo-redundancy for an Azure Cosmos DB SQL API account, you can then use the SDK to read data from regions in any order you configure. This technique is beneficial when you distribute your read requests across all of your available read regions.

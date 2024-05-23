@@ -12,9 +12,12 @@ In this lab, you will complete the following tasks:
 - Task 1: Prepare your development environment.
 - Task 2: Seed the Azure Cosmos DB SQL API account with data.
 - Task 3: Paginate through small result sets of a SQL query using the SDK.
-- Task 4: Iterate over the results of a SQL query using the SDK.
 
 ## Estimated Timing: 30 minutes
+
+## Architecture Diagram
+
+![image](architecturedia/lab10.png)
 
 ## Exercise 1: Paginate cross-product query results with the Azure Cosmos DB SQL API SDK
 
@@ -238,6 +241,5 @@ In this lab, you have completed:
 - Prepared your development environment.
 - Seeded the Azure Cosmos DB SQL API account with data.
 - Paginated through small result sets of a SQL query using the SDK.
-- Iterated over the results of a SQL query using the SDK.
 
 ### You have successfully completed the lab
