@@ -15,6 +15,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab31.png)
+
 ## Exercise 1: 
 
 ### Task 1: Author a stored procedure

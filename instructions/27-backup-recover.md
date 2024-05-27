@@ -21,6 +21,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab27.png)
+
 ## Exercise 1: Recover a database or container from a recovery point 
 
 ### Task 1: Create an Azure Cosmos DB SQL API account

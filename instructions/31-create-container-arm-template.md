@@ -17,6 +17,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab30.png)
+
 ## Exercise 1: Create an Azure Cosmos DB SQL API container using Azure Resource Manager templates
 
 ### Task 1: Prepare your development environment

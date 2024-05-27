@@ -17,6 +17,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab32.png)
+
 ### Task 1: Prepare your development environment
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
