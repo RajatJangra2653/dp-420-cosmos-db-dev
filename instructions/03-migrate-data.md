@@ -14,6 +14,10 @@ In this lab, you will complete the following tasks:
 
 ### Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab3.png)
+
 ## Exercise 1: Migrate existing data using Azure Data Factory
 
 ### Task 1: Create and seed your Azure Cosmos DB SQL API account

@@ -16,6 +16,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 60 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab21.png)
+
 ## Exercise 1: Configure consistency models in the portal and the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment

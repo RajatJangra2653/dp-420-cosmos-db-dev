@@ -15,6 +15,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab12.png)
+
 ## Exercise 1: Review the default index policy for an Azure Cosmos DB SQL API container with the portal
 
 ### Task 1: Create an Azure Cosmos DB SQL API account

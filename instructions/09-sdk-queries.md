@@ -8,7 +8,6 @@ The latest version of the .NET SDK for the Azure Cosmos DB SQL API makes it easi
 
 In this lab, you'll use an asynchronous stream to iterate over a large result set returned from Azure Cosmos DB SQL API. You will use the .NET SDK to query and iterate over results.
 
-
 ## Lab objectives
 
 In this lab, you will complete the following tasks:
@@ -18,6 +17,10 @@ In this lab, you will complete the following tasks:
 - Task 4: Iterate over the results of a SQL query using the SDK.
 
 ## Estimated Timing: 30 minutes
+
+## Architecture Diagram
+
+![image](architecturedia/lab9.png)
 
 ## Exercise 1: Execute a query with the Azure Cosmos DB SQL API SDK
 

@@ -15,6 +15,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab8.png)
+
 ## Exercise 1: Move multiple documents in bulk with the Azure Cosmos DB SQL API SDK
 
 ## Prepare your development environment

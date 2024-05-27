@@ -22,6 +22,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab28.png)
+
 ## Exercise 1: Store Azure Cosmos DB SQL API account keys in Azure Key Vault
 
 ### Task 1: Prepare your development environment

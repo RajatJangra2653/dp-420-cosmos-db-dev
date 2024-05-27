@@ -13,6 +13,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab2.png)
+
 ## Exercise 1: Configure throughput for Azure Cosmos DB SQL API with the Azure portal
 
 ### Task 1: Create a serverless account

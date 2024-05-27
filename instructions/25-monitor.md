@@ -17,6 +17,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab25.png)
+
 ## Exercise 1: Use Azure Monitor to analyze an Azure Cosmos DB SQL API account
 
 ### Task 1: Prepare your development environment

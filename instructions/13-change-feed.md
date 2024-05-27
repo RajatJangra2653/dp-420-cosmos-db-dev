@@ -14,8 +14,11 @@ In this lab, you will complete the following tasks:
 - Task 3: Implement the change feed processor in the .NET SDK.
 - Task 4: Seed your Azure Cosmos DB SQL API account with sample data.
 
-
 ## Estimated Timing: 60 minutes
+
+## Architecture Diagram
+
+![image](architecturedia/lab13.png)
 
 ## Exercise 1: Process change feed events using the Azure Cosmos DB SQL API SDK
 

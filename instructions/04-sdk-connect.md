@@ -17,6 +17,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab4.png)
+
 ## Exercise 1: Connect to Azure Cosmos DB SQL API with the SDK
 
 ### Task 1: Prepare your development environment

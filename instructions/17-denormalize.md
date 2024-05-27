@@ -15,6 +15,10 @@ In this lab, you will complete the following exercises:
 
 ## Estimated Timing: 30 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab17.png)
+
 ## Lab : Cost of denormalizing data and aggregates and using the change feed for referential integrity
 
 ## Prepare your development environment

@@ -15,8 +15,11 @@ In this lab, you will complete the following tasks:
 - Task 4: Create a user-defined function (UDF) using the .NET SDK.
 - Task 5: Test the UDF using the Data Explorer.
 
-
 ## Estimated Timing: 30 minutes
+
+## Architecture Diagram
+
+![image](architecturedia/lab32.png)
 
 ## Exercise 1: Implement and then use a UDF using the SDK
 

@@ -16,6 +16,10 @@ In this lab, you will complete the following tasks:
 
 ### Estimated Timing: 60 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab23.png)
+
 ## Exercise 1: Optimize an Azure Cosmos DB SQL API container's indexing policy for write operations
 
 ### Task 1: Prepare your development environment

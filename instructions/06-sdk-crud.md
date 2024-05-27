@@ -15,6 +15,10 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 60 minutes
 
+## Architecture Diagram
+
+![image](architecturedia/lab6.png)
+
 ## Exercise 1: Create and update documents with the Azure Cosmos DB SQL API SDK
 
 ## Prepare your development environment

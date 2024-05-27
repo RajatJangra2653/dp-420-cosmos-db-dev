@@ -16,6 +16,7 @@ In this lab, you will complete the following tasks:
 
 ## Estimated Timing: 30 minutes
 
+
 ## Exercise 1: Paginate cross-product query results with the Azure Cosmos DB SQL API SDK
 
 ### Task 1: Prepare your development environment
