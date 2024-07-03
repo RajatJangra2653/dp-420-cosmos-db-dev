@@ -32,7 +32,7 @@ In this lab, you will complete the following tasks:
 
     ![](./media/Csharp.png)
 
-3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles/dp-420-cosmos-db-dev**.
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles\dp-420-cosmos-db-dev**.
 
 4. Select the folder **06-sdk-crud** and click on **Select Folder**.
 
@@ -81,7 +81,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Wait for the deployment task to complete before continuing with this task.
 
-1. Select **Go to resources**. On the newly created **Azure Cosmos DB** account under **Settings** navigate to the **Keys** pane.
+1. Select **Go to resource**. On the newly created **Azure Cosmos DB** account under **Settings** navigate to the **Keys** pane.
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
