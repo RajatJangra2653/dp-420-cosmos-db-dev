@@ -44,7 +44,7 @@ Your environment should already have the emulator pre-installed. If not, refer t
 
 The **Microsoft.Azure.Cosmos** library has already been pre-installed in the .NET script you will use in this exercise. Further, some of the boilerplate code has already been written to save you time. You will need to update the boilerplate connection string value and write a couple of lines of code to complete the script.
 
-1. In **Visual Studio Code**, Select the file option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles/dp-420-cosmos-db-dev**
+1. In **Visual Studio Code**, Select the file option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles\dp-420-cosmos-db-dev**
 1. Select the folder **05-sdk-offline** and click on Select Folder.
 
 1. Open the **script.cs** code file within the **05-sdk-offline** folder.
