@@ -76,7 +76,7 @@ Stored procedures are authored in language-integrated JavaScript and support the
     | :--- | :--- |
     | **Database id** | *Create new* &vert; *cosmicworks* |
     | **Share throughput across containers** | *Select this option* |
-    | **Database throughput** | *Manual* &vert; *400* |
+    | **Database throughput** | *Manual* &vert; *4000* |
     | **Container id** | *products* |
     | **Indexing** | *Automatic* |
     | **Partition key** | */categoryId* |
@@ -155,7 +155,7 @@ Stored procedures are authored in language-integrated JavaScript and support the
 
     | **Setting** | **Key** | **Value** |
     | :--- | :--- | :--- |
-    | **Partition key value** | *String* | *demo* |
+    | **Enter input parameters (if any)** | *String* | *demo* |
 
 1. Observe the empty result. While the stored procedure was executed successfully, the JavaScript code never returned a human-readable response.
 
