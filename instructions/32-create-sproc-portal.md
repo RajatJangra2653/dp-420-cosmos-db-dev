@@ -155,7 +155,7 @@ Stored procedures are authored in language-integrated JavaScript and support the
 
     | **Setting** | **Key** | **Value** |
     | :--- | :--- | :--- |
-    | **Enter input parameters (if any)** | *String* | *demo* |
+    | **Partition key value** | *String* | *demo* |
 
 1. Observe the empty result. While the stored procedure was executed successfully, the JavaScript code never returned a human-readable response.
 
