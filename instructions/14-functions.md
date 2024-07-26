@@ -195,12 +195,12 @@ Before you can begin writing code, you will need to create the Azure Functions r
     | :--- | :--- |
     | **Development environment** | *Develop in portal* |
     | **Select a template** | *Azure Cosmos DB trigger* |
-    | **New Function** | *``ItemsListener``* |
+    | **Function Name** | *``ItemsListener``* |
     | **Cosmos DB account connection** | *Select New* &vert; *Select Azure Cosmos DB Account* &vert; *Select the Azure Cosmos DB account you created earlier* |
     | **Database name** | *``cosmicworks``* |
-    | **Collection name** | *``products``* |
-    | **Collection name for leases** | *``productslease``* |
-    | **Create lease collection if it does not exist** | *No* |
+    | **Container name** | *``products``* |
+    | **Container name for leases** | *``productslease``* |
+    | **Create lease container if it does not exist** | *No* |
 
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
